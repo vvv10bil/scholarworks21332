@@ -1,0 +1,217 @@
+/* =============================================
+   PROOF — AI Detector Results, Turnitin Block, Social Proof Bar
+   ============================================= */
+
+/* === AI DETECTOR RESULTS === */
+.aidet { padding: 80px 32px; background: var(--ivory); position: relative; overflow: hidden }
+.aidet-in { max-width: 1100px; margin: 0 auto }
+
+.aidet-head { margin-bottom: 40px }
+.aidet-head h2 { font-family: var(--fd); font-size: clamp(28px, 3.5vw, 42px); line-height: 1.15; margin-bottom: 8px }
+.aidet-head h2 em { color: var(--em); font-style: italic }
+.aidet-head p { font-size: 15px; color: var(--mu); max-width: 520px; line-height: 1.6 }
+
+.aidet-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px }
+
+.aicard {
+  background: var(--wh);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid rgba(200, 164, 78, .06);
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+.aicard::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px }
+.aicard.pass::before { background: linear-gradient(90deg, #10b981, #34d399) }
+.aicard:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0, 0, 0, .06) }
+
+.aicard-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 20px }
+.aicard-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.aicard-name { font-weight: 700; font-size: 15px; color: var(--ch); margin-bottom: 1px }
+.aicard-type { font-size: 11px; color: var(--mu) }
+
+.aicard-result { display: flex; align-items: center; gap: 8px; margin-bottom: 16px }
+.aicard-badge { display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 700 }
+.aicard-badge.green { background: rgba(16, 185, 129, .1); color: #059669 }
+.aicard-badge svg { width: 14px; height: 14px }
+
+.aicard-score { font-family: var(--fd); font-size: 36px; color: var(--em); margin-bottom: 4px }
+.aicard-label { font-size: 12px; color: var(--mu); margin-bottom: 14px }
+
+.aicard-bar { height: 8px; background: var(--ivory); border-radius: 4px; overflow: hidden }
+.aicard-bar-fill { height: 100%; border-radius: 4px; transition: width 2s ease }
+.aicard-bar-fill.green { background: linear-gradient(90deg, #10b981, #34d399) }
+.aicard-bar-fill.red { background: linear-gradient(90deg, #ef4444, #f87171) }
+
+.aicard-note { font-size: 11px; color: var(--mu); margin-top: 10px; line-height: 1.5 }
+
+.aidet-bottom {
+  background: linear-gradient(135deg, var(--em-d), var(--em));
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.aidet-bottom-l h3 { font-family: var(--fd); font-size: 22px; color: var(--wh); margin-bottom: 4px }
+.aidet-bottom-l p { font-size: 13px; color: rgba(255, 255, 255, .6) }
+.aidet-bottom-r { display: flex; align-items: center; gap: 16px; flex-wrap: wrap }
+.aidet-include { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--gold) }
+.aidet-include svg { width: 16px; height: 16px }
+.aidet-cta {
+  background: var(--gold);
+  color: var(--ch);
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-family: var(--fb);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all .3s;
+  white-space: nowrap;
+}
+.aidet-cta:hover { background: var(--gold-l); transform: translateY(-1px) }
+
+/* AI Detector decorative */
+.aidet { background-image: radial-gradient(rgba(13, 107, 78, .025) 1px, transparent 1px); background-size: 24px 24px }
+.aidet::before {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  width: 240px;
+  height: 240px;
+  border: 2px solid rgba(200, 164, 78, .06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.aidet::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(13, 107, 78, .08);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+
+/* === TURNITIN BLOCK === */
+.turnitin { padding: 60px 32px; background: var(--cream); border-bottom: 1px solid rgba(200, 164, 78, .06); position: relative; overflow: hidden }
+.turnitin-in {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.turnitin-l h2 { font-family: var(--fd); font-size: clamp(26px, 3vw, 38px); line-height: 1.2; margin-bottom: 12px }
+.turnitin-l h2 em { color: var(--em); font-style: italic }
+.turnitin-l p { font-size: 14px; color: var(--mu); line-height: 1.7; margin-bottom: 24px }
+
+.turnitin-perks { display: flex; flex-direction: column; gap: 10px }
+.tperk { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--sl) }
+.tperk-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--em-s);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.tperk-icon svg { width: 14px; height: 14px; color: var(--em) }
+
+.turnitin-mock {
+  background: var(--wh);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .06);
+  border: 1px solid rgba(200, 164, 78, .08);
+}
+.turnitin-mock-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ivory);
+}
+.tm-brand { font-weight: 800; font-size: 14px; color: var(--ch); display: flex; align-items: center; gap: 6px }
+.tm-brand span { background: rgba(220, 53, 69, .1); color: var(--red); padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 800 }
+.tm-date { font-size: 11px; color: var(--mu) }
+.tm-doc { font-size: 13px; font-weight: 600; color: var(--ch); margin-bottom: 4px }
+.tm-sub { font-size: 11px; color: var(--mu); margin-bottom: 20px }
+
+.tm-score-row { display: flex; gap: 12px; margin-bottom: 20px }
+.tm-score { flex: 1; text-align: center; padding: 16px 10px; border-radius: 10px }
+.tm-score.green { background: rgba(16, 185, 129, .08); border: 1px solid rgba(16, 185, 129, .15) }
+.tm-score.blue { background: rgba(59, 130, 246, .08); border: 1px solid rgba(59, 130, 246, .1) }
+.tm-score-val { font-family: var(--fd); font-size: 28px; font-weight: 700; display: block; margin-bottom: 2px }
+.tm-score.green .tm-score-val { color: #059669 }
+.tm-score.blue .tm-score-val { color: #2563eb }
+.tm-score-label { font-size: 10px; color: var(--mu); font-weight: 600; text-transform: uppercase; letter-spacing: .5px }
+
+.tm-bar-section { margin-bottom: 14px }
+.tm-bar-label { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 5px }
+.tm-bar-label span:first-child { color: var(--mu) }
+.tm-bar-label span:last-child { font-weight: 700; color: var(--ch) }
+.tm-bar { height: 6px; background: var(--ivory); border-radius: 3px; overflow: hidden }
+.tm-bar-fill { height: 100%; border-radius: 3px }
+.tm-bar-fill.g { background: #10b981; width: 3% }
+.tm-bar-fill.b { background: #3b82f6; width: 100% }
+.tm-bar-fill.r { background: #ef4444; width: 0% }
+
+.tm-badge-row { display: flex; gap: 8px; flex-wrap: wrap }
+.tm-badge { display: flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 6px; font-size: 10px; font-weight: 700 }
+.tm-badge.ok { background: rgba(16, 185, 129, .1); color: #059669 }
+.tm-badge svg { width: 11px; height: 11px }
+
+/* Turnitin decorative */
+.turnitin::before {
+  content: '';
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(200, 164, 78, .12);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+.turnitin::after {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -60px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(13, 107, 78, .05) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+
+/* === SOCIAL PROOF NUMBERS BAR === */
+.spbar { background: var(--em-d); padding: 40px 32px }
+.spbar-in { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px }
+.spnum { text-align: center; padding: 0 16px; border-right: 1px solid rgba(255, 255, 255, .07) }
+.spnum:last-child { border-right: none }
+.spnum-val { font-family: var(--fd); font-size: 42px; color: var(--gold); display: block; line-height: 1; margin-bottom: 6px }
+.spnum-label { font-size: 12px; color: rgba(255, 255, 255, .5); font-weight: 500; line-height: 1.3 }

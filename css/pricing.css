@@ -1,0 +1,154 @@
+/* =============================================
+   PRICING — Pricing Section, Calculator, Subjects Marquee
+   ============================================= */
+
+/* === PRICING === */
+.pri {
+  padding: 80px 32px;
+  background: var(--em-d);
+  position: relative;
+  overflow: hidden;
+}
+.pri::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23fff' fill-opacity='.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.pri-in { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1 }
+.pri .stag { color: var(--gold) }
+.pri .stag::before { background: var(--gold) }
+.pri h2 { font-family: var(--fd); font-size: clamp(28px, 3.5vw, 42px); color: var(--wh); margin-bottom: 10px }
+.prd { font-size: 15px; color: rgba(255, 255, 255, .5); max-width: 480px; line-height: 1.6; margin-bottom: 36px }
+
+/* === PRICE CALCULATOR === */
+.pcalc {
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 28px;
+}
+.pcalc-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 20px }
+.pcalc-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .7px; color: rgba(255, 255, 255, .4); margin-bottom: 6px }
+.pcalc-select {
+  width: 100%;
+  padding: 11px 14px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 9px;
+  font-family: var(--fb);
+  font-size: 13px;
+  color: var(--wh);
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: all .3s;
+}
+.pcalc-select:focus { border-color: var(--gold); background: rgba(255, 255, 255, .1) }
+
+.pcalc-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: rgba(200, 164, 78, .1);
+  border: 1px solid rgba(200, 164, 78, .2);
+  border-radius: 10px;
+}
+.pcalc-from { font-size: 13px; color: rgba(255, 255, 255, .5) }
+.pcalc-price { font-family: var(--fd); font-size: 36px; color: var(--gold) }
+.pcalc-note { font-size: 11px; color: rgba(255, 255, 255, .35); margin-top: 3px }
+.pcalc-cta {
+  background: var(--gold);
+  color: var(--ch);
+  padding: 12px 28px;
+  border-radius: 9px;
+  border: none;
+  font-family: var(--fb);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all .3s;
+  white-space: nowrap;
+}
+.pcalc-cta:hover { background: var(--gold-l); transform: translateY(-1px) }
+
+/* === PRICING CARDS === */
+.pcs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px }
+.pc {
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-radius: 14px;
+  padding: 28px;
+  transition: all .3s;
+}
+.pc:hover { background: rgba(255, 255, 255, .07); transform: translateY(-2px) }
+.pc h3 { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px }
+.pi { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, .04) }
+.pi:last-child { border-bottom: none }
+.pi .pl { color: rgba(255, 255, 255, .65); font-size: 13px }
+.pi .pa { color: var(--wh); font-weight: 700; font-size: 13px }
+
+
+/* === SUBJECTS MARQUEE === */
+.subj {
+  padding: 60px 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(200, 164, 78, .06);
+  position: relative;
+  background: var(--wh);
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 55px, rgba(200, 164, 78, .02) 55px, rgba(200, 164, 78, .02) 56px);
+}
+.subj-head { padding: 0 32px; margin-bottom: 28px }
+.subj h2 { font-family: var(--fd); font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 6px }
+.subj-d { font-size: 15px; color: var(--mu); max-width: 480px; line-height: 1.6 }
+
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+}
+.marquee-track { display: flex; gap: 10px; width: max-content; animation: marq 30s linear infinite }
+.marquee-track:hover { animation-play-state: paused }
+.marquee2 .marquee-track { animation-direction: reverse; animation-duration: 35s }
+@keyframes marq { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
+
+.st2 {
+  padding: 10px 22px;
+  border: 1.5px solid rgba(26, 26, 26, .08);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sl);
+  white-space: nowrap;
+  transition: all .3s;
+  cursor: default;
+}
+.st2:hover { border-color: var(--em); color: var(--em); background: var(--em-s) }
+.marquee + .marquee { margin-top: 10px }
+
+/* Subjects decorative */
+.subj::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: -50px;
+  width: 180px;
+  height: 180px;
+  border: 2px solid rgba(200, 164, 78, .06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.subj::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  pointer-events: none;
+}

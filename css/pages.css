@@ -1,0 +1,141 @@
+/* =============================================
+   PAGES — About Page, Contact Page, US Map
+   ============================================= */
+
+/* === ABOUT PAGE === */
+.abh {
+  padding: 140px 32px 60px;
+  background: linear-gradient(135deg, var(--em-d), var(--em));
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+.abh::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(200, 164, 78, .08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.abh-in {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.abh .stag { color: var(--gold) }
+.abh .stag::before { background: var(--gold) }
+.abh h1 { font-family: var(--fd); font-size: clamp(30px, 3.5vw, 46px); color: var(--wh); line-height: 1.15; margin-bottom: 16px }
+.abh-t { font-size: 15px; color: rgba(255, 255, 255, .65); line-height: 1.7; max-width: 500px }
+.abh-t strong { color: var(--wh) }
+
+.abh-f { background: var(--wh); border-radius: 18px; padding: 28px; box-shadow: 0 16px 48px rgba(0, 0, 0, .12) }
+
+.faq-about { padding: 80px 32px; max-width: 960px; margin: 0 auto }
+.faq-about h2 { font-family: var(--fd); font-size: clamp(28px, 3.5vw, 42px); text-align: center; margin-bottom: 40px }
+
+
+/* === CONTACT PAGE === */
+.cth {
+  padding: 140px 32px 60px;
+  background: linear-gradient(135deg, var(--em-d), var(--em));
+  position: relative;
+  overflow: hidden;
+}
+.cth::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(200, 164, 78, .08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cth-in {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+.cth .stag { color: var(--gold) }
+.cth .stag::before { background: var(--gold) }
+.cth h1 { font-family: var(--fd); font-size: clamp(30px, 3.5vw, 46px); color: var(--wh); line-height: 1.15; margin-bottom: 12px }
+.cth-t { font-size: 15px; color: rgba(255, 255, 255, .65); line-height: 1.7; margin-bottom: 24px }
+
+.cms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px }
+.cm {
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+  transition: all .3s;
+}
+.cm:hover { background: rgba(255, 255, 255, .12) }
+.cm svg { width: 24px; height: 24px; color: var(--gold); margin-bottom: 6px }
+.cm h4 { font-size: 13px; font-weight: 700; color: var(--wh); margin-bottom: 2px }
+.cm p { font-size: 10px; color: rgba(255, 255, 255, .45) }
+
+.cfc { background: var(--wh); border-radius: 18px; padding: 28px; box-shadow: 0 16px 48px rgba(0, 0, 0, .12) }
+
+
+/* === US MAP === */
+.map h2 { font-family: var(--fd); font-size: clamp(24px, 2.8vw, 34px); margin-bottom: 10px }
+.map-d { font-size: 14px; color: var(--mu); line-height: 1.6; margin-bottom: 20px }
+.map-s { display: grid; grid-template-columns: 1fr 1fr; gap: 10px }
+.ms { background: var(--ivory); padding: 16px; border-radius: 10px; text-align: center }
+.ms .v { font-family: var(--fd); font-size: 24px; color: var(--em) }
+.ms .l { font-size: 10px; color: var(--mu); margin-top: 2px }
+
+.map-section { padding: 60px 32px; max-width: 1280px; margin: 0 auto }
+.map-section h2 { font-family: var(--fd); font-size: clamp(24px, 2.8vw, 34px); margin-bottom: 10px }
+.map-section-in { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center }
+
+.us-map-svg { width: 100%; height: auto; cursor: pointer }
+.us-map-svg path {
+  fill: rgba(13, 107, 78, .12);
+  stroke: var(--wh);
+  stroke-width: .75;
+  stroke-linejoin: round;
+  transition: fill .2s, filter .2s;
+  cursor: pointer;
+}
+.us-map-svg path:hover { fill: var(--em); filter: drop-shadow(0 2px 6px rgba(13, 107, 78, .3)) }
+.us-map-svg .map-borders, .us-map-svg .map-sep { fill: none; stroke: var(--wh); cursor: default }
+.us-map-svg .map-borders:hover, .us-map-svg .map-sep:hover { fill: none; filter: none }
+
+.map-tooltip {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--em-d);
+  color: var(--wh);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--fb);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s;
+  white-space: nowrap;
+  z-index: 10;
+}
+.map-tooltip.show { opacity: 1 }

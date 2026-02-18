@@ -1,0 +1,218 @@
+/* =============================================
+   PROCESS — Process Steps, Metrics, FAQ, Promo CTA
+   ============================================= */
+
+/* === PROCESS + METRICS === */
+.proc { padding: 80px 32px; background: var(--ivory); position: relative; overflow: hidden }
+.proc-in { max-width: 1280px; margin: 0 auto }
+.proc h2 { font-family: var(--fd); font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 8px }
+.proc-d { font-size: 15px; color: var(--mu); line-height: 1.6; margin-bottom: 40px; max-width: 500px }
+
+.proc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start }
+
+.steps2 { display: flex; flex-direction: column }
+.stp { display: flex; gap: 18px; padding: 18px 0 }
+.stp-l { display: flex; flex-direction: column; align-items: center }
+.stp-n {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--em);
+  background: var(--ivory);
+  flex-shrink: 0;
+  z-index: 1;
+}
+.stp-c { width: 2px; flex: 1; background: rgba(13, 107, 78, .1) }
+.stp:last-child .stp-c { display: none }
+.stp-b h4 { font-family: var(--fd); font-size: 16px; margin-bottom: 3px }
+.stp-b p { font-size: 12px; line-height: 1.5; color: var(--mu) }
+
+.metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 14px }
+.metric-card {
+  background: var(--wh);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .03);
+  border: 1px solid rgba(200, 164, 78, .06);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.metric-card .mc-val { font-family: var(--fd); font-size: 36px; color: var(--em); position: relative; z-index: 1 }
+.metric-card .mc-lab { font-size: 11px; color: var(--mu); margin-top: 3px; font-weight: 500; position: relative; z-index: 1 }
+
+.mc-bar { height: 6px; background: var(--ivory); border-radius: 3px; margin-top: 12px; overflow: hidden; position: relative; z-index: 1 }
+.mc-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--em), var(--em-l)); transition: width 1.5s ease }
+
+.mc-ring { width: 80px; height: 80px; margin: 0 auto 8px; position: relative }
+.mc-ring svg { width: 80px; height: 80px; transform: rotate(-90deg) }
+.mc-ring circle { fill: none; stroke-width: 6 }
+.mc-ring .ring-bg { stroke: var(--ivory) }
+.mc-ring .ring-fg { stroke: var(--em); stroke-linecap: round; transition: stroke-dashoffset 1.5s ease }
+.mc-ring .ring-val { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--fd); font-size: 22px; color: var(--em) }
+
+/* Process decorative */
+.proc::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  width: 56px;
+  height: 56px;
+  background-image: radial-gradient(rgba(200, 164, 78, .1) 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  pointer-events: none;
+  border-radius: 6px;
+}
+.proc::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  border: 2px solid rgba(13, 107, 78, .06);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 40px rgba(13, 107, 78, .025);
+}
+
+
+/* === FAQ ON HOMEPAGE === */
+.faq-home {
+  padding: 80px 32px;
+  background: var(--wh);
+  position: relative;
+  overflow: hidden;
+  background-image: repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(200, 164, 78, .02) 80px, rgba(200, 164, 78, .02) 81px);
+}
+.faq-home-in { max-width: 860px; margin: 0 auto }
+.faq-home-in h2 { font-family: var(--fd); font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 8px }
+.faq-home-desc { font-size: 15px; color: var(--mu); margin-bottom: 40px; max-width: 480px; line-height: 1.6 }
+
+.fqi {
+  border: 1px solid rgba(200, 164, 78, .08);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: var(--cream);
+  transition: all .3s;
+}
+.fqi:hover { border-color: rgba(200, 164, 78, .16) }
+.fqq {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  user-select: none;
+}
+.fqq .fqic {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--em-s);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--em);
+  font-size: 16px;
+  font-weight: 700;
+  transition: transform .3s;
+  flex-shrink: 0;
+}
+.fqi.op .fqic { transform: rotate(45deg) }
+.fqa { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s; padding: 0 20px }
+.fqi.op .fqa { max-height: 300px; padding: 0 20px 16px }
+.fqa p { font-size: 13px; color: var(--mu); line-height: 1.7 }
+
+/* FAQ decorative */
+.faq-home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 92% 8%, rgba(200, 164, 78, .06) 0%, transparent 40%),
+              radial-gradient(ellipse at 8% 92%, rgba(13, 107, 78, .04) 0%, transparent 40%);
+  pointer-events: none;
+}
+.faq-home::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 56px;
+  height: 56px;
+  border-top: 2.5px solid rgba(13, 107, 78, .12);
+  border-left: 2.5px solid rgba(13, 107, 78, .12);
+  border-radius: 10px 0 0 0;
+  pointer-events: none;
+}
+
+
+/* === PROMO CTA === */
+.pcta {
+  padding: 60px 32px;
+  background: linear-gradient(135deg, var(--em-d), var(--em));
+  position: relative;
+  overflow: hidden;
+}
+.pcta::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(200, 164, 78, .1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.pcta-in {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+.pcta-in h2 { font-family: var(--fd); font-size: clamp(24px, 2.8vw, 36px); color: var(--wh) }
+.pcta-in h2 em { color: var(--gold); font-style: italic }
+.pcta-in > div:first-child p { font-size: 14px; color: rgba(255, 255, 255, .55); margin-top: 4px }
+
+.pcta-r { display: flex; align-items: center; gap: 20px; flex-shrink: 0 }
+.cdb { display: flex; gap: 5px }
+.cdb-b {
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 8px;
+  padding: 10px 14px;
+  text-align: center;
+}
+.cdb-b .cn2 { font-family: var(--fd); font-size: 22px; color: var(--wh); display: block; font-variant-numeric: tabular-nums }
+.cdb-b .cl2 { font-size: 8px; color: rgba(255, 255, 255, .4); text-transform: uppercase; letter-spacing: 1px }
+
+.bg {
+  background: var(--gold);
+  color: var(--ch);
+  padding: 14px 28px;
+  border-radius: 9px;
+  border: none;
+  font-family: var(--fb);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all .3s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.bg:hover { background: var(--gold-l); transform: translateY(-2px) }

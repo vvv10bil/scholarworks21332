@@ -91,6 +91,21 @@
   background: var(--ivory);
   position: relative;
   overflow: hidden;
+  background-image:
+    radial-gradient(ellipse at 20% 30%, rgba(13, 107, 78, .035) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(13, 107, 78, .03) 0%, transparent 45%);
+}
+.blog-prev::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 56px;
+  height: 56px;
+  border-top: 2px solid rgba(13, 107, 78, .08);
+  border-left: 2px solid rgba(13, 107, 78, .08);
+  border-radius: 10px 0 0 0;
+  pointer-events: none;
 }
 .blog-prev::after {
   content: '';
@@ -99,10 +114,44 @@
   right: 24px;
   width: 48px;
   height: 48px;
-  border-bottom: 2px solid rgba(200, 164, 78, .1);
-  border-right: 2px solid rgba(200, 164, 78, .1);
+  border-bottom: 2px solid rgba(13, 107, 78, .08);
+  border-right: 2px solid rgba(13, 107, 78, .08);
   border-radius: 0 0 8px 0;
   pointer-events: none;
+}
+
+/* Decorative green wavy patterns */
+.blog-wave {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.blog-wave-1 {
+  top: 15%;
+  left: -5%;
+  width: 45%;
+  opacity: .7;
+}
+.blog-wave-2 {
+  top: -15%;
+  right: -8%;
+  width: 280px;
+  height: 280px;
+  opacity: .6;
+}
+.blog-wave-3 {
+  bottom: -10%;
+  right: 5%;
+  width: 140px;
+  height: 350px;
+  opacity: .6;
+}
+.blog-wave-4 {
+  bottom: 10%;
+  left: 8%;
+  width: 180px;
+  height: 180px;
+  opacity: .7;
 }
 .blog-in { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1 }
 

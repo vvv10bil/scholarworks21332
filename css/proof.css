@@ -55,6 +55,24 @@
 
 .aicard-note { font-size: 11px; color: var(--mu); margin-top: 10px; line-height: 1.5 }
 
+.aicard-blog-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--em);
+  text-decoration: none;
+  padding: 5px 12px;
+  border: 1px solid rgba(13, 107, 78, .15);
+  border-radius: 6px;
+  transition: all .3s;
+}
+.aicard-blog-link:hover {
+  background: var(--em-s);
+  border-color: var(--em);
+  color: var(--em);
+}
+
 .aidet-bottom {
   background: linear-gradient(135deg, var(--em-d), var(--em));
   border-radius: 16px;
@@ -230,6 +248,35 @@
 .tperk div { display: flex; flex-direction: column; gap: 2px }
 .tperk strong { font-size: 13px; color: var(--ch); font-weight: 700 }
 .tperk span { font-size: 12px; color: var(--mu); line-height: 1.4 }
+
+/* Blog links in turnitin section */
+.turnitin-blog-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.turnitin-blog-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--em);
+  text-decoration: none;
+  padding: 10px 16px;
+  background: rgba(13, 107, 78, .04);
+  border: 1px solid rgba(13, 107, 78, .1);
+  border-radius: 10px;
+  transition: all .3s;
+}
+.turnitin-blog-btn:hover {
+  background: var(--em-s);
+  border-color: var(--em);
+  transform: translateX(4px);
+  box-shadow: 0 2px 12px rgba(13, 107, 78, .08);
+}
+.turnitin-blog-btn svg { flex-shrink: 0; opacity: .7 }
 
 /* Trust badges row */
 .turnitin-trust {

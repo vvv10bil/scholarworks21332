@@ -333,6 +333,16 @@
 .fqa { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s; padding: 0 20px }
 .fqi.op .fqa { max-height: 300px; padding: 0 20px 16px }
 .fqa p { font-size: 13px; color: var(--mu); line-height: 1.7 }
+.fqa-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--em);
+  text-decoration: none;
+  transition: color .3s;
+}
+.fqa-link:hover { color: var(--gold); text-decoration: underline }
 
 /* FAQ decorative */
 .faq-home::before {

@@ -1,0 +1,128 @@
+/* =============================================
+   WRITERS — Writers Showcase Section
+   ============================================= */
+
+.writers { padding: 80px 32px; background: var(--cream); overflow: hidden; position: relative }
+.writers-in { max-width: 1280px; margin: 0 auto }
+
+.writers-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.writers-head-l h2 { font-family: var(--fd); font-size: clamp(28px, 3.5vw, 42px); line-height: 1.15; margin-bottom: 6px }
+.writers-head-l h2 em { color: var(--em); font-style: italic }
+.writers-head-l p { font-size: 14px; color: var(--mu) }
+
+.writers-online { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--em) }
+.writers-online-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: pulse-dot 2s infinite }
+
+.writers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px }
+
+.wcard {
+  background: var(--wh);
+  border: 1px solid rgba(200, 164, 78, .08);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+.wcard:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0, 0, 0, .07); border-color: rgba(13, 107, 78, .15) }
+
+.wcard-top { display: flex; align-items: center; gap: 12px; margin-bottom: 16px }
+
+.wavatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  position: relative;
+}
+.wavatar-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 18px;
+  height: 18px;
+  background: var(--em);
+  border-radius: 50%;
+  border: 2px solid var(--wh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wavatar-badge svg { width: 9px; height: 9px; color: var(--wh) }
+
+.wname { font-weight: 700; font-size: 15px; color: var(--ch); margin-bottom: 2px }
+.wdeg { font-size: 11px; color: var(--mu); font-weight: 500 }
+.wstars { color: var(--gold); font-size: 13px; letter-spacing: 1px; margin-bottom: 10px }
+
+.wrating-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px }
+.wrating { font-size: 13px; font-weight: 700; color: var(--ch) }
+.worders { font-size: 11px; color: var(--mu) }
+
+.wtags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 14px }
+.wtag { font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px; background: var(--em-s); color: var(--em) }
+
+.whire {
+  width: 100%;
+  padding: 9px;
+  background: var(--em);
+  color: var(--wh);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--fb);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .3s;
+}
+.whire:hover { background: var(--em-d) }
+
+.wcard-featured::before {
+  content: 'TOP WRITER';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--gold);
+  color: var(--ch);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 3px 7px;
+  border-radius: 4px;
+}
+
+/* === DECORATIVE === */
+.writers::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(200, 164, 78, .07);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 0 35px rgba(200, 164, 78, .03);
+}
+.writers::after {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  left: 24px;
+  width: 72px;
+  height: 72px;
+  background-image: radial-gradient(rgba(13, 107, 78, .09) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+  pointer-events: none;
+  border-radius: 6px;
+}

@@ -257,8 +257,8 @@
 }
 .metric-card:hover .ring-val { color: var(--gold) }
 
-/* Metrics push down for symmetry */
-.metrics { align-self: end; }
+/* Metrics center vertically in right column */
+.metrics { align-self: center; }
 
 /* Asymmetric green background blobs */
 .proc-green-blob {

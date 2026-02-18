@@ -288,20 +288,53 @@
 
 <!-- ★ NEW: TURNITIN / PLAGIARISM REPORT BLOCK -->
 <section class="turnitin" id="turnitin-sec">
+  <!-- Decorative seal watermark -->
+  <div class="turnitin-seal" aria-hidden="true">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="90" stroke="rgba(200,164,78,.07)" stroke-width="1.5"/>
+      <circle cx="100" cy="100" r="78" stroke="rgba(200,164,78,.05)" stroke-width="1"/>
+      <circle cx="100" cy="100" r="66" stroke="rgba(200,164,78,.04)" stroke-width="1" stroke-dasharray="4 4"/>
+      <path d="M100 30L108 55H134L113 70L121 95L100 80L79 95L87 70L66 55H92L100 30Z" stroke="rgba(200,164,78,.08)" stroke-width="1" fill="none"/>
+      <text x="100" y="145" text-anchor="middle" font-size="8" fill="rgba(200,164,78,.1)" font-family="serif" letter-spacing="3">VERIFIED ORIGINAL</text>
+      <text x="100" y="160" text-anchor="middle" font-size="6" fill="rgba(200,164,78,.08)" font-family="serif" letter-spacing="2">SCHOLAR WORKS</text>
+    </svg>
+  </div>
+  <!-- Corner filigree -->
+  <div class="turnitin-filigree turnitin-filigree-tl" aria-hidden="true"></div>
+  <div class="turnitin-filigree turnitin-filigree-br" aria-hidden="true"></div>
+
   <div class="turnitin-in">
     <div class="turnitin-l rv">
       <div class="stag">Included Free</div>
       <h2>Free Plagiarism & <em>AI Report</em> with Every Order</h2>
       <p>Every paper comes with a complimentary Turnitin originality report and GPTZero scan. Show your professor proof it's 100% original — no extra charge.</p>
+
       <div class="turnitin-perks">
-        <div class="tperk"><div class="tperk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>Turnitin originality report attached to your delivery</div>
-        <div class="tperk"><div class="tperk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>GPTZero scan showing 100% human score</div>
-        <div class="tperk"><div class="tperk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>Under 5% similarity guaranteed or we rewrite free</div>
-        <div class="tperk"><div class="tperk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>Report delivered alongside the paper, no waiting</div>
+        <div class="tperk"><div class="tperk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div><div><strong>Turnitin Report</strong><span>Originality report attached to every delivery</span></div></div>
+        <div class="tperk"><div class="tperk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg></div><div><strong>GPTZero Scan</strong><span>100% human score verified before delivery</span></div></div>
+        <div class="tperk"><div class="tperk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><strong>Under 5% Similarity</strong><span>Guaranteed or we rewrite completely free</span></div></div>
+        <div class="tperk"><div class="tperk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div><strong>Instant Delivery</strong><span>Report arrives alongside your paper — no waiting</span></div></div>
+      </div>
+
+      <div class="turnitin-trust">
+        <div class="turnitin-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Bank-Level Encryption
+        </div>
+        <div class="turnitin-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          100% Human-Written
+        </div>
+        <div class="turnitin-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+          Reports in Minutes
+        </div>
       </div>
     </div>
-    <div class="rv">
+
+    <div class="turnitin-r rv">
       <div class="turnitin-mock">
+        <div class="turnitin-mock-glow"></div>
         <div class="turnitin-mock-header">
           <div class="tm-brand">Turnitin <span>REPORT</span></div>
           <div class="tm-date">Scholar Works — Sample</div>
@@ -328,6 +361,10 @@
           <div class="tm-badge ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Original</div>
           <div class="tm-badge ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Human-Written</div>
           <div class="tm-badge ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>No AI</div>
+        </div>
+        <!-- Verification stamp overlay -->
+        <div class="tm-stamp">
+          <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="42" stroke="rgba(16,185,129,.25)" stroke-width="3"/><circle cx="50" cy="50" r="35" stroke="rgba(16,185,129,.15)" stroke-width="1"/><path d="M38 50l8 8 16-20" stroke="rgba(16,185,129,.3)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
       </div>
     </div>

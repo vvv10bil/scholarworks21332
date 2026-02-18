@@ -80,7 +80,11 @@
 
   /* Turnitin */
   .turnitin { padding: 48px 16px }
+  .turnitin-seal { display: none }
+  .turnitin-filigree { display: none }
+  .turnitin-trust { gap: 12px }
   .tm-score-row { gap: 8px }
+  .tm-stamp { width: 48px; height: 48px }
 
   /* Compare */
   .cmp { padding: 48px 16px }

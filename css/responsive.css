@@ -155,9 +155,13 @@
   .cth { padding: 100px 16px 40px }
   .cth-in { grid-template-columns: 1fr; gap: 28px }
   .cth h1 { font-size: 28px }
+  .cth-corner { display: none }
+  .cth-promise { padding: 12px 14px }
   .cms { grid-template-columns: 1fr }
   .cm { display: flex; align-items: center; gap: 10px; text-align: left; padding: 14px }
+  .cm::before { display: none }
   .cm svg { margin-bottom: 0 }
+  .cth-trust { gap: 10px }
   .cfc { padding: 22px 16px }
   .map-section { padding: 40px 16px }
   .map-section-in { grid-template-columns: 1fr; gap: 24px }

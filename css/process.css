@@ -10,7 +10,9 @@
   overflow: hidden;
   background-image:
     repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(200, 164, 78, .03) 59px, rgba(200, 164, 78, .03) 60px),
-    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(200, 164, 78, .03) 59px, rgba(200, 164, 78, .03) 60px);
+    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(200, 164, 78, .03) 59px, rgba(200, 164, 78, .03) 60px),
+    repeating-linear-gradient(135deg, transparent, transparent 150px, rgba(13, 107, 78, .015) 150px, rgba(13, 107, 78, .015) 151px),
+    repeating-linear-gradient(0deg, transparent, transparent 120px, rgba(13, 107, 78, .012) 120px, rgba(13, 107, 78, .012) 121px);
 }
 .proc-in { max-width: 1280px; margin: 0 auto; position: relative; z-index: 2 }
 
@@ -255,6 +257,39 @@
 }
 .metric-card:hover .ring-val { color: var(--gold) }
 
+/* Metrics push down for symmetry */
+.metrics { align-self: end; }
+
+/* Asymmetric green background blobs */
+.proc-green-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.proc-green-blob-1 {
+  width: 320px;
+  height: 320px;
+  top: -60px;
+  right: 8%;
+  background: radial-gradient(circle, rgba(13, 107, 78, .07) 0%, rgba(13, 107, 78, .02) 50%, transparent 70%);
+}
+.proc-green-blob-2 {
+  width: 220px;
+  height: 220px;
+  bottom: 10%;
+  left: -40px;
+  background: radial-gradient(circle, rgba(13, 107, 78, .06) 0%, rgba(13, 107, 78, .02) 45%, transparent 70%);
+}
+.proc-green-blob-3 {
+  width: 160px;
+  height: 160px;
+  top: 40%;
+  right: 15%;
+  background: radial-gradient(circle, rgba(13, 107, 78, .04) 0%, transparent 60%);
+  border-radius: 40% 60% 55% 45%;
+}
+
 /* Process decorative backgrounds */
 .proc::before {
   content: '';
@@ -264,8 +299,11 @@
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(ellipse at 10% 20%, rgba(13, 107, 78, .04) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 80%, rgba(200, 164, 78, .05) 0%, transparent 50%);
+    radial-gradient(ellipse at 10% 20%, rgba(13, 107, 78, .06) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(200, 164, 78, .05) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 15%, rgba(13, 107, 78, .05) 0%, transparent 35%),
+    radial-gradient(ellipse at 25% 70%, rgba(13, 107, 78, .04) 0%, transparent 40%),
+    radial-gradient(circle at 85% 45%, rgba(13, 107, 78, .03) 0%, transparent 30%);
   pointer-events: none;
   z-index: 0;
 }
@@ -290,7 +328,10 @@
   background: var(--wh);
   position: relative;
   overflow: hidden;
-  background-image: repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(200, 164, 78, .02) 80px, rgba(200, 164, 78, .02) 81px);
+  background-image:
+    repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(200, 164, 78, .02) 80px, rgba(200, 164, 78, .02) 81px),
+    repeating-linear-gradient(0deg, transparent, transparent 120px, rgba(13, 107, 78, .015) 120px, rgba(13, 107, 78, .015) 121px),
+    repeating-linear-gradient(45deg, transparent, transparent 200px, rgba(13, 107, 78, .01) 200px, rgba(13, 107, 78, .01) 201px);
 }
 .faq-home-in { max-width: 860px; margin: 0 auto }
 .faq-home-in h2 { font-family: var(--fd); font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 8px }

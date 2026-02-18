@@ -9,7 +9,9 @@
   border-bottom: 1px solid rgba(200, 164, 78, .06);
   position: relative;
   overflow: hidden;
-  background-image: repeating-linear-gradient(-45deg, transparent, transparent 50px, rgba(200, 164, 78, .025) 50px, rgba(200, 164, 78, .025) 51px);
+  background-image:
+    repeating-linear-gradient(-45deg, transparent, transparent 50px, rgba(200, 164, 78, .025) 50px, rgba(200, 164, 78, .025) 51px),
+    repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(13, 107, 78, .012) 100px, rgba(13, 107, 78, .012) 101px);
 }
 .urgency-in { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1 }
 .urgency h2 { font-family: var(--fd); font-size: clamp(26px, 3vw, 38px); margin-bottom: 8px }

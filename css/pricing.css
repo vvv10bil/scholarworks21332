@@ -47,6 +47,15 @@
   transition: all .3s;
 }
 .pcalc-select:focus { border-color: var(--gold); background: rgba(255, 255, 255, .1) }
+.pcalc-select option {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 8px 12px;
+}
+.pcalc-select::-webkit-scrollbar { width: 8px }
+.pcalc-select::-webkit-scrollbar-track { background: #1a1a2e }
+.pcalc-select::-webkit-scrollbar-thumb { background: rgba(200, 164, 78, .4); border-radius: 4px }
+.pcalc-select::-webkit-scrollbar-thumb:hover { background: rgba(200, 164, 78, .6) }
 
 .pcalc-result {
   display: flex;

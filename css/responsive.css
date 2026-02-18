@@ -116,6 +116,8 @@
 
   /* Process */
   .proc { padding: 48px 16px }
+  .proc-laurel, .proc-crest { display: none }
+  .steps2 { padding: 20px 16px }
   .metrics { gap: 10px }
   .metric-card { padding: 18px }
   .metric-card .mc-val { font-size: 28px }

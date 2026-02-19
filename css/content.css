@@ -83,6 +83,7 @@
   background-position: 14px 14px;
 }
 .rev-section-in { max-width: 1280px; margin: 0 auto; text-align: center }
+.rev-section .stag { display: flex; width: fit-content }
 .rev-section h2 { font-family: var(--fd); font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 8px }
 .rev-desc { font-size: 15px; color: var(--mu); margin-bottom: 10px; max-width: 480px; line-height: 1.6; margin-left: auto; margin-right: auto }
 

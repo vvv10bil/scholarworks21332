@@ -4,7 +4,6 @@
 
 /* ---- Max 1100px ---- */
 @media (max-width: 1100px) {
-  .writers-grid { grid-template-columns: repeat(2, 1fr) }
 }
 
 /* ---- Max 1024px ---- */
@@ -68,10 +67,12 @@
 
   /* Writers */
   .writers { padding: 48px 16px }
-  .writers-grid { grid-template-columns: 1fr 1fr; gap: 10px }
+  .writers-track .wcard { min-width: calc((100% - 16px) / 2); max-width: calc((100% - 16px) / 2) }
   .wcard { padding: 16px }
   .wavatar { width: 44px; height: 44px; font-size: 18px }
   .wname { font-size: 13px }
+  .writers-arrow { width: 36px; height: 36px }
+  .writers-arrow svg { width: 16px; height: 16px }
 
   /* Reviews */
   .rev-section { padding: 48px 16px }
@@ -256,7 +257,7 @@
 
 /* ---- Max 480px ---- */
 @media (max-width: 480px) {
-  .writers-grid { grid-template-columns: 1fr }
+  .writers-track .wcard { min-width: 100%; max-width: 100% }
   .exit-box { padding: 28px 20px }
   .exit-box h2 { font-size: 22px }
   .exit-input-row { flex-direction: column }

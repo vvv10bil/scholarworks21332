@@ -113,55 +113,61 @@
       </div>
       <div class="writers-online"><div class="writers-online-dot"></div>47 writers online now</div>
     </div>
-    <div class="writers-grid">
-      <div class="wcard wcard-featured rv">
-        <div class="wcard-top">
-          <div class="wavatar a1" style="background:linear-gradient(135deg,#667eea,#764ba2)">👩‍🏫
-            <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+    <div class="writers-carousel">
+      <button class="writers-arrow writers-arrow-l" onclick="scrollWriters(-1)" aria-label="Previous writers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="writers-track-wrap">
+        <div class="writers-track" id="writersTrack">
+          <div class="wcard wcard-featured rv">
+            <div class="wcard-top">
+              <div class="wavatar a1" style="background:linear-gradient(135deg,#667eea,#764ba2)">👩‍🏫
+                <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+              </div>
+              <div><div class="wname">Dr. Sarah M.</div><div class="wdeg">PhD · English Literature · Harvard</div></div>
+            </div>
+            <div class="wstars">★★★★★</div>
+            <div class="wrating-row"><span class="wrating">4.97 / 5.0</span><span class="worders">1,240 orders completed</span></div>
+            <div class="wtags"><span class="wtag">Essays</span><span class="wtag">Literature</span><span class="wtag">History</span></div>
+            <button class="whire">Hire Sarah →</button>
           </div>
-          <div><div class="wname">Dr. Sarah M.</div><div class="wdeg">PhD · English Literature · Harvard</div></div>
-        </div>
-        <div class="wstars">★★★★★</div>
-        <div class="wrating-row"><span class="wrating">4.97 / 5.0</span><span class="worders">1,240 orders completed</span></div>
-        <div class="wtags"><span class="wtag">Essays</span><span class="wtag">Literature</span><span class="wtag">History</span></div>
-        <button class="whire">Hire Sarah →</button>
-      </div>
-      <div class="wcard rv">
-        <div class="wcard-top">
-          <div class="wavatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">👨‍⚕️
-            <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div class="wcard rv">
+            <div class="wcard-top">
+              <div class="wavatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">👨‍⚕️
+                <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+              </div>
+              <div><div class="wname">Dr. James K.</div><div class="wdeg">PhD · Nursing & Healthcare · Johns Hopkins</div></div>
+            </div>
+            <div class="wstars">★★★★★</div>
+            <div class="wrating-row"><span class="wrating">4.95 / 5.0</span><span class="worders">890 orders completed</span></div>
+            <div class="wtags"><span class="wtag">Nursing</span><span class="wtag">Medicine</span><span class="wtag">Biology</span></div>
+            <button class="whire">Hire James →</button>
           </div>
-          <div><div class="wname">Dr. James K.</div><div class="wdeg">PhD · Nursing & Healthcare · Johns Hopkins</div></div>
-        </div>
-        <div class="wstars">★★★★★</div>
-        <div class="wrating-row"><span class="wrating">4.95 / 5.0</span><span class="worders">890 orders completed</span></div>
-        <div class="wtags"><span class="wtag">Nursing</span><span class="wtag">Medicine</span><span class="wtag">Biology</span></div>
-        <button class="whire">Hire James →</button>
-      </div>
-      <div class="wcard rv">
-        <div class="wcard-top">
-          <div class="wavatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">👩‍💼
-            <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div class="wcard rv">
+            <div class="wcard-top">
+              <div class="wavatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">👩‍💼
+                <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+              </div>
+              <div><div class="wname">Prof. Linda T.</div><div class="wdeg">MA · Business & Management · Wharton</div></div>
+            </div>
+            <div class="wstars">★★★★★</div>
+            <div class="wrating-row"><span class="wrating">4.92 / 5.0</span><span class="worders">1,105 orders completed</span></div>
+            <div class="wtags"><span class="wtag">Business</span><span class="wtag">Finance</span><span class="wtag">MBA</span></div>
+            <button class="whire">Hire Linda →</button>
           </div>
-          <div><div class="wname">Prof. Linda T.</div><div class="wdeg">MA · Business & Management · Wharton</div></div>
-        </div>
-        <div class="wstars">★★★★★</div>
-        <div class="wrating-row"><span class="wrating">4.92 / 5.0</span><span class="worders">1,105 orders completed</span></div>
-        <div class="wtags"><span class="wtag">Business</span><span class="wtag">Finance</span><span class="wtag">MBA</span></div>
-        <button class="whire">Hire Linda →</button>
-      </div>
-      <div class="wcard rv">
-        <div class="wcard-top">
-          <div class="wavatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">👨‍💻
-            <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div class="wcard rv">
+            <div class="wcard-top">
+              <div class="wavatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">👨‍💻
+                <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+              </div>
+              <div><div class="wname">Alex R.</div><div class="wdeg">PhD · Computer Science · MIT</div></div>
+            </div>
+            <div class="wstars">★★★★★</div>
+            <div class="wrating-row"><span class="wrating">4.99 / 5.0</span><span class="worders">642 orders completed</span></div>
+            <div class="wtags"><span class="wtag">CS / Tech</span><span class="wtag">Math</span><span class="wtag">Stats</span></div>
+            <button class="whire">Hire Alex →</button>
           </div>
-          <div><div class="wname">Alex R.</div><div class="wdeg">PhD · Computer Science · MIT</div></div>
         </div>
-        <div class="wstars">★★★★★</div>
-        <div class="wrating-row"><span class="wrating">4.99 / 5.0</span><span class="worders">642 orders completed</span></div>
-        <div class="wtags"><span class="wtag">CS / Tech</span><span class="wtag">Math</span><span class="wtag">Stats</span></div>
-        <button class="whire">Hire Alex →</button>
       </div>
+      <button class="writers-arrow writers-arrow-r" onclick="scrollWriters(1)" aria-label="Next writers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
   </div>
 </section>

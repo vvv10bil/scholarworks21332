@@ -68,6 +68,22 @@ function tgf(el) {
 }
 
 
+// ===== WRITERS CAROUSEL =====
+let writerPos = 0;
+function scrollWriters(dir) {
+  const track = document.getElementById('writersTrack');
+  if (!track) return;
+  const cards = track.querySelectorAll('.wcard');
+  const total = cards.length;
+  const visible = window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3;
+  const maxPos = total - visible;
+  writerPos = Math.max(0, Math.min(maxPos, writerPos + dir));
+  const gap = 16;
+  const cardWidth = cards[0].offsetWidth + gap;
+  track.style.transform = 'translateX(-' + (writerPos * cardWidth) + 'px)';
+}
+
+
 // ===== REVIEWS CAROUSEL (duplicate for infinite scroll) =====
 const rt = document.getElementById('revTrack');
 if (rt) rt.innerHTML += rt.innerHTML;

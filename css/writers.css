@@ -20,7 +20,36 @@
 .writers-online { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--em) }
 .writers-online-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: pulse-dot 2s infinite }
 
-.writers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px }
+/* === CAROUSEL === */
+.writers-carousel { display: flex; align-items: center; gap: 12px; position: relative }
+.writers-track-wrap { overflow: hidden; flex: 1 }
+.writers-track {
+  display: flex;
+  gap: 16px;
+  transition: transform .4s ease;
+}
+.writers-track .wcard {
+  min-width: calc((100% - 32px) / 3);
+  max-width: calc((100% - 32px) / 3);
+  flex-shrink: 0;
+}
+.writers-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(200, 164, 78, .15);
+  background: var(--wh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all .3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.writers-arrow:hover { background: var(--em); border-color: var(--em) }
+.writers-arrow:hover svg { color: var(--wh) }
+.writers-arrow svg { width: 20px; height: 20px; color: var(--ch) }
 
 .wcard {
   background: var(--wh);

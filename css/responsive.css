@@ -89,9 +89,16 @@
 
   /* Compare */
   .cmp { padding: 48px 16px }
-  .ct thead th, .ct tbody td { padding: 10px 7px; font-size: 11px }
-  .ct .ca, .ct .cs { width: auto; min-width: 80px }
+  .cmp-d { font-size: 13px; margin-bottom: 24px }
+  .ct { border-radius: 10px }
+  .ct thead th { padding: 8px 6px; font-size: 10px; text-align: center }
+  .ct thead th:first-child { text-align: left }
+  .ct tbody td { padding: 9px 6px; font-size: 11px; line-height: 1.35 }
+  .ct .ca, .ct .cs { width: auto; min-width: 0 }
+  .cn { font-size: 12px }
   .csub { display: none }
+  .vb, .vg { font-size: 10px }
+  .vb .x { font-size: 12px }
 
   /* Features */
   .wh { padding: 48px 16px }
@@ -277,6 +284,13 @@
   .exit-box { padding: 28px 20px }
   .exit-box h2 { font-size: 22px }
   .exit-input-row { flex-direction: column }
+
+  /* Compare table — tight screens */
+  .cmp { padding: 36px 10px }
+  .ct thead th { padding: 7px 4px; font-size: 9px }
+  .ct tbody td { padding: 7px 4px; font-size: 10px }
+  .cn { font-size: 11px }
+  .vb, .vg { font-size: 9px }
 }
 
 /* ---- Max 380px ---- */

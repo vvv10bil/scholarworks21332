@@ -67,12 +67,16 @@
 
   /* Writers */
   .writers { padding: 48px 16px }
-  .writers-track .wcard { min-width: calc((100% - 16px) / 2); max-width: calc((100% - 16px) / 2) }
-  .wcard { padding: 16px }
-  .wavatar { width: 44px; height: 44px; font-size: 18px }
+  .wcard { width: 220px; padding: 16px; border-radius: 12px }
+  .wavatar { width: 40px; height: 40px; font-size: 18px }
   .wname { font-size: 13px }
-  .writers-arrow { width: 36px; height: 36px }
-  .writers-arrow svg { width: 16px; height: 16px }
+  .wdeg { font-size: 10px }
+  .wstars { font-size: 11px; margin-bottom: 6px }
+  .wrating { font-size: 11px }
+  .worders { font-size: 10px }
+  .wtag { font-size: 9px; padding: 2px 6px }
+  .whire { padding: 7px; font-size: 11px }
+  .writers-track { animation-duration: 45s }
 
   /* Reviews */
   .rev-section { padding: 48px 16px }

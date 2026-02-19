@@ -113,7 +113,19 @@ nav.sc{padding:8px 32px;box-shadow:0 2px 20px rgba(0,0,0,.06)}
 .writers-head-l p{font-size:14px;color:var(--mu)}
 .writers-online{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--em)}
 .writers-online-dot{width:8px;height:8px;background:#4ade80;border-radius:50%;animation:pulse-dot 2s infinite}
-.writers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+/* Writers carousel */
+.writers-carousel{position:relative}
+.writers-viewport{overflow:hidden}
+.writers-slides{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.writers-slide{min-width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;box-sizing:border-box}
+.writers-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:28px}
+.writers-arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(200,164,78,.2);background:var(--wh);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;flex-shrink:0}
+.writers-arrow:hover{border-color:var(--em);background:var(--em);color:var(--wh)}
+.writers-arrow:hover svg{stroke:var(--wh)}
+.writers-arrow svg{width:18px;height:18px;stroke:var(--ch);stroke-width:2;fill:none}
+.writers-dots{display:flex;gap:8px;align-items:center}
+.writers-dot{width:10px;height:10px;border-radius:50%;background:rgba(200,164,78,.2);cursor:pointer;transition:all .3s}
+.writers-dot.active{background:var(--em);width:28px;border-radius:5px}
 .wcard{background:var(--wh);border:1px solid rgba(200,164,78,.08);border-radius:16px;padding:24px;transition:all .3s;position:relative;overflow:hidden}
 .wcard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.07);border-color:rgba(13,107,78,.15)}
 .wcard-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
@@ -131,9 +143,9 @@ nav.sc{padding:8px 32px;box-shadow:0 2px 20px rgba(0,0,0,.06)}
 .whire{width:100%;padding:9px;background:var(--em);color:var(--wh);border:none;border-radius:8px;font-family:var(--fb);font-size:12px;font-weight:700;cursor:pointer;transition:all .3s}
 .whire:hover{background:var(--em-d)}
 .wcard-featured::before{content:'TOP WRITER';position:absolute;top:12px;right:12px;background:var(--gold);color:var(--ch);font-size:8px;font-weight:800;letter-spacing:1px;padding:3px 7px;border-radius:4px}
-@media(max-width:1100px){.writers-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.writers{padding:48px 16px}.writers-grid{grid-template-columns:1fr 1fr;gap:10px}.wcard{padding:16px}.wavatar{width:44px;height:44px;font-size:18px}.wname{font-size:13px}}
-@media(max-width:480px){.writers-grid{grid-template-columns:1fr}}
+@media(max-width:1100px){.writers-slide{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.writers{padding:48px 16px}.writers-slide{grid-template-columns:1fr 1fr;gap:10px}.wcard{padding:16px}.wavatar{width:44px;height:44px;font-size:18px}.wname{font-size:13px}.writers-arrow{width:36px;height:36px}.writers-arrow svg{width:14px;height:14px}}
+@media(max-width:480px){.writers-slide{grid-template-columns:1fr}}
 
 /* ===== NEW: AI DETECTOR RESULTS ===== */
 .aidet{padding:80px 32px;background:var(--ivory)}
@@ -200,10 +212,10 @@ nav.sc{padding:8px 32px;box-shadow:0 2px 20px rgba(0,0,0,.06)}
 
 /* === REVIEWS CAROUSEL === */
 .rev-section{padding:80px 32px;background:var(--wh);border-bottom:1px solid rgba(200,164,78,.06);overflow:hidden}
-.rev-section-in{max-width:1280px;margin:0 auto}
+.rev-section-in{max-width:1280px;margin:0 auto;text-align:center}
 .rev-section h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);margin-bottom:8px}
-.rev-desc{font-size:15px;color:var(--mu);margin-bottom:10px;max-width:480px;line-height:1.6}
-.rev-platforms{display:flex;align-items:center;gap:20px;margin-bottom:32px;flex-wrap:wrap}
+.rev-desc{font-size:15px;color:var(--mu);margin-bottom:10px;max-width:480px;line-height:1.6;margin-left:auto;margin-right:auto}
+.rev-platforms{display:flex;align-items:center;gap:20px;margin-bottom:32px;flex-wrap:wrap;justify-content:center}
 .rev-plat{display:flex;align-items:center;gap:6px;background:var(--ivory);border:1px solid rgba(200,164,78,.1);padding:6px 14px;border-radius:8px}
 .rev-plat-name{font-size:12px;font-weight:700;color:var(--ch)}
 .rev-plat-stars{color:var(--gold);font-size:12px}
@@ -212,7 +224,7 @@ nav.sc{padding:8px 32px;box-shadow:0 2px 20px rgba(0,0,0,.06)}
 .rev-track{display:flex;gap:16px;animation:scrollReviews 40s linear infinite;width:max-content}
 .rev-track:hover{animation-play-state:paused}
 @keyframes scrollReviews{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.rev-card{width:300px;flex-shrink:0;background:var(--cream);border:1px solid rgba(200,164,78,.08);border-radius:14px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;min-height:200px;transition:transform .3s}
+.rev-card{width:300px;flex-shrink:0;background:var(--cream);border:1px solid rgba(200,164,78,.08);border-radius:14px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;min-height:200px;transition:transform .3s;text-align:left}
 .rev-card:hover{transform:translateY(-2px)}
 .rev-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 .rev-stars{color:var(--gold);font-size:14px;letter-spacing:1px}
@@ -752,54 +764,172 @@ footer{background:var(--ch);padding:48px 32px 24px}
       </div>
       <div class="writers-online"><div class="writers-online-dot"></div>47 writers online now</div>
     </div>
-    <div class="writers-grid">
-      <div class="wcard wcard-featured rv">
-        <div class="wcard-top">
-          <div class="wavatar a1" style="background:linear-gradient(135deg,#667eea,#764ba2)">👩‍🏫
-            <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+    <div class="writers-carousel" id="writersCarousel">
+      <div class="writers-viewport">
+        <div class="writers-slides" id="writersSlides">
+          <!-- Slide 1 -->
+          <div class="writers-slide">
+            <div class="wcard wcard-featured rv">
+              <div class="wcard-top">
+                <div class="wavatar a1" style="background:linear-gradient(135deg,#667eea,#764ba2)">👩‍🏫
+                  <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                </div>
+                <div><div class="wname">Dr. Sarah M.</div><div class="wdeg">PhD · English Literature · Harvard</div></div>
+              </div>
+              <div class="wstars">★★★★★</div>
+              <div class="wrating-row"><span class="wrating">4.97 / 5.0</span><span class="worders">1,240 orders completed</span></div>
+              <div class="wtags"><span class="wtag">Essays</span><span class="wtag">Literature</span><span class="wtag">History</span></div>
+              <button class="whire">Hire Sarah →</button>
+            </div>
+            <div class="wcard rv">
+              <div class="wcard-top">
+                <div class="wavatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">👨‍⚕️
+                  <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                </div>
+                <div><div class="wname">Dr. James K.</div><div class="wdeg">PhD · Nursing & Healthcare · Johns Hopkins</div></div>
+              </div>
+              <div class="wstars">★★★★★</div>
+              <div class="wrating-row"><span class="wrating">4.95 / 5.0</span><span class="worders">890 orders completed</span></div>
+              <div class="wtags"><span class="wtag">Nursing</span><span class="wtag">Medicine</span><span class="wtag">Biology</span></div>
+              <button class="whire">Hire James →</button>
+            </div>
+            <div class="wcard rv">
+              <div class="wcard-top">
+                <div class="wavatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">👩‍💼
+                  <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                </div>
+                <div><div class="wname">Prof. Linda T.</div><div class="wdeg">MA · Business & Management · Wharton</div></div>
+              </div>
+              <div class="wstars">★★★★★</div>
+              <div class="wrating-row"><span class="wrating">4.92 / 5.0</span><span class="worders">1,105 orders completed</span></div>
+              <div class="wtags"><span class="wtag">Business</span><span class="wtag">Finance</span><span class="wtag">MBA</span></div>
+              <button class="whire">Hire Linda →</button>
+            </div>
+            <div class="wcard rv">
+              <div class="wcard-top">
+                <div class="wavatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">👨‍💻
+                  <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                </div>
+                <div><div class="wname">Alex R.</div><div class="wdeg">PhD · Computer Science · MIT</div></div>
+              </div>
+              <div class="wstars">★★★★★</div>
+              <div class="wrating-row"><span class="wrating">4.99 / 5.0</span><span class="worders">642 orders completed</span></div>
+              <div class="wtags"><span class="wtag">CS / Tech</span><span class="wtag">Math</span><span class="wtag">Stats</span></div>
+              <button class="whire">Hire Alex →</button>
+            </div>
           </div>
-          <div><div class="wname">Dr. Sarah M.</div><div class="wdeg">PhD · English Literature · Harvard</div></div>
+          <!-- Slide 2 -->
+          <div class="writers-slide">
+            <div class="wcard wcard-featured rv">
+              <div class="wcard-top">
+                <div class="wavatar" style="background:linear-gradient(135deg,#ff9a9e,#fad0c4)">👩‍🔬
+                  <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                </div>
+                <div><div class="wname">Dr. Michelle P.</div><div class="wdeg">PhD · Psychology · Stanford</div></div>
+              </div>
+              <div class="wstars">★★★★★</div>
+              <div class="wrating-row"><span class="wrating">4.96 / 5.0</span><span class="worders">1,087 orders completed</span></div>
+              <div class="wtags"><span class="wtag">Psychology</span><span class="wtag">Sociology</span><span class="wtag">Research</span></div>
+              <button class="whire">Hire Michelle →</button>
+            </div>
+            <div class="wcard rv">
+              <div class="wcard-top">
+                <div class="wavatar" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)">👨‍🎓
+                  <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                </div>
+                <div><div class="wname">Prof. David L.</div><div class="wdeg">PhD · Political Science · Yale</div></div>
+              </div>
+              <div class="wstars">★★★★★</div>
+              <div class="wrating-row"><span class="wrating">4.93 / 5.0</span><span class="worders">756 orders completed</span></div>
+              <div class="wtags"><span class="wtag">Politics</span><span class="wtag">Law</span><span class="wtag">History</span></div>
+              <button class="whire">Hire David →</button>
+            </div>
+            <div class="wcard rv">
+              <div class="wcard-top">
+                <div class="wavatar" style="background:linear-gradient(135deg,#ffecd2,#fcb69f)">👩‍⚕️
+                  <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                </div>
+                <div><div class="wname">Dr. Rachel W.</div><div class="wdeg">DNP · Nursing Practice · UPenn</div></div>
+              </div>
+              <div class="wstars">★★★★★</div>
+              <div class="wrating-row"><span class="wrating">4.98 / 5.0</span><span class="worders">934 orders completed</span></div>
+              <div class="wtags"><span class="wtag">Nursing</span><span class="wtag">Healthcare</span><span class="wtag">Ethics</span></div>
+              <button class="whire">Hire Rachel →</button>
+            </div>
+            <div class="wcard rv">
+              <div class="wcard-top">
+                <div class="wavatar" style="background:linear-gradient(135deg,#84fab0,#8fd3f4)">👨‍🏫
+                  <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                </div>
+                <div><div class="wname">Prof. Marcus B.</div><div class="wdeg">MBA · Finance · Columbia</div></div>
+              </div>
+              <div class="wstars">★★★★★</div>
+              <div class="wrating-row"><span class="wrating">4.91 / 5.0</span><span class="worders">1,320 orders completed</span></div>
+              <div class="wtags"><span class="wtag">Finance</span><span class="wtag">Economics</span><span class="wtag">Accounting</span></div>
+              <button class="whire">Hire Marcus →</button>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="writers-slide">
+            <div class="wcard wcard-featured rv">
+              <div class="wcard-top">
+                <div class="wavatar" style="background:linear-gradient(135deg,#c2e9fb,#a1c4fd)">👩‍🎨
+                  <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                </div>
+                <div><div class="wname">Dr. Emily C.</div><div class="wdeg">PhD · Art History · NYU</div></div>
+              </div>
+              <div class="wstars">★★★★★</div>
+              <div class="wrating-row"><span class="wrating">4.94 / 5.0</span><span class="worders">568 orders completed</span></div>
+              <div class="wtags"><span class="wtag">Art History</span><span class="wtag">Humanities</span><span class="wtag">Culture</span></div>
+              <button class="whire">Hire Emily →</button>
+            </div>
+            <div class="wcard rv">
+              <div class="wcard-top">
+                <div class="wavatar" style="background:linear-gradient(135deg,#fddb92,#d1fdff)">👨‍🔬
+                  <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                </div>
+                <div><div class="wname">Dr. Kevin H.</div><div class="wdeg">PhD · Biology · UC Berkeley</div></div>
+              </div>
+              <div class="wstars">★★★★★</div>
+              <div class="wrating-row"><span class="wrating">4.96 / 5.0</span><span class="worders">715 orders completed</span></div>
+              <div class="wtags"><span class="wtag">Biology</span><span class="wtag">Chemistry</span><span class="wtag">Lab Reports</span></div>
+              <button class="whire">Hire Kevin →</button>
+            </div>
+            <div class="wcard rv">
+              <div class="wcard-top">
+                <div class="wavatar" style="background:linear-gradient(135deg,#e0c3fc,#8ec5fc)">👩‍💻
+                  <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                </div>
+                <div><div class="wname">Prof. Natasha G.</div><div class="wdeg">MA · Education · Teachers College</div></div>
+              </div>
+              <div class="wstars">★★★★★</div>
+              <div class="wrating-row"><span class="wrating">4.90 / 5.0</span><span class="worders">482 orders completed</span></div>
+              <div class="wtags"><span class="wtag">Education</span><span class="wtag">Pedagogy</span><span class="wtag">Research</span></div>
+              <button class="whire">Hire Natasha →</button>
+            </div>
+            <div class="wcard rv">
+              <div class="wcard-top">
+                <div class="wavatar" style="background:linear-gradient(135deg,#f6d365,#fda085)">👨‍⚖️
+                  <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+                </div>
+                <div><div class="wname">Dr. Thomas A.</div><div class="wdeg">JD/PhD · Criminal Justice · Georgetown</div></div>
+              </div>
+              <div class="wstars">★★★★★</div>
+              <div class="wrating-row"><span class="wrating">4.95 / 5.0</span><span class="worders">891 orders completed</span></div>
+              <div class="wtags"><span class="wtag">Law</span><span class="wtag">Criminal Justice</span><span class="wtag">Ethics</span></div>
+              <button class="whire">Hire Thomas →</button>
+            </div>
+          </div>
         </div>
-        <div class="wstars">★★★★★</div>
-        <div class="wrating-row"><span class="wrating">4.97 / 5.0</span><span class="worders">1,240 orders completed</span></div>
-        <div class="wtags"><span class="wtag">Essays</span><span class="wtag">Literature</span><span class="wtag">History</span></div>
-        <button class="whire">Hire Sarah →</button>
       </div>
-      <div class="wcard rv">
-        <div class="wcard-top">
-          <div class="wavatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">👨‍⚕️
-            <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
-          </div>
-          <div><div class="wname">Dr. James K.</div><div class="wdeg">PhD · Nursing & Healthcare · Johns Hopkins</div></div>
+      <div class="writers-nav">
+        <button class="writers-arrow" id="writersPrev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <div class="writers-dots" id="writersDots">
+          <div class="writers-dot active" data-slide="0"></div>
+          <div class="writers-dot" data-slide="1"></div>
+          <div class="writers-dot" data-slide="2"></div>
         </div>
-        <div class="wstars">★★★★★</div>
-        <div class="wrating-row"><span class="wrating">4.95 / 5.0</span><span class="worders">890 orders completed</span></div>
-        <div class="wtags"><span class="wtag">Nursing</span><span class="wtag">Medicine</span><span class="wtag">Biology</span></div>
-        <button class="whire">Hire James →</button>
-      </div>
-      <div class="wcard rv">
-        <div class="wcard-top">
-          <div class="wavatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">👩‍💼
-            <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
-          </div>
-          <div><div class="wname">Prof. Linda T.</div><div class="wdeg">MA · Business & Management · Wharton</div></div>
-        </div>
-        <div class="wstars">★★★★★</div>
-        <div class="wrating-row"><span class="wrating">4.92 / 5.0</span><span class="worders">1,105 orders completed</span></div>
-        <div class="wtags"><span class="wtag">Business</span><span class="wtag">Finance</span><span class="wtag">MBA</span></div>
-        <button class="whire">Hire Linda →</button>
-      </div>
-      <div class="wcard rv">
-        <div class="wcard-top">
-          <div class="wavatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">👨‍💻
-            <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
-          </div>
-          <div><div class="wname">Alex R.</div><div class="wdeg">PhD · Computer Science · MIT</div></div>
-        </div>
-        <div class="wstars">★★★★★</div>
-        <div class="wrating-row"><span class="wrating">4.99 / 5.0</span><span class="worders">642 orders completed</span></div>
-        <div class="wtags"><span class="wtag">CS / Tech</span><span class="wtag">Math</span><span class="wtag">Stats</span></div>
-        <button class="whire">Hire Alex →</button>
+        <button class="writers-arrow" id="writersNext" aria-label="Next slide"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
       </div>
     </div>
   </div>
@@ -1636,6 +1766,29 @@ document.querySelectorAll('#usMapSvg path').forEach(function(path){
     nav2('home');
   });
 });
+
+// === WRITERS CAROUSEL ===
+(function(){
+  var currentSlide=0;
+  var totalSlides=3;
+  var slides=document.getElementById('writersSlides');
+  var dots=document.querySelectorAll('#writersDots .writers-dot');
+  var prevBtn=document.getElementById('writersPrev');
+  var nextBtn=document.getElementById('writersNext');
+  function goToSlide(n){
+    if(n<0)n=totalSlides-1;
+    if(n>=totalSlides)n=0;
+    currentSlide=n;
+    slides.style.transform='translateX(-'+currentSlide*100+'%)';
+    dots.forEach(function(d,i){d.classList.toggle('active',i===currentSlide)});
+    // Re-trigger reveal animations for new slide
+    var newSlide=slides.children[currentSlide];
+    if(newSlide){newSlide.querySelectorAll('.rv:not(.vi)').forEach(function(el){el.classList.add('vi')})}
+  }
+  if(prevBtn)prevBtn.addEventListener('click',function(){goToSlide(currentSlide-1)});
+  if(nextBtn)nextBtn.addEventListener('click',function(){goToSlide(currentSlide+1)});
+  dots.forEach(function(dot){dot.addEventListener('click',function(){goToSlide(parseInt(this.dataset.slide))})});
+})();
 </script>
 </body>
 </html>

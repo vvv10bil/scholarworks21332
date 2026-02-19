@@ -68,9 +68,148 @@ function tgf(el) {
 }
 
 
-// ===== WRITERS AUTO-SCROLL (duplicate for infinite loop) =====
-const wt = document.getElementById('writersTrack');
-if (wt) wt.innerHTML += wt.innerHTML;
+// ===== WRITERS SCROLLBAR WITH ARROWS =====
+(function() {
+  const track = document.getElementById('writersTrack');
+  const wrap = document.getElementById('writersWrap');
+  const leftBtn = document.getElementById('writersLeft');
+  const rightBtn = document.getElementById('writersRight');
+  const dotsContainer = document.getElementById('writersDots');
+  if (!track || !wrap || !leftBtn || !rightBtn) return;
+
+  const cards = track.querySelectorAll('.wcard');
+  let currentPos = 0;
+
+  function getCardWidth() {
+    if (!cards.length) return 296;
+    var card = cards[0];
+    return card.offsetWidth + 16; // card width + gap
+  }
+
+  function isMobileScroll() {
+    return window.innerWidth <= 480;
+  }
+
+  function getVisibleCards() {
+    return Math.floor(wrap.offsetWidth / getCardWidth()) || 1;
+  }
+
+  function getMaxPos() {
+    const visible = getVisibleCards();
+    return Math.max(0, cards.length - visible);
+  }
+
+  function getPageCount() {
+    const visible = getVisibleCards();
+    return Math.ceil(cards.length / visible);
+  }
+
+  function getCurrentPage() {
+    const visible = getVisibleCards();
+    return Math.floor(currentPos / visible);
+  }
+
+  function buildDots() {
+    if (!dotsContainer) return;
+    const pages = getPageCount();
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < pages; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'writers-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Page ' + (i + 1));
+      dot.addEventListener('click', function() {
+        const visible = getVisibleCards();
+        currentPos = Math.min(i * visible, getMaxPos());
+        updatePosition();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    if (!dotsContainer) return;
+    const page = getCurrentPage();
+    dotsContainer.querySelectorAll('.writers-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === page);
+    });
+  }
+
+  function updatePosition() {
+    if (isMobileScroll()) return; // mobile uses native scroll
+    var cw = getCardWidth();
+    var offset = currentPos * cw;
+    track.style.transform = 'translateX(-' + offset + 'px)';
+    leftBtn.disabled = currentPos <= 0;
+    rightBtn.disabled = currentPos >= getMaxPos();
+    updateDots();
+  }
+
+  leftBtn.addEventListener('click', function() {
+    const step = getVisibleCards();
+    currentPos = Math.max(0, currentPos - step);
+    updatePosition();
+  });
+
+  rightBtn.addEventListener('click', function() {
+    const step = getVisibleCards();
+    currentPos = Math.min(getMaxPos(), currentPos + step);
+    updatePosition();
+  });
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  let touchDelta = 0;
+  let isSwiping = false;
+
+  wrap.addEventListener('touchstart', function(e) {
+    if (isMobileScroll()) return;
+    touchStartX = e.touches[0].clientX;
+    isSwiping = true;
+    track.style.transition = 'none';
+  }, { passive: true });
+
+  wrap.addEventListener('touchmove', function(e) {
+    if (isMobileScroll() || !isSwiping) return;
+    touchDelta = e.touches[0].clientX - touchStartX;
+    var cw = getCardWidth();
+    var offset = currentPos * cw - touchDelta;
+    track.style.transform = 'translateX(-' + offset + 'px)';
+  }, { passive: true });
+
+  wrap.addEventListener('touchend', function() {
+    if (isMobileScroll() || !isSwiping) return;
+    isSwiping = false;
+    track.style.transition = '';
+    var cw = getCardWidth();
+    var threshold = cw / 3;
+    if (touchDelta > threshold) {
+      currentPos = Math.max(0, currentPos - getVisibleCards());
+    } else if (touchDelta < -threshold) {
+      currentPos = Math.min(getMaxPos(), currentPos + getVisibleCards());
+    }
+    touchDelta = 0;
+    updatePosition();
+  });
+
+  // Rebuild on resize
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      if (isMobileScroll()) {
+        // Reset transform for mobile native scroll
+        track.style.transform = '';
+      } else {
+        currentPos = Math.min(currentPos, getMaxPos());
+        updatePosition();
+      }
+      buildDots();
+    }, 150);
+  });
+
+  buildDots();
+  if (!isMobileScroll()) updatePosition();
+})();
 
 
 // ===== REVIEWS CAROUSEL (duplicate for infinite scroll) =====

@@ -20,22 +20,95 @@
 .writers-online { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--em) }
 .writers-online-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: pulse-dot 2s infinite }
 
-/* === AUTO-SCROLL === */
+/* === SCROLL CONTAINER WITH ARROWS === */
+.writers-scroll-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.writers-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(200, 164, 78, .2);
+  background: var(--wh);
+  color: var(--ch);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+  transition: all .25s ease;
+  flex-shrink: 0;
+}
+.writers-arrow:hover {
+  background: var(--em);
+  color: var(--wh);
+  border-color: var(--em);
+  box-shadow: 0 6px 24px rgba(13, 107, 78, .2);
+  transform: translateY(-50%) scale(1.08);
+}
+.writers-arrow:active { transform: translateY(-50%) scale(.95) }
+.writers-arrow:disabled {
+  opacity: .3;
+  cursor: default;
+  pointer-events: none;
+}
+.writers-arrow svg { stroke: currentColor }
+
+.writers-arrow-left { left: -22px }
+.writers-arrow-right { right: -22px }
+
 .writers-track-wrap {
   overflow: hidden;
   position: relative;
-  mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+  flex: 1;
+  border-radius: 12px;
+  mask-image: linear-gradient(90deg, transparent 0%, black 2%, black 98%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 2%, black 98%, transparent 100%);
 }
 .writers-track {
   display: flex;
   gap: 16px;
   width: max-content;
-  animation: scrollWriters 60s linear infinite;
+  transition: transform .45s cubic-bezier(.25, .1, .25, 1);
+  padding: 8px 4px;
 }
-.writers-track:hover { animation-play-state: paused }
-@keyframes scrollWriters { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
 
+/* === PAGINATION DOTS === */
+.writers-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.writers-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(200, 164, 78, .25);
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease;
+  padding: 0;
+}
+.writers-dot.active {
+  width: 28px;
+  border-radius: 4px;
+  background: var(--em);
+}
+.writers-dot:hover:not(.active) {
+  background: rgba(13, 107, 78, .3);
+}
+
+/* === CARDS === */
 .wcard {
   width: 280px;
   flex-shrink: 0;

@@ -113,8 +113,12 @@
       </div>
       <div class="writers-online"><div class="writers-online-dot"></div>47 writers online now</div>
     </div>
-    <div class="writers-track-wrap">
-      <div class="writers-track" id="writersTrack">
+    <div class="writers-scroll-container">
+      <button class="writers-arrow writers-arrow-left" id="writersLeft" aria-label="Scroll left">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="writers-track-wrap" id="writersWrap">
+        <div class="writers-track" id="writersTrack">
         <div class="wcard wcard-featured">
           <div class="wcard-top">
             <div class="wavatar a1" style="background:linear-gradient(135deg,#667eea,#764ba2)">👩‍🏫
@@ -319,8 +323,97 @@
           <div class="wtags"><span class="wtag">Philosophy</span><span class="wtag">Ethics</span><span class="wtag">Logic</span></div>
           <button class="whire">Hire Anna →</button>
         </div>
+        <div class="wcard">
+          <div class="wcard-top">
+            <div class="wavatar" style="background:linear-gradient(135deg,#f7971e,#ffd200)">👨‍🔬
+              <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+            </div>
+            <div><div class="wname">Dr. Thomas G.</div><div class="wdeg">PhD · Environmental Science · UC Davis</div></div>
+          </div>
+          <div class="wstars">★★★★★</div>
+          <div class="wrating-row"><span class="wrating">4.94 / 5.0</span><span class="worders">687 orders completed</span></div>
+          <div class="wtags"><span class="wtag">Ecology</span><span class="wtag">Earth Sci</span><span class="wtag">Research</span></div>
+          <button class="whire">Hire Thomas →</button>
+        </div>
+        <div class="wcard">
+          <div class="wcard-top">
+            <div class="wavatar" style="background:linear-gradient(135deg,#ee9ca7,#ffdde1)">👩‍⚖️
+              <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+            </div>
+            <div><div class="wname">Prof. Claire D.</div><div class="wdeg">JD · Law & Legal Studies · UPenn</div></div>
+          </div>
+          <div class="wstars">★★★★★</div>
+          <div class="wrating-row"><span class="wrating">4.96 / 5.0</span><span class="worders">912 orders completed</span></div>
+          <div class="wtags"><span class="wtag">Law</span><span class="wtag">Criminal Justice</span><span class="wtag">Policy</span></div>
+          <button class="whire">Hire Claire →</button>
+        </div>
+        <div class="wcard wcard-featured">
+          <div class="wcard-top">
+            <div class="wavatar" style="background:linear-gradient(135deg,#2193b0,#6dd5ed)">👨‍💻
+              <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+            </div>
+            <div><div class="wname">Dr. Raj P.</div><div class="wdeg">PhD · Data Science · Carnegie Mellon</div></div>
+          </div>
+          <div class="wstars">★★★★★</div>
+          <div class="wrating-row"><span class="wrating">4.99 / 5.0</span><span class="worders">1,385 orders completed</span></div>
+          <div class="wtags"><span class="wtag">Data Science</span><span class="wtag">AI / ML</span><span class="wtag">Python</span></div>
+          <button class="whire">Hire Raj →</button>
+        </div>
+        <div class="wcard">
+          <div class="wcard-top">
+            <div class="wavatar" style="background:linear-gradient(135deg,#c471f5,#fa71cd)">👩‍🎓
+              <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+            </div>
+            <div><div class="wname">Dr. Mei W.</div><div class="wdeg">PhD · Linguistics · Georgetown</div></div>
+          </div>
+          <div class="wstars">★★★★★</div>
+          <div class="wrating-row"><span class="wrating">4.92 / 5.0</span><span class="worders">564 orders completed</span></div>
+          <div class="wtags"><span class="wtag">Linguistics</span><span class="wtag">ESL</span><span class="wtag">Translation</span></div>
+          <button class="whire">Hire Mei →</button>
+        </div>
+        <div class="wcard">
+          <div class="wcard-top">
+            <div class="wavatar" style="background:linear-gradient(135deg,#56ab2f,#a8e063)">👨‍🏫
+              <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+            </div>
+            <div><div class="wname">Prof. Marcus J.</div><div class="wdeg">PhD · Anthropology · U of Michigan</div></div>
+          </div>
+          <div class="wstars">★★★★★</div>
+          <div class="wrating-row"><span class="wrating">4.91 / 5.0</span><span class="worders">738 orders completed</span></div>
+          <div class="wtags"><span class="wtag">Anthropology</span><span class="wtag">Culture</span><span class="wtag">Research</span></div>
+          <button class="whire">Hire Marcus →</button>
+        </div>
+        <div class="wcard">
+          <div class="wcard-top">
+            <div class="wavatar" style="background:linear-gradient(135deg,#fc5c7d,#6a82fb)">👩‍💼
+              <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+            </div>
+            <div><div class="wname">Dr. Sophia R.</div><div class="wdeg">PhD · Marketing · Northwestern</div></div>
+          </div>
+          <div class="wstars">★★★★★</div>
+          <div class="wrating-row"><span class="wrating">4.95 / 5.0</span><span class="worders">823 orders completed</span></div>
+          <div class="wtags"><span class="wtag">Marketing</span><span class="wtag">Branding</span><span class="wtag">Strategy</span></div>
+          <button class="whire">Hire Sophia →</button>
+        </div>
+        <div class="wcard">
+          <div class="wcard-top">
+            <div class="wavatar" style="background:linear-gradient(135deg,#373b44,#4286f4)">👨‍⚕️
+              <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+            </div>
+            <div><div class="wname">Dr. Andre L.</div><div class="wdeg">MD · Pharmacology · Emory</div></div>
+          </div>
+          <div class="wstars">★★★★★</div>
+          <div class="wrating-row"><span class="wrating">4.97 / 5.0</span><span class="worders">491 orders completed</span></div>
+          <div class="wtags"><span class="wtag">Pharmacy</span><span class="wtag">Medicine</span><span class="wtag">Healthcare</span></div>
+          <button class="whire">Hire Andre →</button>
+        </div>
       </div>
+      </div>
+      <button class="writers-arrow writers-arrow-right" id="writersRight" aria-label="Scroll right">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </div>
+    <div class="writers-dots" id="writersDots"></div>
   </div>
 </section>
 

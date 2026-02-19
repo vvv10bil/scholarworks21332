@@ -67,6 +67,10 @@
 
   /* Writers */
   .writers { padding: 48px 16px }
+  .writers-arrow { width: 36px; height: 36px }
+  .writers-arrow-left { left: -8px }
+  .writers-arrow-right { right: -8px }
+  .writers-scroll-container { margin: 0 8px }
   .wcard { width: 220px; padding: 16px; border-radius: 12px }
   .wavatar { width: 40px; height: 40px; font-size: 18px }
   .wname { font-size: 13px }
@@ -76,7 +80,9 @@
   .worders { font-size: 10px }
   .wtag { font-size: 9px; padding: 2px 6px }
   .whire { padding: 7px; font-size: 11px }
-  .writers-track { animation-duration: 45s }
+  .writers-dots { margin-top: 20px; gap: 6px }
+  .writers-dot { width: 6px; height: 6px }
+  .writers-dot.active { width: 22px }
 
   /* Reviews */
   .rev-section { padding: 48px 16px }
@@ -289,7 +295,22 @@
 
 /* ---- Max 480px ---- */
 @media (max-width: 480px) {
-  .wcard { width: 200px }
+  .writers-arrow { display: none }
+  .writers-scroll-container { margin: 0 }
+  .writers-track-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .writers-track-wrap::-webkit-scrollbar { display: none }
+  .writers-track { transition: none; padding: 8px 0 }
+  .wcard { width: 240px }
+  .writers-head { margin-bottom: 24px }
+  .writers-head-l h2 { font-size: 24px }
+  .writers-head-l p { font-size: 12px }
+  .writers-online { font-size: 11px }
   .exit-box { padding: 28px 20px }
   .exit-box h2 { font-size: 22px }
   .exit-input-row { flex-direction: column }

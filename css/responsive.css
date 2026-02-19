@@ -175,11 +175,14 @@
   .st2 { padding: 8px 16px; font-size: 12px }
 
   /* Process */
-  .proc { padding: 48px 16px }
+  .proc { padding: 32px 16px }
+  .proc-header { margin-bottom: 24px }
   .proc-laurel, .proc-crest { display: none }
-  .steps2 { padding: 20px 16px }
-  .metrics { gap: 10px }
-  .metric-card { padding: 18px }
+  .proc-grid { gap: 24px }
+  .steps2 { padding: 16px 14px }
+  .stp { padding: 10px 0 }
+  .metrics { gap: 8px }
+  .metric-card { padding: 14px }
   .metric-card .mc-val { font-size: 28px }
   .mc-ring { width: 64px; height: 64px }
   .mc-ring svg { width: 64px; height: 64px }

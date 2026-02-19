@@ -248,7 +248,22 @@
 /* ---- Max 600px ---- */
 @media (max-width: 600px) {
   .aidet { padding: 48px 16px }
-  .aidet-grid { grid-template-columns: 1fr }
+  .aidet-head { margin-bottom: 24px }
+  .aidet-head p { font-size: 13px }
+  .aidet-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 20px }
+  .aicard { padding: 16px; border-radius: 12px }
+  .aicard-logo { gap: 8px; margin-bottom: 12px }
+  .aicard-icon { width: 32px; height: 32px; border-radius: 8px; font-size: 14px }
+  .aicard-name { font-size: 13px }
+  .aicard-type { font-size: 10px }
+  .aicard-result { margin-bottom: 10px }
+  .aicard-badge { padding: 4px 9px; font-size: 11px; border-radius: 6px }
+  .aicard-badge svg { width: 12px; height: 12px }
+  .aicard-score { font-size: 26px; margin-bottom: 2px }
+  .aicard-label { font-size: 11px; margin-bottom: 10px }
+  .aicard-bar { height: 6px }
+  .aicard-note { font-size: 10px; margin-top: 8px }
+  .aicard-blog-link { font-size: 10px; padding: 4px 10px; margin-top: 8px }
   .aidet-bottom { flex-direction: column; text-align: center; padding: 20px 16px }
   .urgency { padding: 40px 16px }
   .urgency-grid { grid-template-columns: 1fr 1fr; gap: 10px }

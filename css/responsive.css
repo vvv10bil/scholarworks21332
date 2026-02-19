@@ -102,8 +102,13 @@
 
   /* Features */
   .wh { padding: 48px 16px }
-  .fg2 { grid-template-columns: 1fr; gap: 12px }
-  .fc { padding: 22px 18px }
+  .whd { font-size: 13px; margin-bottom: 28px }
+  .fg2 { grid-template-columns: 1fr 1fr; gap: 10px }
+  .fc { padding: 14px 12px; border-radius: 10px }
+  .fic { width: 32px; height: 32px; border-radius: 8px; margin-bottom: 8px }
+  .fic svg { width: 16px; height: 16px }
+  .fc h3 { font-size: 14px; margin-bottom: 3px }
+  .fc p { font-size: 11px; line-height: 1.45 }
 
   /* Social proof */
   .spbar { padding: 16px 12px }

@@ -83,7 +83,7 @@
   .turnitin { padding: 48px 16px }
   .turnitin-seal { display: none }
   .turnitin-filigree { display: none }
-  .turnitin-trust { gap: 12px }
+  .turnitin-trust { gap: 12px; justify-content: center }
   .tm-score-row { gap: 8px }
   .tm-stamp { width: 48px; height: 48px }
 

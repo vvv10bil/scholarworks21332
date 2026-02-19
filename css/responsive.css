@@ -289,7 +289,7 @@
 
 /* ---- Max 480px ---- */
 @media (max-width: 480px) {
-  .writers-track .wcard { min-width: 100%; max-width: 100% }
+  .wcard { width: 200px }
   .exit-box { padding: 28px 20px }
   .exit-box h2 { font-size: 22px }
   .exit-input-row { flex-direction: column }

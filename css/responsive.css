@@ -99,12 +99,13 @@
   .fc { padding: 22px 18px }
 
   /* Social proof */
-  .spbar { padding: 28px 16px }
-  .spbar-in { grid-template-columns: repeat(2, 1fr); gap: 16px }
-  .spnum { padding: 12px 8px; border-right: none; border-bottom: 1px solid rgba(255, 255, 255, .06) }
+  .spbar { padding: 16px 12px }
+  .spbar-in { grid-template-columns: repeat(2, 1fr); gap: 8px }
+  .spnum { padding: 8px 6px; border-right: none; border-bottom: 1px solid rgba(255, 255, 255, .06) }
   .spnum:nth-child(odd) { border-right: 1px solid rgba(255, 255, 255, .06) }
   .spnum:nth-last-child(-n+2) { border-bottom: none }
-  .spnum-val { font-size: 32px }
+  .spnum-val { font-size: 24px; margin-bottom: 2px }
+  .spnum-label { font-size: 10px }
 
   /* Pricing */
   .pri { padding: 48px 16px }

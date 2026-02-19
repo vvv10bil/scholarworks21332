@@ -71,7 +71,7 @@
   flex-direction: column;
   background: var(--wh);
   border-radius: 20px;
-  padding: 32px 28px;
+  padding: 24px 28px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, .04);
   border: 1px solid rgba(200, 164, 78, .08);
   position: relative;
@@ -99,12 +99,12 @@
   pointer-events: none;
 }
 
-.stp { display: flex; gap: 18px; padding: 16px 0; position: relative }
+.stp { display: flex; gap: 18px; padding: 12px 0; position: relative }
 .stp + .stp { border-top: 1px solid rgba(200, 164, 78, .06) }
 .stp-l { display: flex; flex-direction: column; align-items: center }
 .stp-n {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: 2px solid var(--em);
   display: flex;
@@ -134,18 +134,18 @@
 
 .stp-b { flex: 1 }
 .stp-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: rgba(13, 107, 78, .06);
   border-radius: 8px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   color: var(--em);
   transition: all .3s;
 }
-.stp-icon svg { width: 16px; height: 16px }
+.stp-icon svg { width: 14px; height: 14px }
 .stp:hover .stp-icon {
   background: rgba(200, 164, 78, .1);
   color: var(--gold);
@@ -158,7 +158,7 @@
   transition: color .3s;
 }
 .stp:hover .stp-b h4 { color: var(--em) }
-.stp-b p { font-size: 13px; line-height: 1.6; color: var(--mu) }
+.stp-b p { font-size: 13px; line-height: 1.5; color: var(--mu) }
 
 /* === METRICS === */
 .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 16px }

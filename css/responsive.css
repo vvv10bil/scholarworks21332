@@ -179,8 +179,13 @@
   .proc-header { margin-bottom: 24px }
   .proc-laurel, .proc-crest { display: none }
   .proc-grid { gap: 24px }
-  .steps2 { padding: 16px 14px }
-  .stp { padding: 10px 0 }
+  .steps2 { padding: 12px 12px }
+  .stp { padding: 8px 0; gap: 12px }
+  .stp-n { width: 30px; height: 30px; font-size: 11px }
+  .stp-icon { width: 24px; height: 24px; margin-bottom: 2px }
+  .stp-icon svg { width: 12px; height: 12px }
+  .stp-b h4 { font-size: 15px; margin-bottom: 2px }
+  .stp-b p { font-size: 12px; line-height: 1.4 }
   .metrics { gap: 8px }
   .metric-card { padding: 14px }
   .metric-card .mc-val { font-size: 28px }

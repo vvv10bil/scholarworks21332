@@ -45,7 +45,7 @@
   /* Sections */
   .urgency-grid { grid-template-columns: repeat(2, 1fr) }
   .aidet-grid { grid-template-columns: 1fr 1fr }
-  .turnitin-in { grid-template-columns: 1fr; gap: 32px }
+  .aidet-report { grid-template-columns: 1fr; gap: 32px }
   .pcalc-row { grid-template-columns: 1fr 1fr }
   .niches-grid { grid-template-columns: 1fr }
   .blog-grid { grid-template-columns: 1fr }

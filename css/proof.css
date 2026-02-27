@@ -73,6 +73,31 @@
   color: var(--em);
 }
 
+/* Merged AI + Turnitin report area */
+.aidet-report {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 48px;
+  margin-bottom: 32px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(200, 164, 78, .1);
+}
+.aidet-report-content h3 {
+  font-family: var(--fd);
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.aidet-report-content h3 em { color: var(--em); font-style: italic }
+.aidet-report-content > p {
+  font-size: 14px;
+  color: var(--mu);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
 .aidet-bottom {
   background: linear-gradient(135deg, var(--em-d), var(--em));
   border-radius: 16px;
@@ -85,6 +110,8 @@
 }
 .aidet-bottom-l h3 { font-family: var(--fd); font-size: 22px; color: var(--wh); margin-bottom: 4px }
 .aidet-bottom-l p { font-size: 13px; color: rgba(255, 255, 255, .6) }
+.aidet-bottom-l p a { color: rgba(255, 255, 255, .8); text-decoration: underline; text-underline-offset: 2px }
+.aidet-bottom-l p a:hover { color: var(--wh) }
 .aidet-bottom-r { display: flex; align-items: center; gap: 16px; flex-wrap: wrap }
 .aidet-include { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--gold) }
 .aidet-include svg { width: 16px; height: 16px }

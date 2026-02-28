@@ -222,7 +222,7 @@ function calcPrice() {
   const type = parseFloat(document.getElementById('calcType').value) || 5;
   const deadline = parseFloat(document.getElementById('calcDeadline').value) || 1;
   const level = parseFloat(document.getElementById('calcLevel').value) || 1;
-  const price = (type * deadline * level).toFixed(2);
+  const price = Math.max(5, type * deadline * level).toFixed(2);
   document.getElementById('calcResult').textContent = '$' + price;
 }
 calcPrice();
@@ -240,6 +240,25 @@ document.addEventListener('mouseleave', (e) => {
 function closeExit() {
   document.getElementById('exitPopup').classList.remove('show');
 }
+
+
+// ===== WRITERS ONLINE RANDOMIZER =====
+(function() {
+  var el = document.getElementById('writersCount');
+  if (!el) return;
+  var current = 47;
+  function update() {
+    var delta = Math.floor(Math.random() * 7) - 3; // -3 to +3
+    current = Math.max(38, Math.min(56, current + delta));
+    el.textContent = current;
+    var next = 30000 + Math.floor(Math.random() * 60000); // 30-90 seconds
+    setTimeout(update, next);
+  }
+  // Initial randomization on page load
+  current = 41 + Math.floor(Math.random() * 16); // 41-56
+  el.textContent = current;
+  setTimeout(update, 30000 + Math.floor(Math.random() * 60000));
+})();
 
 
 // ===== LIVE ORDER FEED =====

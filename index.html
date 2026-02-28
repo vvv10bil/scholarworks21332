@@ -41,7 +41,7 @@
     <h2>Wait — Get <em>20% Off</em> Before You Go</h2>
     <p>Deadline panic? Drop your email and we'll send a 20% discount code + a free consultation with one of our PhD writers. No spam, ever.</p>
     <div class="exit-input-row">
-      <input type="email" placeholder="your@university.edu">
+      <input type="email" placeholder="your@email.com">
       <button onclick="closeExit()">Claim 20% →</button>
     </div>
     <span class="exit-skip" onclick="closeExit()">No thanks, I'll pay full price</span>
@@ -86,10 +86,11 @@
     <div class="hfw" id="mobile-form">
       <div class="hf">
         <div class="fh"><h3>Get Started — 15% Off</h3><p>Pick options, we handle the rest.</p></div>
-        <div class="fg"><label class="fl">Assignment type</label><select class="fs"><option>Essay / Seminar Paper</option><option>Research Paper</option><option>Case Study</option><option>Lab Report</option><option>Literature Review</option><option>Bachelor Thesis</option><option>Master Thesis</option><option>Dissertation / PhD</option><option>Editing & Proofreading</option><option>Other</option></select></div>
+        <div class="fg"><label class="fl">Assignment type</label><select class="fs"><option>Essay</option><option>Research Paper</option><option>Argumentative Essay</option><option>Persuasive Essay</option><option>Narrative Essay</option><option>Expository Essay</option><option>Compare & Contrast Essay</option><option>Cause & Effect Essay</option><option>Analytical Essay</option><option>Reflective Essay</option><option>Admission Essay</option><option>Scholarship Essay</option><option>Discussion Post</option><option>Annotated Bibliography</option><option>Literature Review</option><option>Book Report / Review</option><option>Article Review / Critique</option><option>Case Study</option><option>Lab Report</option><option>Term Paper</option><option>Coursework</option><option>Capstone Project</option><option>Research Proposal</option><option>Presentation / PowerPoint</option><option>Speech</option><option>Reaction Paper</option><option>Position Paper</option><option>Personal Statement</option><option>Creative Writing</option><option>Critical Thinking</option><option>Business Plan</option><option>SOAP Note</option><option>Care Plan (Nursing)</option><option>PICOT Question</option><option>Evidence-Based Practice Paper</option><option>Bachelor Thesis</option><option>Master Thesis</option><option>Dissertation / PhD</option><option>Editing & Proofreading</option><option>Multiple Choice Questions</option><option>Math / Statistics Problem</option><option>Other</option></select></div>
         <div class="frow"><div class="fg"><label class="fl">Deadline</label><select class="fs"><option>3 hours (Urgent)</option><option>12 hours</option><option>24 hours</option><option selected>3 days</option><option>7 days</option><option>14+ days</option></select></div><div class="fg"><label class="fl">Academic Level</label><select class="fs"><option>High School</option><option selected>Undergraduate</option><option>Master's</option><option>Ph.D.</option></select></div></div>
-        <div class="frow"><div class="fg"><label class="fl">Your name</label><input type="text" class="fi" placeholder="John Smith"></div><div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="you@university.edu"></div></div>
+        <div class="frow"><div class="fg"><label class="fl">Your name</label><input type="text" class="fi" placeholder="John Smith"></div><div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="your@email.com"></div></div>
         <div class="fg"><label class="fl">Description (optional)</label><textarea class="fta" placeholder="Topic, page count, instructions..."></textarea></div>
+        <div class="fg"><label class="fl">Attach file (optional)</label><input type="file" class="fi ffile" multiple accept=".pdf,.doc,.docx,.txt,.rtf,.ppt,.pptx,.xls,.xlsx,.jpg,.png"></div>
         <button class="fsub">HIRE MY WRITER — 15% OFF →</button>
         <div class="fmi"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Zero AI</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Confidential</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 2v6h6M21.5 22v-6h-6"/><path d="M22 11.5A10 10 0 003.2 7.2M2 12.5a10 10 0 0018.8 4.3"/></svg>Secure Pay</span></div>
       </div>
@@ -111,7 +112,7 @@
         <h2>Your Paper is Written by a <em>Real Human</em></h2>
         <p>200+ verified PhD & Master's writers. You choose who works on your paper.</p>
       </div>
-      <div class="writers-online"><div class="writers-online-dot"></div>47 writers online now</div>
+      <div class="writers-online"><div class="writers-online-dot"></div><span id="writersCount">47</span> writers online now</div>
     </div>
     <div class="writers-scroll-container">
       <button class="writers-arrow writers-arrow-left" id="writersLeft" aria-label="Scroll left">
@@ -124,7 +125,7 @@
             <div class="wavatar a1" style="background:linear-gradient(135deg,#667eea,#764ba2)">👩‍🏫
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Sarah M.</div><div class="wdeg">PhD · English Literature · Harvard</div></div>
+            <div><div class="wname">Dr. Sarah M.</div><div class="wdeg">PhD · English Literature</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.97 / 5.0</span><span class="worders">1,240 orders completed</span></div>
@@ -136,7 +137,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">👨‍⚕️
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. James K.</div><div class="wdeg">PhD · Nursing & Healthcare · Johns Hopkins</div></div>
+            <div><div class="wname">Dr. James K.</div><div class="wdeg">PhD · Nursing & Healthcare</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.95 / 5.0</span><span class="worders">890 orders completed</span></div>
@@ -148,7 +149,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">👩‍💼
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Prof. Linda T.</div><div class="wdeg">MA · Business & Management · Wharton</div></div>
+            <div><div class="wname">Prof. Linda T.</div><div class="wdeg">MA · Business & Management</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.92 / 5.0</span><span class="worders">1,105 orders completed</span></div>
@@ -160,7 +161,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">👨‍💻
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Alex R.</div><div class="wdeg">PhD · Computer Science · MIT</div></div>
+            <div><div class="wname">Alex R.</div><div class="wdeg">MS · Computer Science</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.99 / 5.0</span><span class="worders">642 orders completed</span></div>
@@ -172,7 +173,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#ff9a9e,#fad0c4)">👩‍🔬
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Maria L.</div><div class="wdeg">PhD · Psychology · Stanford</div></div>
+            <div><div class="wname">Dr. Maria L.</div><div class="wdeg">PhD · Psychology</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.96 / 5.0</span><span class="worders">978 orders completed</span></div>
@@ -184,7 +185,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)">👨‍🎓
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Prof. David W.</div><div class="wdeg">PhD · Political Science · Columbia</div></div>
+            <div><div class="wname">Prof. David W.</div><div class="wdeg">PhD · Political Science</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.94 / 5.0</span><span class="worders">715 orders completed</span></div>
@@ -196,7 +197,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#ffecd2,#fcb69f)">👩‍⚕️
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Rachel P.</div><div class="wdeg">PhD · Biology & Chemistry · Yale</div></div>
+            <div><div class="wname">Dr. Rachel P.</div><div class="wdeg">PhD · Biology & Chemistry</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.98 / 5.0</span><span class="worders">1,032 orders completed</span></div>
@@ -208,7 +209,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#89f7fe,#66a6ff)">👨‍🏫
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Prof. Michael B.</div><div class="wdeg">MA · Education & Pedagogy · UCLA</div></div>
+            <div><div class="wname">Prof. Michael B.</div><div class="wdeg">MA · Education & Pedagogy</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.91 / 5.0</span><span class="worders">867 orders completed</span></div>
@@ -220,7 +221,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#fddb92,#d1fdff)">👩‍💻
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Olivia N.</div><div class="wdeg">PhD · Economics · Princeton</div></div>
+            <div><div class="wname">Dr. Olivia N.</div><div class="wdeg">PhD · Economics</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.93 / 5.0</span><span class="worders">534 orders completed</span></div>
@@ -232,7 +233,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#f6d365,#fda085)">👨‍🔬
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Kevin S.</div><div class="wdeg">PhD · Sociology · U of Chicago</div></div>
+            <div><div class="wname">Kevin S.</div><div class="wdeg">MA · Sociology</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.94 / 5.0</span><span class="worders">763 orders completed</span></div>
@@ -244,7 +245,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#e0c3fc,#8ec5fc)">👩‍🎨
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Prof. Emma H.</div><div class="wdeg">MA · Communications · NYU</div></div>
+            <div><div class="wname">Prof. Emma H.</div><div class="wdeg">MA · Communications</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.90 / 5.0</span><span class="worders">612 orders completed</span></div>
@@ -256,7 +257,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#5ee7df,#b490ca)">👨‍🏫
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Daniel F.</div><div class="wdeg">PhD · Mathematics · Caltech</div></div>
+            <div><div class="wname">Dr. Daniel F.</div><div class="wdeg">PhD · Mathematics</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.98 / 5.0</span><span class="worders">481 orders completed</span></div>
@@ -268,7 +269,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#c1dfc4,#deecdd)">👩‍🎓
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Prof. Natasha V.</div><div class="wdeg">MA · History · Georgetown</div></div>
+            <div><div class="wname">Prof. Natasha V.</div><div class="wdeg">MA · History</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.91 / 5.0</span><span class="worders">845 orders completed</span></div>
@@ -280,7 +281,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#ff758c,#ff7eb3)">👨‍💼
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Robert C.</div><div class="wdeg">PhD · Engineering · Georgia Tech</div></div>
+            <div><div class="wname">Robert C.</div><div class="wdeg">MS · Engineering</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.96 / 5.0</span><span class="worders">592 orders completed</span></div>
@@ -292,7 +293,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#fbc2eb,#a6c1ee)">👩‍✏️
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Prof. Jessica A.</div><div class="wdeg">MA · Creative Writing · Iowa</div></div>
+            <div><div class="wname">Prof. Jessica A.</div><div class="wdeg">MA · Creative Writing</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.95 / 5.0</span><span class="worders">1,156 orders completed</span></div>
@@ -304,7 +305,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#13547a,#80d0c7)">👨‍⚕️
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Hassan M.</div><div class="wdeg">PhD · Public Health · Columbia</div></div>
+            <div><div class="wname">Dr. Hassan M.</div><div class="wdeg">PhD · Public Health</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.97 / 5.0</span><span class="worders">703 orders completed</span></div>
@@ -316,7 +317,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#d299c2,#fef9d7)">👩‍🏫
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Prof. Anna K.</div><div class="wdeg">MA · Philosophy · Oxford</div></div>
+            <div><div class="wname">Prof. Anna K.</div><div class="wdeg">MA · Philosophy</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.93 / 5.0</span><span class="worders">528 orders completed</span></div>
@@ -328,7 +329,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#f7971e,#ffd200)">👨‍🔬
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Thomas G.</div><div class="wdeg">PhD · Environmental Science · UC Davis</div></div>
+            <div><div class="wname">Dr. Thomas G.</div><div class="wdeg">PhD · Environmental Science</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.94 / 5.0</span><span class="worders">687 orders completed</span></div>
@@ -340,7 +341,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#ee9ca7,#ffdde1)">👩‍⚖️
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Prof. Claire D.</div><div class="wdeg">JD · Law & Legal Studies · UPenn</div></div>
+            <div><div class="wname">Prof. Claire D.</div><div class="wdeg">JD · Law & Legal Studies</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.96 / 5.0</span><span class="worders">912 orders completed</span></div>
@@ -352,7 +353,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#2193b0,#6dd5ed)">👨‍💻
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Raj P.</div><div class="wdeg">PhD · Data Science · Carnegie Mellon</div></div>
+            <div><div class="wname">Dr. Raj P.</div><div class="wdeg">PhD · Data Science</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.99 / 5.0</span><span class="worders">1,385 orders completed</span></div>
@@ -364,7 +365,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#c471f5,#fa71cd)">👩‍🎓
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Mei W.</div><div class="wdeg">PhD · Linguistics · Georgetown</div></div>
+            <div><div class="wname">Mei W.</div><div class="wdeg">MA · Linguistics</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.92 / 5.0</span><span class="worders">564 orders completed</span></div>
@@ -376,7 +377,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#56ab2f,#a8e063)">👨‍🏫
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Prof. Marcus J.</div><div class="wdeg">PhD · Anthropology · U of Michigan</div></div>
+            <div><div class="wname">Prof. Marcus J.</div><div class="wdeg">PhD · Anthropology</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.91 / 5.0</span><span class="worders">738 orders completed</span></div>
@@ -388,7 +389,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#fc5c7d,#6a82fb)">👩‍💼
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Sophia R.</div><div class="wdeg">PhD · Marketing · Northwestern</div></div>
+            <div><div class="wname">Sophia R.</div><div class="wdeg">MA · Marketing</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.95 / 5.0</span><span class="worders">823 orders completed</span></div>
@@ -400,7 +401,7 @@
             <div class="wavatar" style="background:linear-gradient(135deg,#373b44,#4286f4)">👨‍⚕️
               <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
             </div>
-            <div><div class="wname">Dr. Andre L.</div><div class="wdeg">MD · Pharmacology · Emory</div></div>
+            <div><div class="wname">Dr. Andre L.</div><div class="wdeg">MD · Pharmacology</div></div>
           </div>
           <div class="wstars">★★★★★</div>
           <div class="wrating-row"><span class="wrating">4.97 / 5.0</span><span class="worders">491 orders completed</span></div>
@@ -682,12 +683,29 @@
         <div>
           <div class="pcalc-label">Assignment Type</div>
           <select class="pcalc-select" id="calcType" onchange="calcPrice()">
-            <option value="5">Essay / Short Paper</option>
+            <option value="5">Essay</option>
+            <option value="6">Argumentative / Persuasive Essay</option>
+            <option value="6">Discussion Post</option>
+            <option value="7">Annotated Bibliography</option>
+            <option value="7">Book Report / Review</option>
+            <option value="7">Reaction / Reflection Paper</option>
             <option value="8">Research Paper</option>
+            <option value="8">Term Paper</option>
+            <option value="8">Literature Review</option>
+            <option value="9">Article Review / Critique</option>
             <option value="10">Case Study</option>
+            <option value="10">Coursework</option>
+            <option value="10">Presentation / PowerPoint</option>
+            <option value="10">SOAP Note / Care Plan</option>
             <option value="12">Lab Report</option>
+            <option value="12">Capstone Project</option>
+            <option value="12">Research Proposal</option>
+            <option value="12">Business Plan</option>
             <option value="15">Thesis Chapter</option>
+            <option value="15">Admission / Personal Statement</option>
             <option value="20">Dissertation</option>
+            <option value="8">Editing & Proofreading</option>
+            <option value="10">Math / Statistics Problem</option>
           </select>
         </div>
         <div>
@@ -704,6 +722,7 @@
         <div>
           <div class="pcalc-label">Academic Level</div>
           <select class="pcalc-select" id="calcLevel" onchange="calcPrice()">
+            <option value="0.85">High School</option>
             <option value="1">Undergraduate</option>
             <option value="1.3">Master's</option>
             <option value="1.6">Ph.D.</option>
@@ -1020,10 +1039,11 @@
     </div>
     <div class="abh-f">
       <div class="fh"><h3>Get Expert Help</h3><p>We'll match you with the right writer.</p></div>
-      <div class="fg"><label class="fl">Assignment type</label><select class="fs"><option>Essay</option><option>Research Paper</option><option>Thesis</option><option>Dissertation</option><option>Other</option></select></div>
+      <div class="fg"><label class="fl">Assignment type</label><select class="fs"><option>Essay</option><option>Research Paper</option><option>Argumentative Essay</option><option>Discussion Post</option><option>Annotated Bibliography</option><option>Literature Review</option><option>Case Study</option><option>Lab Report</option><option>Term Paper</option><option>Coursework</option><option>Capstone Project</option><option>Presentation / PowerPoint</option><option>SOAP Note / Care Plan</option><option>Business Plan</option><option>Thesis</option><option>Dissertation</option><option>Editing & Proofreading</option><option>Other</option></select></div>
       <div class="frow"><div class="fg"><label class="fl">Name</label><input type="text" class="fi" placeholder="Your name"></div><div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="Email"></div></div>
       <div class="frow"><div class="fg"><label class="fl">Subject</label><input type="text" class="fi" placeholder="e.g. Biology"></div><div class="fg"><label class="fl">Phone</label><input type="tel" class="fi" placeholder="Phone"></div></div>
       <div class="fg"><label class="fl">Message</label><textarea class="fta" placeholder="Your project..."></textarea></div>
+      <div class="fg"><label class="fl">Attach file (optional)</label><input type="file" class="fi ffile" multiple accept=".pdf,.doc,.docx,.txt,.rtf,.ppt,.pptx,.xls,.xlsx,.jpg,.png"></div>
       <button class="fsub">Order Now →</button>
       <div class="fmi"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Confidential</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Secure</span></div>
     </div>
@@ -1115,10 +1135,11 @@
 
     <div class="cfc">
       <div class="fh"><h3>Place Your Order</h3><p>Fill in the details below to get started.</p></div>
-      <div class="fg"><label class="fl">Assignment type</label><select class="fs"><option>Essay</option><option>Research Paper</option><option>Thesis</option><option>Dissertation</option><option>Other</option></select></div>
+      <div class="fg"><label class="fl">Assignment type</label><select class="fs"><option>Essay</option><option>Research Paper</option><option>Argumentative Essay</option><option>Discussion Post</option><option>Annotated Bibliography</option><option>Literature Review</option><option>Case Study</option><option>Lab Report</option><option>Term Paper</option><option>Coursework</option><option>Capstone Project</option><option>Presentation / PowerPoint</option><option>SOAP Note / Care Plan</option><option>Business Plan</option><option>Thesis</option><option>Dissertation</option><option>Editing & Proofreading</option><option>Other</option></select></div>
       <div class="frow"><div class="fg"><label class="fl">Name</label><input type="text" class="fi" placeholder="Your name *"></div><div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="Email *"></div></div>
       <div class="frow"><div class="fg"><label class="fl">Subject</label><input type="text" class="fi" placeholder="e.g. Biology"></div><div class="fg"><label class="fl">Phone</label><input type="tel" class="fi" placeholder="Phone *"></div></div>
       <div class="fg"><label class="fl">Message</label><textarea class="fta" placeholder="Topic, page count, instructions..."></textarea></div>
+      <div class="fg"><label class="fl">Attach file (optional)</label><input type="file" class="fi ffile" multiple accept=".pdf,.doc,.docx,.txt,.rtf,.ppt,.pptx,.xls,.xlsx,.jpg,.png"></div>
       <button class="fsub">Order Now →</button>
       <div class="fmi"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Confidential</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Secure</span></div>
     </div>

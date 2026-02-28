@@ -35,21 +35,21 @@
 .pcalc-select {
   width: 100%;
   padding: 11px 14px;
-  background: rgba(255, 255, 255, .06);
-  border: 1px solid rgba(255, 255, 255, .1);
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, .25);
   border-radius: 9px;
   font-family: var(--fb);
   font-size: 13px;
-  color: var(--wh);
+  color: var(--ch);
   outline: none;
   appearance: none;
   cursor: pointer;
   transition: all .3s;
 }
-.pcalc-select:focus { border-color: var(--gold); background: rgba(255, 255, 255, .1) }
+.pcalc-select:focus { border-color: var(--gold); background: #fff }
 .pcalc-select option {
-  background: #1a1a2e;
-  color: #fff;
+  background: #fff;
+  color: var(--ch);
   padding: 8px 12px;
 }
 .pcalc-select::-webkit-scrollbar { width: 8px }

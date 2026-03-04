@@ -313,22 +313,21 @@
     box-shadow: 0 12px 40px rgba(0, 0, 0, .06), 0 0 0 1px rgba(200, 164, 78, .08);
   }
   .hmf-head {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--fd);
-    font-size: 17px;
-    font-weight: 700;
+    text-align: center;
     margin-bottom: 18px;
-    color: var(--ch);
   }
-  .hmf-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--em);
-    border-radius: 50%;
-    flex-shrink: 0;
-    box-shadow: 0 0 0 3px var(--em-s);
+  .hmf-head h3 {
+    font-family: var(--fd);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ch);
+    margin: 0 0 4px;
+  }
+  .hmf-head p {
+    font-size: 13px;
+    color: var(--mu);
+    margin: 0;
+    font-weight: 400;
   }
   .hmf .frow { grid-template-columns: 1fr 1fr }
   .hmf .fg { margin-bottom: 10px }
@@ -423,6 +422,8 @@
   .hm-s span { font-size: 9px }
   .pb { font-size: 9px }
   .hmf { padding: 18px 14px; margin-top: 20px }
-  .hmf-head { font-size: 15px; margin-bottom: 14px }
+  .hmf-head { margin-bottom: 14px }
+  .hmf-head h3 { font-size: 16px }
+  .hmf-head p { font-size: 12px }
   .hmf .frow { grid-template-columns: 1fr }
 }

@@ -1,0 +1,32 @@
+/* =============================================
+   VARIABLES — Colors, Fonts, CSS Custom Properties
+   ============================================= */
+
+:root {
+  /* Primary — Emerald Green */
+  --em: #0D6B4E;
+  --em-d: #064A35;
+  --em-l: #11B07A;
+  --em-s: rgba(13, 107, 78, .08);
+
+  /* Accent — Gold */
+  --gold: #C8A44E;
+  --gold-l: #E8CA72;
+  --gold-p: #FFF8E7;
+
+  /* Neutrals */
+  --cream: #FFFDF7;
+  --ivory: #F7F4ED;
+  --ch: #1A1A1A;
+  --sl: #4A4A4A;
+  --mu: #7A7A7A;
+  --wh: #FFF;
+
+  /* Danger */
+  --red: #DC3545;
+  --red-s: rgba(220, 53, 69, .08);
+
+  /* Typography */
+  --fd: 'DM Serif Display', Georgia, serif;
+  --fb: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}

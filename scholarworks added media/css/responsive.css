@@ -93,6 +93,9 @@
 
   /* Reviews */
   .rev-section { padding: 48px 16px }
+  .rev-platforms { gap: 10px }
+  .rev-plat { padding: 5px 10px }
+  .rev-plat:last-child { margin: 0 auto }
   .rev-card { width: 260px; padding: 18px; min-height: 170px }
   .rev-text { font-size: 13px }
 

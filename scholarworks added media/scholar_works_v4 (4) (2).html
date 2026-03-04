@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scholar Works — Expert Academic Writing</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--em:#0D6B4E;--em-d:#064A35;--em-l:#11B07A;--em-s:rgba(13,107,78,.08);
+--gold:#C8A44E;--gold-l:#E8CA72;--gold-p:#FFF8E7;
+--cream:#FFFDF7;--ivory:#F7F4ED;--ch:#1A1A1A;--sl:#4A4A4A;--mu:#7A7A7A;--wh:#FFF;
+--red:#DC3545;--red-s:rgba(220,53,69,.08);
+--fd:'DM Serif Display',Georgia,serif;--fb:'Plus Jakarta Sans',-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ch);background:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* === PROMO BAR === */
+.pb{position:fixed;top:0;left:0;right:0;z-index:2000;background:var(--em);padding:9px 16px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:13px;font-weight:700;color:var(--wh)}
+.pb .pt{background:rgba(0,0,0,.2);padding:2px 8px;border-radius:5px;font-variant-numeric:tabular-nums;font-weight:800;font-size:12px}
+.pb a{color:var(--gold-l);text-decoration:underline;font-weight:800}
+@media(max-width:640px){.pb{font-size:10px;gap:4px;padding:7px 10px}.hm{display:none}}
+
+/* === NAV === */
+nav{position:fixed;top:38px;left:0;right:0;z-index:1000;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,253,247,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,164,78,.1);transition:all .3s}
+nav.sc{padding:8px 32px;box-shadow:0 2px 20px rgba(0,0,0,.06)}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;cursor:pointer}
+.logo-i{width:34px;height:34px;background:var(--em);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--fd);font-size:18px}
+.logo-t{font-family:var(--fd);font-size:20px;color:var(--ch)}.logo-t span{color:var(--em)}
+.nl{display:flex;align-items:center;gap:6px;list-style:none;flex-wrap:wrap}
+.nl a{text-decoration:none;color:var(--sl);font-size:12px;font-weight:600;padding:6px 12px;border-radius:6px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.nl a:hover{color:var(--em);background:var(--em-s)}
+.nl a.act{color:var(--em)}
+.nl .sep{width:1px;height:16px;background:rgba(200,164,78,.2);margin:0 2px}
+.nl .cta{background:var(--em)!important;color:var(--wh)!important;padding:8px 16px!important}
+.nl .cta:hover{background:var(--em-d)!important}
+.np{font-size:12px;font-weight:700;color:var(--em);text-decoration:none;display:flex;align-items:center;gap:4px}
+.bur{display:none;background:none;border:none;cursor:pointer;color:var(--ch);padding:4px}
+/* Floating chat button */
+.fchat{position:fixed;bottom:28px;right:28px;z-index:1500;background:var(--em);color:var(--wh);border:none;border-radius:50px;padding:14px 22px;font-family:var(--fb);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 8px 28px rgba(13,107,78,.35);transition:all .3s;text-decoration:none}
+.fchat:hover{background:var(--em-d);transform:translateY(-2px);box-shadow:0 12px 36px rgba(13,107,78,.4)}
+.fchat-dot{width:8px;height:8px;background:#4ade80;border-radius:50%;animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.3)}}
+@media(max-width:900px){.nl{display:none!important;position:fixed;top:84px;left:0;right:0;background:var(--cream);flex-direction:column;padding:16px;gap:4px;border-bottom:1px solid rgba(200,164,78,.15);box-shadow:0 8px 32px rgba(0,0,0,.1);z-index:999}.nl.mo{display:flex!important}.nl a{padding:12px 16px;font-size:15px;width:100%}.nl .sep{display:none}.nl .cta{text-align:center;margin-top:4px;border-radius:10px;padding:14px!important}.bur{display:flex;align-items:center}nav{padding:10px 16px}nav.sc{padding:8px 16px}.logo-i{width:30px;height:30px;font-size:15px}.logo-t{font-size:17px}.fchat{bottom:16px;right:16px;padding:12px 18px;font-size:13px}}
+
+/* === PAGES === */
+.pg{display:none}.pg.on{display:block}
+.stag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--em);margin-bottom:14px}
+.stag::before{content:'';width:18px;height:2px;background:var(--gold)}
+.rv{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.4,0,.2,1)}.rv.vi{opacity:1;transform:translateY(0)}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fr{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pu{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* === SHARED FORM === */
+.fl{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--mu);margin-bottom:5px}
+.fs,.fi{width:100%;padding:12px;background:var(--ivory);border:1.5px solid rgba(26,26,26,.07);border-radius:9px;font-family:var(--fb);font-size:14px;color:var(--ch);outline:none;transition:all .3s;appearance:none;min-height:44px}
+.fs{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237A7A7A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;cursor:pointer}
+.fs:focus,.fi:focus{border-color:var(--em);background:var(--wh);box-shadow:0 0 0 3px var(--em-s)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fg{margin-bottom:12px}
+.fta{width:100%;padding:12px;height:70px;resize:vertical;background:var(--ivory);border:1.5px solid rgba(26,26,26,.07);border-radius:9px;font-family:var(--fb);font-size:14px;color:var(--ch);outline:none;transition:all .3s}
+.fta:focus{border-color:var(--em);background:var(--wh);box-shadow:0 0 0 3px var(--em-s)}
+.fsub{width:100%;padding:15px;margin-top:4px;background:var(--em);color:var(--wh);border:none;border-radius:10px;font-family:var(--fb);font-size:14px;font-weight:800;cursor:pointer;transition:all .3s;min-height:50px}
+.fsub:hover{background:var(--em-d);transform:translateY(-1px);box-shadow:0 6px 20px rgba(13,107,78,.25)}
+.fmi{text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:10px;color:var(--mu)}.fmi span{display:flex;align-items:center;gap:3px}.fmi svg{width:11px;height:11px;color:var(--em-l)}
+@media(max-width:768px){.frow{grid-template-columns:1fr}.fs,.fi{font-size:15px;min-height:46px}.fta{font-size:15px;height:60px}.fsub{font-size:15px;min-height:52px}}
+
+/* === HERO === */
+.hero{min-height:100vh;padding:140px 32px 60px;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-180px;right:-180px;width:700px;height:700px;background:radial-gradient(circle,rgba(13,107,78,.05) 0%,transparent 70%);pointer-events:none}
+.hg{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;position:relative;z-index:1}
+.up{display:inline-flex;align-items:center;gap:6px;background:var(--red-s);border:1px solid rgba(220,53,69,.15);padding:5px 12px;border-radius:100px;font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.4px;margin-bottom:18px;animation:fu .5s ease forwards}
+.pd{width:5px;height:5px;background:var(--red);border-radius:50%;animation:pu 2s infinite}
+.hero h1{font-family:var(--fd);font-size:clamp(34px,4.2vw,54px);line-height:1.1;margin-bottom:16px;animation:fu .6s ease .1s forwards;opacity:0}
+.hero h1 em{color:var(--em);font-style:italic}
+.hsub{font-size:16px;line-height:1.65;color:var(--mu);max-width:500px;margin-bottom:24px;animation:fu .6s ease .15s forwards;opacity:0}.hsub strong{color:var(--ch);font-weight:600}
+.mqc{display:none}
+.sp{display:flex;align-items:center;gap:12px;margin-bottom:22px;animation:fu .6s ease .2s forwards;opacity:0}
+.avs{display:flex}.av{width:32px;height:32px;border-radius:50%;border:2px solid var(--cream);margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:13px}.av:first-child{margin-left:0}
+.a1{background:linear-gradient(135deg,#667eea,#764ba2)}.a2{background:linear-gradient(135deg,#f093fb,#f5576c)}.a3{background:linear-gradient(135deg,#4facfe,#00f2fe)}.a4{background:linear-gradient(135deg,#43e97b,#38f9d7)}.a5{background:linear-gradient(135deg,#fa709a,#fee140)}
+.pt2{font-size:13px;color:var(--mu);line-height:1.3}.pt2 .st{color:var(--gold);letter-spacing:1px}.pt2 strong{color:var(--ch)}
+.tr{display:flex;gap:16px;flex-wrap:wrap;animation:fu .6s ease .25s forwards;opacity:0}
+.tb{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--mu);font-weight:500}.tb svg{width:14px;height:14px;color:var(--em-l);flex-shrink:0}
+.hms{display:none}
+.hfw{animation:fr .8s ease .2s forwards;opacity:0}
+.hf{background:var(--wh);border-radius:18px;padding:32px;box-shadow:0 16px 48px rgba(0,0,0,.06),0 0 0 1px rgba(200,164,78,.08)}
+.fh{text-align:center;margin-bottom:20px}.fh h3{font-family:var(--fd);font-size:20px;margin-bottom:3px}.fh p{font-size:12px;color:var(--mu)}
+
+/* === TRUST BAR === */
+.tbar{padding:28px 32px;background:var(--ivory);border-top:1px solid rgba(200,164,78,.08);border-bottom:1px solid rgba(200,164,78,.08)}
+.tlb{text-align:center;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mu);margin-bottom:14px}
+.tlogos{display:flex;justify-content:center;align-items:center;gap:32px;flex-wrap:wrap}
+.tl{font-family:var(--fd);font-size:16px;color:rgba(26,26,26,.18);white-space:nowrap;transition:color .3s}.tl:hover{color:rgba(26,26,26,.35)}
+
+/* ===== NEW: MEDIA MENTIONS BAR ===== */
+.media-bar{padding:20px 32px;background:var(--wh);border-bottom:1px solid rgba(200,164,78,.06)}
+.media-bar-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.media-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mu);white-space:nowrap}
+.media-logos{display:flex;align-items:center;gap:36px;flex-wrap:wrap;justify-content:center}
+.media-logo{font-family:var(--fd);font-size:17px;color:rgba(26,26,26,.15);white-space:nowrap;transition:color .3s;cursor:default}
+.media-logo:hover{color:rgba(26,26,26,.3)}
+@media(max-width:768px){.media-bar{padding:16px}.media-logos{gap:20px}.media-logo{font-size:14px}.media-bar-in{gap:16px;flex-direction:column}}
+
+/* ===== NEW: WRITERS SHOWCASE ===== */
+.writers{padding:80px 32px;background:var(--cream);overflow:hidden}
+.writers-in{max-width:1280px;margin:0 auto}
+.writers-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px;gap:16px;flex-wrap:wrap}
+.writers-head-l h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);line-height:1.15;margin-bottom:6px}
+.writers-head-l h2 em{color:var(--em);font-style:italic}
+.writers-head-l p{font-size:14px;color:var(--mu)}
+.writers-online{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--em)}
+.writers-online-dot{width:8px;height:8px;background:#4ade80;border-radius:50%;animation:pulse-dot 2s infinite}
+.writers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.wcard{background:var(--wh);border:1px solid rgba(200,164,78,.08);border-radius:16px;padding:24px;transition:all .3s;position:relative;overflow:hidden}
+.wcard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.07);border-color:rgba(13,107,78,.15)}
+.wcard-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.wavatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;position:relative}
+.wavatar-badge{position:absolute;bottom:-2px;right:-2px;width:18px;height:18px;background:var(--em);border-radius:50%;border:2px solid var(--wh);display:flex;align-items:center;justify-content:center}
+.wavatar-badge svg{width:9px;height:9px;color:var(--wh)}
+.wname{font-weight:700;font-size:15px;color:var(--ch);margin-bottom:2px}
+.wdeg{font-size:11px;color:var(--mu);font-weight:500}
+.wstars{color:var(--gold);font-size:13px;letter-spacing:1px;margin-bottom:10px}
+.wrating-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.wrating{font-size:13px;font-weight:700;color:var(--ch)}
+.worders{font-size:11px;color:var(--mu)}
+.wtags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px}
+.wtag{font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px;background:var(--em-s);color:var(--em)}
+.whire{width:100%;padding:9px;background:var(--em);color:var(--wh);border:none;border-radius:8px;font-family:var(--fb);font-size:12px;font-weight:700;cursor:pointer;transition:all .3s}
+.whire:hover{background:var(--em-d)}
+.wcard-featured::before{content:'TOP WRITER';position:absolute;top:12px;right:12px;background:var(--gold);color:var(--ch);font-size:8px;font-weight:800;letter-spacing:1px;padding:3px 7px;border-radius:4px}
+@media(max-width:1100px){.writers-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.writers{padding:48px 16px}.writers-grid{grid-template-columns:1fr 1fr;gap:10px}.wcard{padding:16px}.wavatar{width:44px;height:44px;font-size:18px}.wname{font-size:13px}}
+@media(max-width:480px){.writers-grid{grid-template-columns:1fr}}
+
+/* ===== NEW: AI DETECTOR RESULTS ===== */
+.aidet{padding:80px 32px;background:var(--ivory)}
+.aidet-in{max-width:1100px;margin:0 auto}
+.aidet-head{margin-bottom:40px}
+.aidet-head h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);line-height:1.15;margin-bottom:8px}
+.aidet-head h2 em{color:var(--em);font-style:italic}
+.aidet-head p{font-size:15px;color:var(--mu);max-width:520px;line-height:1.6}
+.aidet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px}
+.aicard{background:var(--wh);border-radius:16px;padding:28px;border:1px solid rgba(200,164,78,.06);transition:all .3s;position:relative;overflow:hidden}
+.aicard::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
+.aicard.pass::before{background:linear-gradient(90deg,#10b981,#34d399)}
+.aicard:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.06)}
+.aicard-logo{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.aicard-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.aicard-name{font-weight:700;font-size:15px;color:var(--ch);margin-bottom:1px}
+.aicard-type{font-size:11px;color:var(--mu)}
+.aicard-result{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.aicard-badge{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:700}
+.aicard-badge.green{background:rgba(16,185,129,.1);color:#059669}
+.aicard-badge svg{width:14px;height:14px}
+.aicard-score{font-family:var(--fd);font-size:36px;color:var(--em);margin-bottom:4px}
+.aicard-label{font-size:12px;color:var(--mu);margin-bottom:14px}
+.aicard-bar{height:8px;background:var(--ivory);border-radius:4px;overflow:hidden}
+.aicard-bar-fill{height:100%;border-radius:4px;transition:width 2s ease}
+.aicard-bar-fill.green{background:linear-gradient(90deg,#10b981,#34d399)}
+.aicard-bar-fill.red{background:linear-gradient(90deg,#ef4444,#f87171)}
+.aicard-note{font-size:11px;color:var(--mu);margin-top:10px;line-height:1.5}
+.aidet-bottom{background:linear-gradient(135deg,var(--em-d),var(--em));border-radius:16px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.aidet-bottom-l h3{font-family:var(--fd);font-size:22px;color:var(--wh);margin-bottom:4px}
+.aidet-bottom-l p{font-size:13px;color:rgba(255,255,255,.6)}
+.aidet-bottom-r{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.aidet-include{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--gold)}
+.aidet-include svg{width:16px;height:16px}
+.aidet-cta{background:var(--gold);color:var(--ch);padding:12px 24px;border-radius:8px;border:none;font-family:var(--fb);font-size:13px;font-weight:800;cursor:pointer;transition:all .3s;white-space:nowrap}
+.aidet-cta:hover{background:var(--gold-l);transform:translateY(-1px)}
+@media(max-width:900px){.aidet-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.aidet{padding:48px 16px}.aidet-grid{grid-template-columns:1fr}.aidet-bottom{flex-direction:column;text-align:center;padding:20px 16px}}
+
+/* ===== NEW: URGENCY / DEADLINE BLOCK ===== */
+.urgency{padding:60px 32px;background:var(--wh);border-bottom:1px solid rgba(200,164,78,.06)}
+.urgency-in{max-width:1100px;margin:0 auto}
+.urgency h2{font-family:var(--fd);font-size:clamp(26px,3vw,38px);margin-bottom:8px}
+.urgency h2 em{color:var(--red);font-style:italic}
+.urgency-sub{font-size:14px;color:var(--mu);margin-bottom:32px;max-width:460px;line-height:1.6}
+.urgency-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ucard{border-radius:14px;padding:24px 20px;border:1.5px solid transparent;transition:all .3s;cursor:pointer;position:relative;overflow:hidden}
+.ucard:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.07)}
+.ucard.hot{background:linear-gradient(135deg,rgba(220,53,69,.06),rgba(220,53,69,.02));border-color:rgba(220,53,69,.15)}
+.ucard.warm{background:linear-gradient(135deg,rgba(245,158,11,.06),rgba(245,158,11,.02));border-color:rgba(245,158,11,.15)}
+.ucard.cool{background:linear-gradient(135deg,rgba(13,107,78,.06),rgba(13,107,78,.02));border-color:rgba(13,107,78,.1)}
+.ucard.chill{background:var(--ivory);border-color:rgba(200,164,78,.12)}
+.ucard-icon{font-size:28px;margin-bottom:10px;display:block}
+.ucard-time{font-family:var(--fd);font-size:22px;color:var(--ch);margin-bottom:4px}
+.ucard-desc{font-size:12px;color:var(--mu);line-height:1.5;margin-bottom:14px}
+.ucard-price{display:flex;align-items:center;gap:6px}
+.ucard-from{font-size:10px;color:var(--mu)}
+.ucard-val{font-size:16px;font-weight:800;color:var(--em)}
+.ucard-badge{position:absolute;top:12px;right:12px;font-size:8px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:3px 6px;border-radius:4px}
+.badge-hot{background:var(--red);color:var(--wh)}
+.badge-pop{background:var(--gold);color:var(--ch)}
+@media(max-width:900px){.urgency-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.urgency{padding:40px 16px}.urgency-grid{grid-template-columns:1fr 1fr;gap:10px}.ucard{padding:18px 14px}}
+
+/* === REVIEWS CAROUSEL === */
+.rev-section{padding:80px 32px;background:var(--wh);border-bottom:1px solid rgba(200,164,78,.06);overflow:hidden}
+.rev-section-in{max-width:1280px;margin:0 auto}
+.rev-section h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);margin-bottom:8px}
+.rev-desc{font-size:15px;color:var(--mu);margin-bottom:10px;max-width:480px;line-height:1.6}
+.rev-platforms{display:flex;align-items:center;gap:20px;margin-bottom:32px;flex-wrap:wrap}
+.rev-plat{display:flex;align-items:center;gap:6px;background:var(--ivory);border:1px solid rgba(200,164,78,.1);padding:6px 14px;border-radius:8px}
+.rev-plat-name{font-size:12px;font-weight:700;color:var(--ch)}
+.rev-plat-stars{color:var(--gold);font-size:12px}
+.rev-plat-score{font-size:12px;font-weight:800;color:var(--em)}
+.rev-track-wrap{overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent 0%,black 8%,black 92%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,black 8%,black 92%,transparent 100%)}
+.rev-track{display:flex;gap:16px;animation:scrollReviews 40s linear infinite;width:max-content}
+.rev-track:hover{animation-play-state:paused}
+@keyframes scrollReviews{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.rev-card{width:300px;flex-shrink:0;background:var(--cream);border:1px solid rgba(200,164,78,.08);border-radius:14px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;min-height:200px;transition:transform .3s}
+.rev-card:hover{transform:translateY(-2px)}
+.rev-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.rev-stars{color:var(--gold);font-size:14px;letter-spacing:1px}
+.rev-verified{font-size:10px;font-weight:700;color:var(--em);background:var(--em-s);padding:3px 8px;border-radius:4px;display:flex;align-items:center;gap:3px}
+.rev-verified svg{width:11px;height:11px}
+.rev-text{font-size:14px;color:var(--sl);line-height:1.6;flex:1;margin-bottom:16px}
+.rev-bottom{border-top:1px solid rgba(200,164,78,.06);padding-top:12px}
+.rev-author{font-weight:700;font-size:13px;color:var(--ch)}
+.rev-subject{font-size:11px;color:var(--mu);margin-top:2px}
+@media(max-width:768px){.rev-section{padding:48px 16px}.rev-card{width:260px;padding:18px;min-height:170px}.rev-text{font-size:13px}}
+
+/* === TURNITIN BLOCK === */
+.turnitin{padding:60px 32px;background:var(--cream);border-bottom:1px solid rgba(200,164,78,.06)}
+.turnitin-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.turnitin-l h2{font-family:var(--fd);font-size:clamp(26px,3vw,38px);line-height:1.2;margin-bottom:12px}
+.turnitin-l h2 em{color:var(--em);font-style:italic}
+.turnitin-l p{font-size:14px;color:var(--mu);line-height:1.7;margin-bottom:24px}
+.turnitin-perks{display:flex;flex-direction:column;gap:10px}
+.tperk{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--sl)}
+.tperk-icon{width:28px;height:28px;background:var(--em-s);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tperk-icon svg{width:14px;height:14px;color:var(--em)}
+.turnitin-mock{background:var(--wh);border-radius:16px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,.06);border:1px solid rgba(200,164,78,.08)}
+.turnitin-mock-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--ivory)}
+.tm-brand{font-weight:800;font-size:14px;color:var(--ch);display:flex;align-items:center;gap:6px}
+.tm-brand span{background:rgba(220,53,69,.1);color:var(--red);padding:2px 7px;border-radius:4px;font-size:10px;font-weight:800}
+.tm-date{font-size:11px;color:var(--mu)}
+.tm-doc{font-size:13px;font-weight:600;color:var(--ch);margin-bottom:4px}
+.tm-sub{font-size:11px;color:var(--mu);margin-bottom:20px}
+.tm-score-row{display:flex;gap:12px;margin-bottom:20px}
+.tm-score{flex:1;text-align:center;padding:16px 10px;border-radius:10px}
+.tm-score.green{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.15)}
+.tm-score.blue{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.1)}
+.tm-score-val{font-family:var(--fd);font-size:28px;font-weight:700;display:block;margin-bottom:2px}
+.tm-score.green .tm-score-val{color:#059669}
+.tm-score.blue .tm-score-val{color:#2563eb}
+.tm-score-label{font-size:10px;color:var(--mu);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.tm-bar-section{margin-bottom:14px}
+.tm-bar-label{display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px}
+.tm-bar-label span:first-child{color:var(--mu)}
+.tm-bar-label span:last-child{font-weight:700;color:var(--ch)}
+.tm-bar{height:6px;background:var(--ivory);border-radius:3px;overflow:hidden}
+.tm-bar-fill{height:100%;border-radius:3px}
+.tm-bar-fill.g{background:#10b981;width:3%}
+.tm-bar-fill.b{background:#3b82f6;width:100%}
+.tm-bar-fill.r{background:#ef4444;width:0%}
+.tm-badge-row{display:flex;gap:8px;flex-wrap:wrap}
+.tm-badge{display:flex;align-items:center;gap:4px;padding:5px 10px;border-radius:6px;font-size:10px;font-weight:700}
+.tm-badge.ok{background:rgba(16,185,129,.1);color:#059669}
+.tm-badge svg{width:11px;height:11px}
+@media(max-width:900px){.turnitin-in{grid-template-columns:1fr;gap:32px}}
+@media(max-width:768px){.turnitin{padding:48px 16px}.tm-score-row{gap:8px}}
+
+/* === COMPARE === */
+.cmp{padding:80px 32px;background:var(--cream);border-bottom:1px solid rgba(200,164,78,.06)}
+.cmp-in{max-width:900px;margin:0 auto}
+.cmp h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);line-height:1.15;margin-bottom:10px}.cmp h2 em{color:var(--em);font-style:italic}
+.cmp-d{font-size:15px;color:var(--mu);max-width:500px;line-height:1.6;margin-bottom:40px}
+.ct{width:100%;border-collapse:separate;border-spacing:0;border-radius:14px;overflow:hidden;border:1px solid rgba(200,164,78,.1);box-shadow:0 2px 16px rgba(0,0,0,.03)}
+.ct thead th{padding:16px 18px;text-align:left;font-size:12px;font-weight:700;background:var(--ivory);border-bottom:1px solid rgba(200,164,78,.08)}
+.ct .ca{text-align:center;color:var(--mu);width:180px}
+.ct .cs{text-align:center;color:var(--em);width:180px}
+.ct tbody td{padding:14px 18px;font-size:13px;border-bottom:1px solid rgba(200,164,78,.04);background:var(--wh);vertical-align:middle}
+.ct tbody tr:last-child td{border-bottom:none}
+.cn{font-weight:600}.csub{font-size:11px;color:var(--mu);margin-top:1px}
+.vb{text-align:center;color:var(--mu);font-size:12px}.vb .x{color:var(--red);font-weight:700;font-size:14px}
+.vg{text-align:center;color:var(--em);font-size:12px;font-weight:600}
+.swb{background:rgba(13,107,78,.02)}
+@media(max-width:768px){.cmp{padding:48px 16px}.ct thead th,.ct tbody td{padding:10px 7px;font-size:11px}.ct .ca,.ct .cs{width:auto;min-width:80px}.csub{display:none}}
+
+/* === FEATURES === */
+.wh{padding:80px 32px;max-width:1280px;margin:0 auto}
+.wh h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);margin-bottom:10px}
+.whd{font-size:15px;color:var(--mu);max-width:480px;line-height:1.6;margin-bottom:48px}
+.fg2{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fc{background:var(--wh);border:1px solid rgba(200,164,78,.06);border-radius:14px;padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.fc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--em),var(--gold));opacity:0;transition:opacity .3s}
+.fc:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,.05)}.fc:hover::before{opacity:1}
+.fic{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--em),var(--em-l));display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--wh)}
+.fc h3{font-family:var(--fd);font-size:17px;margin-bottom:6px}.fc p{font-size:13px;line-height:1.6;color:var(--mu)}
+@media(max-width:1024px){.fg2{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.wh{padding:48px 16px}.fg2{grid-template-columns:1fr;gap:12px}.fc{padding:22px 18px}}
+
+/* ===== NEW: SOCIAL PROOF NUMBERS BAR ===== */
+.spbar{background:var(--em-d);padding:40px 32px}
+.spbar-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.spnum{text-align:center;padding:0 16px;border-right:1px solid rgba(255,255,255,.07)}
+.spnum:last-child{border-right:none}
+.spnum-val{font-family:var(--fd);font-size:42px;color:var(--gold);display:block;line-height:1;margin-bottom:6px}
+.spnum-label{font-size:12px;color:rgba(255,255,255,.5);font-weight:500;line-height:1.3}
+@media(max-width:768px){.spbar{padding:28px 16px}.spbar-in{grid-template-columns:repeat(2,1fr);gap:16px}.spnum{padding:12px 8px;border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}.spnum:nth-child(odd){border-right:1px solid rgba(255,255,255,.06)}.spnum:nth-last-child(-n+2){border-bottom:none}.spnum-val{font-size:32px}}
+
+/* === PRICING === */
+.pri{padding:80px 32px;background:var(--em-d);position:relative;overflow:hidden}
+.pri::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23fff' fill-opacity='.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.pri-in{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.pri .stag{color:var(--gold)}.pri .stag::before{background:var(--gold)}
+.pri h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);color:var(--wh);margin-bottom:10px}
+.prd{font-size:15px;color:rgba(255,255,255,.5);max-width:480px;line-height:1.6;margin-bottom:36px}
+
+/* NEW: Price calculator */
+.pcalc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px;margin-bottom:28px}
+.pcalc-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px}
+.pcalc-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:rgba(255,255,255,.4);margin-bottom:6px}
+.pcalc-select{width:100%;padding:11px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;font-family:var(--fb);font-size:13px;color:var(--wh);outline:none;appearance:none;cursor:pointer;transition:all .3s}
+.pcalc-select:focus{border-color:var(--gold);background:rgba(255,255,255,.1)}
+.pcalc-result{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:rgba(200,164,78,.1);border:1px solid rgba(200,164,78,.2);border-radius:10px}
+.pcalc-from{font-size:13px;color:rgba(255,255,255,.5)}
+.pcalc-price{font-family:var(--fd);font-size:36px;color:var(--gold)}
+.pcalc-note{font-size:11px;color:rgba(255,255,255,.35);margin-top:3px}
+.pcalc-cta{background:var(--gold);color:var(--ch);padding:12px 28px;border-radius:9px;border:none;font-family:var(--fb);font-size:14px;font-weight:800;cursor:pointer;transition:all .3s;white-space:nowrap}
+.pcalc-cta:hover{background:var(--gold-l);transform:translateY(-1px)}
+
+.pcs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:28px;transition:all .3s}
+.pc:hover{background:rgba(255,255,255,.07);transform:translateY(-2px)}
+.pc h3{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.pi{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04)}.pi:last-child{border-bottom:none}
+.pi .pl{color:rgba(255,255,255,.65);font-size:13px}.pi .pa{color:var(--wh);font-weight:700;font-size:13px}
+@media(max-width:900px){.pcalc-row{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.pri{padding:48px 16px}.pcs{grid-template-columns:1fr;max-width:100%}.pc{padding:22px 18px}.pcalc-row{grid-template-columns:1fr}.pcalc-result{flex-direction:column;gap:10px;text-align:center}.pcalc-cta{width:100%}}
+
+/* === SUBJECTS MARQUEE === */
+.subj{padding:60px 0;overflow:hidden;border-bottom:1px solid rgba(200,164,78,.06)}
+.subj-head{padding:0 32px;margin-bottom:28px}
+.subj h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);margin-bottom:6px}
+.subj-d{font-size:15px;color:var(--mu);max-width:480px;line-height:1.6}
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,black 5%,black 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 5%,black 95%,transparent)}
+.marquee-track{display:flex;gap:10px;width:max-content;animation:marq 30s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee2 .marquee-track{animation-direction:reverse;animation-duration:35s}
+@keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.st2{padding:10px 22px;border:1.5px solid rgba(26,26,26,.08);border-radius:100px;font-size:13px;font-weight:500;color:var(--sl);white-space:nowrap;transition:all .3s;cursor:default}
+.st2:hover{border-color:var(--em);color:var(--em);background:var(--em-s)}
+.marquee+.marquee{margin-top:10px}
+@media(max-width:768px){.subj{padding:40px 0}.subj-head{padding:0 16px;margin-bottom:20px}.st2{padding:8px 16px;font-size:12px}}
+
+/* === PROCESS + METRICS === */
+.proc{padding:80px 32px;background:var(--ivory)}
+.proc-in{max-width:1280px;margin:0 auto}
+.proc h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);margin-bottom:8px}
+.proc-d{font-size:15px;color:var(--mu);line-height:1.6;margin-bottom:40px;max-width:500px}
+.proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.steps2{display:flex;flex-direction:column}
+.stp{display:flex;gap:18px;padding:18px 0}
+.stp-l{display:flex;flex-direction:column;align-items:center}
+.stp-n{width:36px;height:36px;border-radius:50%;border:2px solid var(--em);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:var(--em);background:var(--ivory);flex-shrink:0;z-index:1}
+.stp-c{width:2px;flex:1;background:rgba(13,107,78,.1)}.stp:last-child .stp-c{display:none}
+.stp-b h4{font-family:var(--fd);font-size:16px;margin-bottom:3px}.stp-b p{font-size:12px;line-height:1.5;color:var(--mu)}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.metric-card{background:var(--wh);border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,.03);border:1px solid rgba(200,164,78,.06);text-align:center;overflow:hidden;position:relative}
+.metric-card .mc-val{font-family:var(--fd);font-size:36px;color:var(--em);position:relative;z-index:1}
+.metric-card .mc-lab{font-size:11px;color:var(--mu);margin-top:3px;font-weight:500;position:relative;z-index:1}
+.mc-bar{height:6px;background:var(--ivory);border-radius:3px;margin-top:12px;overflow:hidden;position:relative;z-index:1}
+.mc-bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--em),var(--em-l));transition:width 1.5s ease}
+.mc-ring{width:80px;height:80px;margin:0 auto 8px;position:relative}
+.mc-ring svg{width:80px;height:80px;transform:rotate(-90deg)}
+.mc-ring circle{fill:none;stroke-width:6}
+.mc-ring .ring-bg{stroke:var(--ivory)}
+.mc-ring .ring-fg{stroke:var(--em);stroke-linecap:round;transition:stroke-dashoffset 1.5s ease}
+.mc-ring .ring-val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:22px;color:var(--em)}
+@media(max-width:1024px){.proc-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.proc{padding:48px 16px}.metrics{gap:10px}.metric-card{padding:18px}.metric-card .mc-val{font-size:28px}.mc-ring{width:64px;height:64px}.mc-ring svg{width:64px;height:64px}.mc-ring .ring-val{font-size:18px}}
+
+/* ===== NEW: FAQ ON HOMEPAGE ===== */
+.faq-home{padding:80px 32px;background:var(--wh)}
+.faq-home-in{max-width:860px;margin:0 auto}
+.faq-home-in h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);margin-bottom:8px}
+.faq-home-desc{font-size:15px;color:var(--mu);margin-bottom:40px;max-width:480px;line-height:1.6}
+.fqi{border:1px solid rgba(200,164,78,.08);border-radius:10px;margin-bottom:10px;overflow:hidden;background:var(--cream);transition:all .3s}
+.fqi:hover{border-color:rgba(200,164,78,.16)}
+.fqq{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:14px;user-select:none}
+.fqq .fqic{width:24px;height:24px;border-radius:50%;background:var(--em-s);display:flex;align-items:center;justify-content:center;color:var(--em);font-size:16px;font-weight:700;transition:transform .3s;flex-shrink:0}
+.fqi.op .fqic{transform:rotate(45deg)}
+.fqa{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 20px}
+.fqi.op .fqa{max-height:300px;padding:0 20px 16px}
+.fqa p{font-size:13px;color:var(--mu);line-height:1.7}
+@media(max-width:768px){.faq-home{padding:48px 16px}.fqq{font-size:13px;padding:14px 16px}}
+
+/* === PROMO CTA === */
+.pcta{padding:60px 32px;background:linear-gradient(135deg,var(--em-d),var(--em));position:relative;overflow:hidden}
+.pcta::before{content:'';position:absolute;top:-40%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(200,164,78,.1) 0%,transparent 70%);pointer-events:none}
+.pcta-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:1}
+.pcta-in h2{font-family:var(--fd);font-size:clamp(24px,2.8vw,36px);color:var(--wh)}.pcta-in h2 em{color:var(--gold);font-style:italic}
+.pcta-in>div:first-child p{font-size:14px;color:rgba(255,255,255,.55);margin-top:4px}
+.pcta-r{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.cdb{display:flex;gap:5px}.cdb-b{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 14px;text-align:center}.cdb-b .cn2{font-family:var(--fd);font-size:22px;color:var(--wh);display:block;font-variant-numeric:tabular-nums}.cdb-b .cl2{font-size:8px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}
+.bg{background:var(--gold);color:var(--ch);padding:14px 28px;border-radius:9px;border:none;font-family:var(--fb);font-size:14px;font-weight:800;cursor:pointer;transition:all .3s;text-decoration:none;white-space:nowrap}.bg:hover{background:var(--gold-l);transform:translateY(-2px)}
+@media(max-width:1024px){.pcta-in{flex-direction:column;text-align:center}.pcta-r{flex-direction:column}}
+@media(max-width:768px){.pcta{padding:40px 16px}}
+
+/* === ABOUT PAGE === */
+.abh{padding:140px 32px 60px;background:linear-gradient(135deg,var(--em-d),var(--em));position:relative;overflow:hidden;min-height:400px;display:flex;align-items:center}
+.abh::before{content:'';position:absolute;top:-30%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(200,164,78,.08) 0%,transparent 70%);pointer-events:none}
+.abh-in{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;position:relative;z-index:1}
+.abh .stag{color:var(--gold)}.abh .stag::before{background:var(--gold)}
+.abh h1{font-family:var(--fd);font-size:clamp(30px,3.5vw,46px);color:var(--wh);line-height:1.15;margin-bottom:16px}
+.abh-t{font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;max-width:500px}.abh-t strong{color:var(--wh)}
+.abh-f{background:var(--wh);border-radius:18px;padding:28px;box-shadow:0 16px 48px rgba(0,0,0,.12)}
+.faq-about{padding:80px 32px;max-width:960px;margin:0 auto}
+.faq-about h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);text-align:center;margin-bottom:40px}
+@media(max-width:768px){.abh{padding:100px 16px 40px}.abh-in{grid-template-columns:1fr;gap:28px}.abh h1{font-size:28px}.abh-f{padding:22px 16px}.faq-about{padding:48px 16px}}
+
+/* === CONTACT === */
+.cth{padding:140px 32px 60px;background:linear-gradient(135deg,var(--em-d),var(--em));position:relative;overflow:hidden}
+.cth::before{content:'';position:absolute;top:-30%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(200,164,78,.08) 0%,transparent 70%);pointer-events:none}
+.cth-in{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;position:relative;z-index:1}
+.cth .stag{color:var(--gold)}.cth .stag::before{background:var(--gold)}
+.cth h1{font-family:var(--fd);font-size:clamp(30px,3.5vw,46px);color:var(--wh);line-height:1.15;margin-bottom:12px}
+.cth-t{font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:24px}
+.cms{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cm{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:18px;text-align:center;transition:all .3s}
+.cm:hover{background:rgba(255,255,255,.12)}
+.cm svg{width:24px;height:24px;color:var(--gold);margin-bottom:6px}
+.cm h4{font-size:13px;font-weight:700;color:var(--wh);margin-bottom:2px}
+.cm p{font-size:10px;color:rgba(255,255,255,.45)}
+.cfc{background:var(--wh);border-radius:18px;padding:28px;box-shadow:0 16px 48px rgba(0,0,0,.12)}
+/* old map CSS removed */
+.map h2{font-family:var(--fd);font-size:clamp(24px,2.8vw,34px);margin-bottom:10px}
+.map-d{font-size:14px;color:var(--mu);line-height:1.6;margin-bottom:20px}
+.map-s{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ms{background:var(--ivory);padding:16px;border-radius:10px;text-align:center}
+.ms .v{font-family:var(--fd);font-size:24px;color:var(--em)}.ms .l{font-size:10px;color:var(--mu);margin-top:2px}
+@media(max-width:768px){.cth{padding:100px 16px 40px}.cth-in{grid-template-columns:1fr;gap:28px}.cth h1{font-size:28px}.cms{grid-template-columns:1fr}.cm{display:flex;align-items:center;gap:10px;text-align:left;padding:14px}.cm svg{margin-bottom:0}.cfc{padding:22px 16px}.map{padding:40px 16px;grid-template-columns:1fr;gap:24px}}
+
+/* === FOOTER === */
+footer{background:var(--ch);padding:48px 32px 24px}
+.fi2{max-width:1280px;margin:0 auto}
+.ft{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.06);gap:24px}
+.fb2 .logo-t{color:var(--wh)}.fb2 .logo-t span{color:var(--em-l)}
+.ftg{font-size:12px;color:rgba(255,255,255,.3);margin-top:8px;max-width:240px;line-height:1.5}
+.flg{display:flex;gap:44px}
+.fcl h4{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:10px}
+.fcl a{display:block;font-size:12px;color:rgba(255,255,255,.45);text-decoration:none;padding:2px 0;transition:color .3s;cursor:pointer}.fcl a:hover{color:var(--wh)}
+.fbot{padding-top:16px;display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.2)}
+@media(max-width:768px){footer{padding:32px 16px 16px}.ft{flex-direction:column;gap:20px}.flg{flex-wrap:wrap;gap:24px}.fbot{flex-direction:column;gap:3px;align-items:center;text-align:center}}
+
+/* === MOBILE HERO OVERRIDE === */
+@media(max-width:768px){
+.hero{padding:96px 16px 32px;min-height:auto;align-items:flex-start}
+.hero::before{display:none}
+.hg{grid-template-columns:1fr;gap:24px}
+.up{font-size:10px;padding:4px 10px;margin-bottom:12px}
+.hero h1{font-size:28px;margin-bottom:12px;opacity:1;animation:none}
+.hero h1 br{display:none}
+.hsub{font-size:14px;margin-bottom:14px;opacity:1;animation:none}
+.mqc{display:flex;align-items:center;justify-content:center;width:100%;padding:15px;background:var(--em);color:var(--wh);border-radius:11px;font-family:var(--fb);font-size:14px;font-weight:800;text-decoration:none;margin-bottom:16px;box-shadow:0 4px 14px rgba(13,107,78,.25)}
+.sp{flex-direction:row;gap:8px;margin-bottom:14px;opacity:1;animation:none}
+.av{width:26px;height:26px;margin-left:-7px;font-size:11px;border-width:2px}
+.pt2{font-size:12px;line-height:1.2}.pt2 .st{font-size:10px}
+.tr{gap:12px;margin-bottom:14px;opacity:1;animation:none}
+.tb{font-size:11px;gap:3px}.tb svg{width:12px;height:12px}
+.hms{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding-top:12px;border-top:1px solid rgba(200,164,78,.08);margin-top:2px}
+.hm-s{text-align:center}.hm-s strong{display:block;font-family:var(--fd);font-size:18px;color:var(--em);line-height:1.2}.hm-s span{font-size:9px;color:var(--mu);font-weight:500}
+.hfw{opacity:1;animation:none}
+.hf{padding:20px 14px;border-radius:14px}
+.fh{margin-bottom:16px}.fh h3{font-size:17px}.fh p{font-size:11px}
+.fg{margin-bottom:8px}.fl{font-size:10px;margin-bottom:3px}
+}
+@media(max-width:380px){
+.hero{padding:90px 12px 28px}
+.hero h1{font-size:24px}
+.hsub{font-size:13px}
+.mqc{font-size:13px;padding:13px}
+.hm-s strong{font-size:16px}
+.pb{font-size:9px}
+}
+
+/* === EXIT INTENT POPUP === */
+.exit-popup{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+.exit-popup.show{display:flex}
+.exit-overlay{position:absolute;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(4px)}
+.exit-box{position:relative;background:var(--wh);border-radius:20px;padding:40px 36px;max-width:480px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.2);animation:fu .3s ease}
+.exit-close{position:absolute;top:14px;right:14px;background:var(--ivory);border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px;color:var(--mu);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.exit-close:hover{background:var(--em-s);color:var(--em)}
+.exit-emoji{font-size:48px;margin-bottom:12px;display:block}
+.exit-box h2{font-family:var(--fd);font-size:26px;margin-bottom:8px}
+.exit-box h2 em{color:var(--em);font-style:italic}
+.exit-box p{font-size:14px;color:var(--mu);line-height:1.6;margin-bottom:24px}
+.exit-input-row{display:flex;gap:8px;margin-bottom:12px}
+.exit-input-row input{flex:1;padding:12px 14px;background:var(--ivory);border:1.5px solid rgba(26,26,26,.07);border-radius:9px;font-family:var(--fb);font-size:14px;color:var(--ch);outline:none;transition:all .3s}
+.exit-input-row input:focus{border-color:var(--em);background:var(--wh)}
+.exit-input-row button{padding:12px 20px;background:var(--em);color:var(--wh);border:none;border-radius:9px;font-family:var(--fb);font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;transition:all .3s}
+.exit-input-row button:hover{background:var(--em-d)}
+.exit-skip{font-size:11px;color:var(--mu);cursor:pointer;text-decoration:underline}
+@media(max-width:480px){.exit-box{padding:28px 20px}.exit-box h2{font-size:22px}.exit-input-row{flex-direction:column}}
+
+/* === DECORATIVE BACKGROUNDS === */
+
+/* Hero — concentric rings + diamond */
+.hero::after{content:'';position:absolute;bottom:-120px;left:-120px;width:500px;height:500px;border:2px solid rgba(200,164,78,.06);border-radius:50%;pointer-events:none;box-shadow:0 0 0 40px rgba(200,164,78,.025),0 0 0 80px rgba(200,164,78,.015)}
+
+/* Writers — floating ring + dot cluster bottom-left */
+.writers{position:relative;overflow:hidden}
+.writers::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border:2px solid rgba(200,164,78,.07);border-radius:50%;pointer-events:none;box-shadow:0 0 0 35px rgba(200,164,78,.03)}
+.writers::after{content:'';position:absolute;bottom:30px;left:24px;width:72px;height:72px;background-image:radial-gradient(rgba(13,107,78,.09) 1.5px,transparent 1.5px);background-size:12px 12px;pointer-events:none;border-radius:6px}
+
+/* Urgency — diagonal lines bg + double ring + diamond */
+.urgency{position:relative;overflow:hidden;background-image:repeating-linear-gradient(-45deg,transparent,transparent 50px,rgba(200,164,78,.025) 50px,rgba(200,164,78,.025) 51px)}
+.urgency::before{content:'';position:absolute;top:-80px;right:-60px;width:360px;height:360px;border:2px solid rgba(200,164,78,.1);border-radius:50%;pointer-events:none;box-shadow:0 0 0 36px rgba(200,164,78,.035)}
+.urgency::after{content:'';position:absolute;bottom:40px;left:48px;width:36px;height:36px;border:1.5px solid rgba(13,107,78,.1);transform:rotate(45deg);pointer-events:none}
+.urgency-in{position:relative;z-index:1}
+
+/* Reviews — dot grid bg + corner cluster + radial glows */
+.rev-section{position:relative;overflow:hidden;background-image:radial-gradient(rgba(200,164,78,.035) 1px,transparent 1px);background-size:28px 28px;background-position:14px 14px}
+.rev-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 3% 12%,rgba(13,107,78,.05) 0%,transparent 35%),radial-gradient(circle at 97% 88%,rgba(200,164,78,.06) 0%,transparent 30%);pointer-events:none}
+.rev-section::after{content:'';position:absolute;top:20px;right:28px;width:96px;height:96px;background-image:radial-gradient(rgba(200,164,78,.16) 2px,transparent 2px);background-size:14px 14px;pointer-events:none;border-radius:8px}
+
+/* Features — corner brackets + cross pattern bg */
+.wh{position:relative;overflow:hidden;background-image:radial-gradient(rgba(13,107,78,.02) 1px,transparent 1px),radial-gradient(rgba(13,107,78,.02) 1px,transparent 1px);background-size:32px 32px;background-position:0 0,16px 16px}
+.wh::before{content:'';position:absolute;top:28px;right:20px;width:80px;height:80px;border-top:2px solid rgba(200,164,78,.14);border-right:2px solid rgba(200,164,78,.14);border-radius:0 12px 0 0;pointer-events:none}
+.wh::after{content:'';position:absolute;bottom:28px;left:20px;width:80px;height:80px;border-bottom:2px solid rgba(13,107,78,.1);border-left:2px solid rgba(13,107,78,.1);border-radius:0 0 0 12px;pointer-events:none}
+
+/* Compare — ring left + dot grid right + diagonal lines */
+.cmp{position:relative;overflow:hidden;background-image:repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(13,107,78,.015) 60px,rgba(13,107,78,.015) 61px)}
+.cmp::before{content:'';position:absolute;top:50%;left:-90px;width:220px;height:220px;border:2px solid rgba(200,164,78,.07);border-radius:50%;transform:translateY(-50%);pointer-events:none}
+.cmp::after{content:'';position:absolute;bottom:36px;right:28px;width:64px;height:64px;background-image:radial-gradient(rgba(13,107,78,.1) 1.5px,transparent 1.5px);background-size:11px 11px;pointer-events:none;border-radius:6px}
+
+/* FAQ — radial glows + corner brackets both sides + zigzag accent */
+.faq-home{position:relative;overflow:hidden;background-image:repeating-linear-gradient(90deg,transparent,transparent 80px,rgba(200,164,78,.02) 80px,rgba(200,164,78,.02) 81px)}
+.faq-home::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 92% 8%,rgba(200,164,78,.06) 0%,transparent 40%),radial-gradient(ellipse at 8% 92%,rgba(13,107,78,.04) 0%,transparent 40%);pointer-events:none}
+.faq-home::after{content:'';position:absolute;top:20px;left:20px;width:56px;height:56px;border-top:2.5px solid rgba(13,107,78,.12);border-left:2.5px solid rgba(13,107,78,.12);border-radius:10px 0 0 0;pointer-events:none}
+
+/* Turnitin — spotlight + ring + diamond */
+.turnitin{position:relative;overflow:hidden}
+.turnitin::before{content:'';position:absolute;bottom:40px;right:40px;width:32px;height:32px;border:1.5px solid rgba(200,164,78,.12);transform:rotate(45deg);pointer-events:none}
+.turnitin::after{content:'';position:absolute;top:-100px;right:-60px;width:420px;height:420px;background:radial-gradient(circle,rgba(13,107,78,.05) 0%,transparent 55%);pointer-events:none}
+
+/* Subjects — gold accent line + floating ring + chevron marks */
+.subj{position:relative;background:var(--wh);background-image:repeating-linear-gradient(-45deg,transparent,transparent 55px,rgba(200,164,78,.02) 55px,rgba(200,164,78,.02) 56px)}
+.subj::before{content:'';position:absolute;top:30px;left:-50px;width:180px;height:180px;border:2px solid rgba(200,164,78,.06);border-radius:50%;pointer-events:none}
+.subj::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:100px;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);pointer-events:none}
+
+/* Process — double ring + dot cluster top-left */
+.proc{position:relative;overflow:hidden}
+.proc::before{content:'';position:absolute;top:24px;left:20px;width:56px;height:56px;background-image:radial-gradient(rgba(200,164,78,.1) 1.5px,transparent 1.5px);background-size:10px 10px;pointer-events:none;border-radius:6px}
+.proc::after{content:'';position:absolute;top:50%;right:-60px;width:260px;height:260px;border:2px solid rgba(13,107,78,.06);border-radius:50%;pointer-events:none;transform:translateY(-50%);box-shadow:0 0 0 40px rgba(13,107,78,.025)}
+
+/* AI Detector — subtle cross pattern */
+.aidet{position:relative;overflow:hidden;background-image:radial-gradient(rgba(13,107,78,.025) 1px,transparent 1px);background-size:24px 24px}
+.aidet::before{content:'';position:absolute;bottom:-40px;left:-40px;width:240px;height:240px;border:2px solid rgba(200,164,78,.06);border-radius:50%;pointer-events:none}
+.aidet::after{content:'';position:absolute;top:24px;right:24px;width:40px;height:40px;border:1.5px solid rgba(13,107,78,.08);transform:rotate(45deg);pointer-events:none}
+
+/* === LIVE ORDER FEED === */
+.live-feed{position:fixed;bottom:28px;left:28px;z-index:1400;max-width:320px;pointer-events:none}
+.live-toast{background:var(--wh);border:1px solid rgba(200,164,78,.12);border-radius:12px;padding:14px 18px;box-shadow:0 8px 32px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.02);display:flex;align-items:center;gap:12px;transform:translateY(20px);opacity:0;transition:all .4s cubic-bezier(.4,0,.2,1);pointer-events:auto}
+.live-toast.show{transform:translateY(0);opacity:1}
+.live-toast-dot{width:8px;height:8px;background:#4ade80;border-radius:50%;flex-shrink:0;animation:pulse-dot 2s infinite}
+.live-toast-text{font-size:12px;color:var(--sl);line-height:1.4}
+.live-toast-text strong{color:var(--ch);font-weight:700}
+.live-toast-text .lt-time{color:var(--mu);font-size:10px;display:block;margin-top:2px}
+@media(max-width:768px){.live-feed{bottom:80px;left:12px;right:12px;max-width:none}.live-toast{padding:10px 14px}}
+
+
+/* === NICHE CARDS === */
+.niches{padding:80px 32px;background:var(--wh);border-bottom:1px solid rgba(200,164,78,.06);position:relative;overflow:hidden}
+.niches::before{content:'';position:absolute;top:-60px;left:-60px;width:250px;height:250px;border:1.5px solid rgba(200,164,78,.07);border-radius:50%;pointer-events:none}
+.niches-in{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+.niches-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.niche-card{border-radius:16px;padding:32px 28px;border:1.5px solid transparent;transition:all .35s;position:relative;overflow:hidden}
+.niche-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:3px 3px 0 0;transition:opacity .3s}
+.niche-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.07)}
+.niche-card:hover::before{opacity:1}
+.niche-nursing{background:linear-gradient(135deg,rgba(13,107,78,.04),rgba(13,107,78,.01));border-color:rgba(13,107,78,.1)}
+.niche-nursing::before{background:linear-gradient(90deg,var(--em),var(--em-l))}
+.niche-business{background:linear-gradient(135deg,rgba(200,164,78,.06),rgba(200,164,78,.02));border-color:rgba(200,164,78,.15)}
+.niche-business::before{background:linear-gradient(90deg,var(--gold),var(--gold-l))}
+.niche-law{background:linear-gradient(135deg,rgba(59,130,246,.04),rgba(59,130,246,.01));border-color:rgba(59,130,246,.1)}
+.niche-law::before{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+.niche-icon{font-size:36px;margin-bottom:14px;display:block}
+.niche-title{font-family:var(--fd);font-size:22px;color:var(--ch);margin-bottom:6px}
+.niche-desc{font-size:13px;color:var(--mu);line-height:1.6;margin-bottom:8px}
+.niche-stats{display:flex;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.niche-stat{font-size:11px;color:var(--sl);font-weight:600;display:flex;align-items:center;gap:4px}
+.niche-stat svg{width:12px;height:12px;color:var(--em)}
+.niche-cta{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;border:none;font-family:var(--fb);font-size:12px;font-weight:700;cursor:pointer;transition:all .3s;color:var(--wh)}
+.niche-nursing .niche-cta{background:var(--em)}
+.niche-nursing .niche-cta:hover{background:var(--em-d)}
+.niche-business .niche-cta{background:var(--gold);color:var(--ch)}
+.niche-business .niche-cta:hover{background:var(--gold-l)}
+.niche-law .niche-cta{background:#3b82f6}
+.niche-law .niche-cta:hover{background:#2563eb}
+@media(max-width:900px){.niches-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.niches{padding:48px 16px}.niche-card{padding:24px 20px}}
+
+/* === BLOG PREVIEW === */
+.blog-prev{padding:80px 32px;background:var(--ivory);position:relative;overflow:hidden}
+.blog-prev::after{content:'';position:absolute;bottom:24px;right:24px;width:48px;height:48px;border-bottom:2px solid rgba(200,164,78,.1);border-right:2px solid rgba(200,164,78,.1);border-radius:0 0 8px 0;pointer-events:none}
+.blog-in{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.blog-card{background:var(--wh);border:1px solid rgba(200,164,78,.08);border-radius:14px;overflow:hidden;transition:all .35s}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.06)}
+.blog-thumb{height:160px;position:relative;overflow:hidden}
+.blog-thumb-1{background:linear-gradient(135deg,rgba(220,53,69,.08),rgba(200,164,78,.12))}
+.blog-thumb-2{background:linear-gradient(135deg,rgba(13,107,78,.08),rgba(59,130,246,.08))}
+.blog-thumb-3{background:linear-gradient(135deg,rgba(200,164,78,.1),rgba(13,107,78,.06))}
+.blog-thumb-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:48px;opacity:.6}
+.blog-thumb-tag{position:absolute;top:12px;left:12px;background:var(--wh);padding:4px 10px;border-radius:5px;font-size:10px;font-weight:700;color:var(--em);text-transform:uppercase;letter-spacing:.5px}
+.blog-body{padding:20px}
+.blog-title{font-family:var(--fd);font-size:17px;color:var(--ch);margin-bottom:6px;line-height:1.3}
+.blog-excerpt{font-size:12px;color:var(--mu);line-height:1.6;margin-bottom:14px}
+.blog-link{font-size:12px;font-weight:700;color:var(--em);text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap .2s}
+.blog-link:hover{gap:8px}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.blog-prev{padding:48px 16px}.blog-thumb{height:120px}}
+
+/* === REFERRAL BLOCK === */
+.referral{padding:48px 32px;background:var(--wh);border-bottom:1px solid rgba(200,164,78,.06)}
+.referral-in{max-width:900px;margin:0 auto;background:linear-gradient(135deg,var(--gold-p),rgba(200,164,78,.08));border:1.5px solid rgba(200,164,78,.15);border-radius:16px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden}
+.referral-in::before{content:'';position:absolute;top:-30px;right:-30px;width:140px;height:140px;border:1.5px solid rgba(200,164,78,.12);border-radius:50%;pointer-events:none}
+.referral-content{position:relative;z-index:1}
+.referral-badge{display:inline-flex;align-items:center;gap:6px;background:var(--wh);border:1px solid rgba(200,164,78,.15);padding:4px 12px;border-radius:100px;font-size:10px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.referral-title{font-family:var(--fd);font-size:22px;color:var(--ch);margin-bottom:4px}
+.referral-desc{font-size:13px;color:var(--mu);line-height:1.5}
+.referral-cta{background:var(--gold);color:var(--ch);padding:12px 28px;border-radius:9px;border:none;font-family:var(--fb);font-size:13px;font-weight:800;cursor:pointer;transition:all .3s;white-space:nowrap;flex-shrink:0;position:relative;z-index:1}
+.referral-cta:hover{background:var(--gold-l);transform:translateY(-1px)}
+@media(max-width:768px){.referral{padding:32px 16px}.referral-in{flex-direction:column;text-align:center;padding:28px 20px}.referral-cta{width:100%}}
+
+
+/* Niches section headings */
+.niches h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);margin-bottom:8px}
+.niches h2 em{color:var(--em);font-style:italic}
+.niches-desc{font-size:15px;color:var(--mu);max-width:500px;line-height:1.6}
+
+/* Blog section headings */
+.blog-prev h2{font-family:var(--fd);font-size:clamp(28px,3.5vw,42px);margin-bottom:8px}
+.blog-desc{font-size:15px;color:var(--mu);max-width:480px;line-height:1.6}
+
+/* Map section headings */
+.map-section h2{font-family:var(--fd);font-size:clamp(24px,2.8vw,34px);margin-bottom:10px}
+/* === INTERACTIVE US MAP === */
+.map-section{padding:60px 32px;max-width:1280px;margin:0 auto}
+.map-section-in{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center}
+.map-d{font-size:14px;color:var(--mu);line-height:1.6;margin-bottom:20px}
+.map-s{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ms{background:var(--ivory);padding:16px;border-radius:10px;text-align:center}
+.ms .v{font-family:var(--fd);font-size:24px;color:var(--em)}.ms .l{font-size:10px;color:var(--mu);margin-top:2px}
+.us-map-svg{width:100%;height:auto;cursor:pointer}
+.us-map-svg path{fill:rgba(13,107,78,.12);stroke:var(--wh);stroke-width:.75;stroke-linejoin:round;transition:fill .2s,filter .2s;cursor:pointer}
+.us-map-svg path:hover{fill:var(--em);filter:drop-shadow(0 2px 6px rgba(13,107,78,.3))}
+.us-map-svg .map-borders,.us-map-svg .map-sep{fill:none;stroke:var(--wh);cursor:default}
+.us-map-svg .map-borders:hover,.us-map-svg .map-sep:hover{fill:none;filter:none}
+.map-tooltip{position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:var(--em-d);color:var(--wh);padding:6px 14px;border-radius:6px;font-size:12px;font-weight:700;font-family:var(--fb);pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap;z-index:10}
+.map-tooltip.show{opacity:1}
+@media(max-width:768px){.map-section{padding:40px 16px}.map-section-in{grid-template-columns:1fr;gap:24px}}
+</style>
+</head>
+<body>
+
+<!-- PROMO BAR -->
+<div class="pb"><span>🎁</span><span>GET <strong>15% OFF</strong> YOUR FIRST ORDER <span class="hm">—</span></span><span class="pt hm"><span id="ph">09</span>:<span id="pm">37</span>:<span id="ps">22</span> LEFT</span><a href="#" onclick="nav2('home');return false">CLAIM NOW →</a></div>
+
+<!-- FLOATING CHAT BUTTON -->
+<a class="fchat" href="mailto:support@scholarworks.us">
+  <div class="fchat-dot"></div>
+  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  Live Chat — We're Online
+</a>
+
+<!-- EXIT INTENT POPUP -->
+<div class="exit-popup" id="exitPopup">
+  <div class="exit-overlay" onclick="closeExit()"></div>
+  <div class="exit-box">
+    <button class="exit-close" onclick="closeExit()">✕</button>
+    <span class="exit-emoji">⚡</span>
+    <h2>Wait — Get <em>20% Off</em> Before You Go</h2>
+    <p>Deadline panic? Drop your email and we'll send a 20% discount code + a free consultation with one of our PhD writers. No spam, ever.</p>
+    <div class="exit-input-row">
+      <input type="email" placeholder="your@university.edu">
+      <button onclick="closeExit()">Claim 20% →</button>
+    </div>
+    <span class="exit-skip" onclick="closeExit()">No thanks, I'll pay full price</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nb">
+  <a class="logo" onclick="nav2('home')"><div class="logo-i">S</div><div class="logo-t"><span>Scholar</span> Works</div></a>
+  <ul class="nl" id="nls">
+    <li><a onclick="nav2('home')" data-p="home">Home</a></li>
+    <li><a onclick="goSec('writers-sec')">Our Writers</a></li>
+    <li><a onclick="goSec('cmp-sec')">Why Not AI</a></li>
+    <li><a onclick="goSec('rev-sec')">Reviews</a></li>
+    <li><a onclick="goSec('pri-sec')">Pricing</a></li>
+    <li><a onclick="goSec('proc-sec')">How It Works</a></li>
+    <li><div class="sep"></div></li>
+    <li><a onclick="nav2('about')" data-p="about">About Us</a></li>
+    <li><a onclick="nav2('contact')" data-p="contact">Contact</a></li>
+    <li><div class="sep"></div></li>
+    <li><a href="#" onclick="document.getElementById('exitPopup').classList.add('show');return false" class="np"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> Live Chat</a></li>
+    <li><a onclick="nav2('home')" class="cta">Get Started</a></li>
+  </ul>
+  <button class="bur" onclick="document.getElementById('nls').classList.toggle('mo')"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+</nav>
+
+<!-- ========== HOME ========== -->
+<div class="pg on" id="pg-home">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hg">
+    <div>
+      <div class="up"><div class="pd"></div><span>Professors are catching AI papers — 83% detection rate</span></div>
+      <h1>Stop Risking Your Grades with AI.<br>Get Papers by <em>Real Experts.</em></h1>
+      <p class="hsub">ChatGPT hallucinates sources and fails AI detectors. Our <strong>Ivy-League-educated writers</strong> deliver 100% original, human-written papers tailored to your professor's exact requirements.</p>
+      <a href="#mobile-form" class="mqc">HIRE MY WRITER — 15% OFF →</a>
+      <div class="sp"><div class="avs"><div class="av a1">👩‍🎓</div><div class="av a2">👨‍💼</div><div class="av a3">👩‍💻</div><div class="av a4">👨‍🎓</div><div class="av a5">👩‍🔬</div></div><div class="pt2"><span class="st">★★★★★</span><br>Loved by <strong>200,000+</strong> students from top US universities</div></div>
+      <div class="tr"><div class="tb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Zero AI</div><div class="tb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Confidential</div><div class="tb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>On time</div></div>
+      <div class="hms"><div class="hm-s"><strong>5+</strong><span>Years</span></div><div class="hm-s"><strong>200+</strong><span>Experts</span></div><div class="hm-s"><strong>1K+</strong><span>Papers</span></div><div class="hm-s"><strong>98%</strong><span>On-Time</span></div></div>
+    </div>
+    <div class="hfw" id="mobile-form">
+      <div class="hf">
+        <div class="fh"><h3>Get Started — 15% Off</h3><p>Pick options, we handle the rest.</p></div>
+        <div class="fg"><label class="fl">Assignment type</label><select class="fs"><option>Essay / Seminar Paper</option><option>Research Paper</option><option>Case Study</option><option>Lab Report</option><option>Literature Review</option><option>Bachelor Thesis</option><option>Master Thesis</option><option>Dissertation / PhD</option><option>Editing & Proofreading</option><option>Other</option></select></div>
+        <div class="frow"><div class="fg"><label class="fl">Deadline</label><select class="fs"><option>3 hours (Urgent)</option><option>12 hours</option><option>24 hours</option><option selected>3 days</option><option>7 days</option><option>14+ days</option></select></div><div class="fg"><label class="fl">Academic Level</label><select class="fs"><option>High School</option><option selected>Undergraduate</option><option>Master's</option><option>Ph.D.</option></select></div></div>
+        <div class="frow"><div class="fg"><label class="fl">Your name</label><input type="text" class="fi" placeholder="John Smith"></div><div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="you@university.edu"></div></div>
+        <div class="fg"><label class="fl">Description (optional)</label><textarea class="fta" placeholder="Topic, page count, instructions..."></textarea></div>
+        <button class="fsub">HIRE MY WRITER — 15% OFF →</button>
+        <div class="fmi"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Zero AI</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Confidential</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 2v6h6M21.5 22v-6h-6"/><path d="M22 11.5A10 10 0 003.2 7.2M2 12.5a10 10 0 0018.8 4.3"/></svg>Secure Pay</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR — UNIVERSITIES -->
+<div class="tbar"><div class="tlb">Trusted by Students at Top Universities</div><div class="tlogos"><span class="tl">Berkeley</span><span class="tl">MIT</span><span class="tl">UCLA</span><span class="tl">Harvard</span><span class="tl">Stanford</span><span class="tl">NYU</span><span class="tl">Columbia</span><span class="tl">Caltech</span><span class="tl">Duke</span><span class="tl">Yale</span></div></div>
+
+
+
+<!-- ★ NEW: WRITERS SHOWCASE -->
+<section class="writers" id="writers-sec">
+  <div class="writers-in">
+    <div class="writers-head rv">
+      <div class="writers-head-l">
+        <div class="stag">Meet the Experts</div>
+        <h2>Your Paper is Written by a <em>Real Human</em></h2>
+        <p>200+ verified PhD & Master's writers. You choose who works on your paper.</p>
+      </div>
+      <div class="writers-online"><div class="writers-online-dot"></div>47 writers online now</div>
+    </div>
+    <div class="writers-grid">
+      <div class="wcard wcard-featured rv">
+        <div class="wcard-top">
+          <div class="wavatar a1" style="background:linear-gradient(135deg,#667eea,#764ba2)">👩‍🏫
+            <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          </div>
+          <div><div class="wname">Dr. Sarah M.</div><div class="wdeg">PhD · English Literature · Harvard</div></div>
+        </div>
+        <div class="wstars">★★★★★</div>
+        <div class="wrating-row"><span class="wrating">4.97 / 5.0</span><span class="worders">1,240 orders completed</span></div>
+        <div class="wtags"><span class="wtag">Essays</span><span class="wtag">Literature</span><span class="wtag">History</span></div>
+        <button class="whire">Hire Sarah →</button>
+      </div>
+      <div class="wcard rv">
+        <div class="wcard-top">
+          <div class="wavatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">👨‍⚕️
+            <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          </div>
+          <div><div class="wname">Dr. James K.</div><div class="wdeg">PhD · Nursing & Healthcare · Johns Hopkins</div></div>
+        </div>
+        <div class="wstars">★★★★★</div>
+        <div class="wrating-row"><span class="wrating">4.95 / 5.0</span><span class="worders">890 orders completed</span></div>
+        <div class="wtags"><span class="wtag">Nursing</span><span class="wtag">Medicine</span><span class="wtag">Biology</span></div>
+        <button class="whire">Hire James →</button>
+      </div>
+      <div class="wcard rv">
+        <div class="wcard-top">
+          <div class="wavatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">👩‍💼
+            <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          </div>
+          <div><div class="wname">Prof. Linda T.</div><div class="wdeg">MA · Business & Management · Wharton</div></div>
+        </div>
+        <div class="wstars">★★★★★</div>
+        <div class="wrating-row"><span class="wrating">4.92 / 5.0</span><span class="worders">1,105 orders completed</span></div>
+        <div class="wtags"><span class="wtag">Business</span><span class="wtag">Finance</span><span class="wtag">MBA</span></div>
+        <button class="whire">Hire Linda →</button>
+      </div>
+      <div class="wcard rv">
+        <div class="wcard-top">
+          <div class="wavatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">👨‍💻
+            <div class="wavatar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          </div>
+          <div><div class="wname">Alex R.</div><div class="wdeg">PhD · Computer Science · MIT</div></div>
+        </div>
+        <div class="wstars">★★★★★</div>
+        <div class="wrating-row"><span class="wrating">4.99 / 5.0</span><span class="worders">642 orders completed</span></div>
+        <div class="wtags"><span class="wtag">CS / Tech</span><span class="wtag">Math</span><span class="wtag">Stats</span></div>
+        <button class="whire">Hire Alex →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ★ NEW: AI DETECTOR RESULTS -->
+<section class="aidet" id="aidet-sec">
+  <div class="aidet-in">
+    <div class="aidet-head rv">
+      <div class="stag">Proven Results</div>
+      <h2>Every Paper Passes <em>All AI Detectors</em></h2>
+      <p>We run every completed paper through all major AI detectors before delivery. Here's what your professors will see — 100% Human every time.</p>
+    </div>
+    <div class="aidet-grid">
+      <div class="aicard pass rv">
+        <div class="aicard-logo">
+          <div class="aicard-icon" style="background:rgba(16,185,129,.1)">🔍</div>
+          <div><div class="aicard-name">GPTZero</div><div class="aicard-type">AI Detection Tool</div></div>
+        </div>
+        <div class="aicard-result"><span class="aicard-badge green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>PASSED</span></div>
+        <div class="aicard-score">100%</div>
+        <div class="aicard-label">Human-Written Score</div>
+        <div class="aicard-bar"><div class="aicard-bar-fill green" style="width:100%"></div></div>
+        <div class="aicard-note">Your document is likely written entirely by a human. No AI-generated text detected.</div>
+      </div>
+      <div class="aicard pass rv">
+        <div class="aicard-logo">
+          <div class="aicard-icon" style="background:rgba(220,53,69,.08)">📊</div>
+          <div><div class="aicard-name">Turnitin</div><div class="aicard-type">Plagiarism & AI Checker</div></div>
+        </div>
+        <div class="aicard-result"><span class="aicard-badge green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>PASSED</span></div>
+        <div class="aicard-score">2%</div>
+        <div class="aicard-label">Similarity Index</div>
+        <div class="aicard-bar"><div class="aicard-bar-fill green" style="width:2%"></div></div>
+        <div class="aicard-note">Excellent. 2% similarity is within normal academic range for references and citations.</div>
+      </div>
+      <div class="aicard pass rv">
+        <div class="aicard-logo">
+          <div class="aicard-icon" style="background:rgba(59,130,246,.08)">🛡️</div>
+          <div><div class="aicard-name">Originality.ai</div><div class="aicard-type">AI + Plagiarism Detection</div></div>
+        </div>
+        <div class="aicard-result"><span class="aicard-badge green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>PASSED</span></div>
+        <div class="aicard-score">0%</div>
+        <div class="aicard-label">AI Content Detected</div>
+        <div class="aicard-bar"><div class="aicard-bar-fill green" style="width:0.5%"></div></div>
+        <div class="aicard-note">No AI-generated content detected. Original, human-written throughout.</div>
+      </div>
+    </div>
+    <div class="aidet-bottom rv">
+      <div class="aidet-bottom-l">
+        <h3>Free Detection Report with Every Order</h3>
+        <p>GPTZero + Turnitin report included at no extra charge.</p>
+      </div>
+      <div class="aidet-bottom-r">
+        <div class="aidet-include"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Included Free</div>
+        <button class="aidet-cta" onclick="nav2('home')">Order Now →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ★ NEW: URGENCY / DEADLINE BLOCK -->
+<section class="urgency" id="urgency-sec">
+  <div class="urgency-in">
+    <div class="stag rv">Deadline Panic?</div>
+    <h2 class="rv">We've Got You — <em>Any Deadline.</em></h2>
+    <p class="urgency-sub rv">From 3-hour emergency orders to long-term projects — our writers are ready right now.</p>
+    <div class="urgency-grid">
+      <div class="ucard hot rv">
+        <span class="ucard-badge badge-hot">🔥 URGENT</span>
+        <span class="ucard-icon">⚡</span>
+        <div class="ucard-time">3 Hours</div>
+        <div class="ucard-desc">Emergency deadline? We've handled thousands of same-night orders.</div>
+        <div class="ucard-price"><span class="ucard-from">from</span><span class="ucard-val">$28/pg</span></div>
+      </div>
+      <div class="ucard warm rv">
+        <span class="ucard-badge badge-pop">★ POPULAR</span>
+        <span class="ucard-icon">🕐</span>
+        <div class="ucard-time">12 Hours</div>
+        <div class="ucard-desc">Tight but doable. Our rush writers excel under pressure.</div>
+        <div class="ucard-price"><span class="ucard-from">from</span><span class="ucard-val">$22/pg</span></div>
+      </div>
+      <div class="ucard cool rv">
+        <span class="ucard-icon">📅</span>
+        <div class="ucard-time">3 Days</div>
+        <div class="ucard-desc">Standard timeline with full research and polished writing.</div>
+        <div class="ucard-price"><span class="ucard-from">from</span><span class="ucard-val">$15/pg</span></div>
+      </div>
+      <div class="ucard chill rv">
+        <span class="ucard-icon">🗓</span>
+        <div class="ucard-time">14+ Days</div>
+        <div class="ucard-desc">Best quality, deep research, multiple revision rounds.</div>
+        <div class="ucard-price"><span class="ucard-from">from</span><span class="ucard-val">$10/pg</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS CAROUSEL -->
+<section class="rev-section" id="rev-sec">
+  <div class="rev-section-in">
+  <div class="stag rv">Student Reviews</div>
+  <h2 class="rv">What Our Clients Are Saying</h2>
+  <p class="rev-desc rv">Real feedback from real students. No AI, no fake reviews.</p>
+  <!-- ★ NEW: Platform ratings row -->
+  <div class="rev-platforms rv">
+    <div class="rev-plat"><span class="rev-plat-name">Sitejabber</span><span class="rev-plat-stars"> ★★★★★</span><span class="rev-plat-score"> 4.9</span></div>
+    <div class="rev-plat"><span class="rev-plat-name">Trustpilot</span><span class="rev-plat-stars"> ★★★★★</span><span class="rev-plat-score"> 4.8</span></div>
+    <div class="rev-plat"><span class="rev-plat-name">Reviews.io</span><span class="rev-plat-stars"> ★★★★★</span><span class="rev-plat-score"> 4.9</span></div>
+  </div>
+  <div class="rev-track-wrap">
+    <div class="rev-track" id="revTrack">
+      <div class="rev-card"><div class="rev-top"><span class="rev-stars">★★★★★</span><span class="rev-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Verified</span></div><div class="rev-text">Fabulous work, thank you so much! 😊 The paper exceeded my expectations and was delivered ahead of schedule.</div><div class="rev-bottom"><div class="rev-author">Customer #40037XX</div><div class="rev-subject">Discussion Post, Health Sciences & Nursing</div></div></div>
+      <div class="rev-card"><div class="rev-top"><span class="rev-stars">★★★★★</span><span class="rev-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Verified</span></div><div class="rev-text">10/10 Recommend! Very fast and reliable service. Communication about assignments is very good. Provided high quality service!</div><div class="rev-bottom"><div class="rev-author">Customer ID: 2354775</div><div class="rev-subject">Research Paper, Nursing</div></div></div>
+      <div class="rev-card"><div class="rev-top"><span class="rev-stars">★★★★☆</span><span class="rev-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Verified</span></div><div class="rev-text">Completed on time after given a short amount of time to do. Thank you! Had minor formatting issues but content was excellent.</div><div class="rev-bottom"><div class="rev-author">Customer ID: 1287625</div><div class="rev-subject">Essay, Drama and Theatre</div></div></div>
+      <div class="rev-card"><div class="rev-top"><span class="rev-stars">★★★★★</span><span class="rev-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Verified</span></div><div class="rev-text">Did a great job on my essay and communicated effectively! Got an A on this paper. Will definitely use again for my next assignment.</div><div class="rev-bottom"><div class="rev-author">Customer ID: 2342899</div><div class="rev-subject">Essay, English Literature</div></div></div>
+      <div class="rev-card"><div class="rev-top"><span class="rev-stars">★★★★★</span><span class="rev-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Verified</span></div><div class="rev-text">She was responsive. After she tweaked the paper it was amazing!! NO AI USED!! JOB WELL DONE!!! Exactly what my professor wanted.</div><div class="rev-bottom"><div class="rev-author">Customer ID: 2331229</div><div class="rev-subject">Case Study, Business & Management</div></div></div>
+      <div class="rev-card"><div class="rev-top"><span class="rev-stars">★★★★★</span><span class="rev-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Verified</span></div><div class="rev-text">Great work! Essay was finished on time and meets expectations. Proper citations from real academic sources. Very impressed.</div><div class="rev-bottom"><div class="rev-author">Customer ID: 2333287</div><div class="rev-subject">Essay, Political Science</div></div></div>
+      <div class="rev-card"><div class="rev-top"><span class="rev-stars">★★★★★</span><span class="rev-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Verified</span></div><div class="rev-text">Passed Turnitin with 3% similarity, passed GPTZero with 100% human score. Exactly what I needed. Lifesaver before finals week!</div><div class="rev-bottom"><div class="rev-author">Customer ID: 2401558</div><div class="rev-subject">Thesis Chapter, Psychology</div></div></div>
+      <div class="rev-card"><div class="rev-top"><span class="rev-stars">★★★★★</span><span class="rev-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Verified</span></div><div class="rev-text">Incredible Work! So helpful and efficient. My professor said it was one of the best papers she's read this semester. Thank you!</div><div class="rev-bottom"><div class="rev-author">Customer ID: 638128</div><div class="rev-subject">Research Paper, Art History</div></div></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ★ NEW: TURNITIN / PLAGIARISM REPORT BLOCK -->
+<section class="turnitin" id="turnitin-sec">
+  <div class="turnitin-in">
+    <div class="turnitin-l rv">
+      <div class="stag">Included Free</div>
+      <h2>Free Plagiarism & <em>AI Report</em> with Every Order</h2>
+      <p>Every paper comes with a complimentary Turnitin originality report and GPTZero scan. Show your professor proof it's 100% original — no extra charge.</p>
+      <div class="turnitin-perks">
+        <div class="tperk"><div class="tperk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>Turnitin originality report attached to your delivery</div>
+        <div class="tperk"><div class="tperk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>GPTZero scan showing 100% human score</div>
+        <div class="tperk"><div class="tperk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>Under 5% similarity guaranteed or we rewrite free</div>
+        <div class="tperk"><div class="tperk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>Report delivered alongside the paper, no waiting</div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="turnitin-mock">
+        <div class="turnitin-mock-header">
+          <div class="tm-brand">Turnitin <span>REPORT</span></div>
+          <div class="tm-date">Scholar Works — Sample</div>
+        </div>
+        <div class="tm-doc">Research Paper: Cognitive Psychology</div>
+        <div class="tm-sub">Submitted via Scholar Works · 14 pages · APA format</div>
+        <div class="tm-score-row">
+          <div class="tm-score green"><span class="tm-score-val">2%</span><span class="tm-score-label">Similarity</span></div>
+          <div class="tm-score blue"><span class="tm-score-val">100%</span><span class="tm-score-label">Human Written</span></div>
+        </div>
+        <div class="tm-bar-section">
+          <div class="tm-bar-label"><span>Similarity</span><span>2%</span></div>
+          <div class="tm-bar"><div class="tm-bar-fill g"></div></div>
+        </div>
+        <div class="tm-bar-section">
+          <div class="tm-bar-label"><span>Human Content</span><span>100%</span></div>
+          <div class="tm-bar"><div class="tm-bar-fill b"></div></div>
+        </div>
+        <div class="tm-bar-section">
+          <div class="tm-bar-label"><span>AI-Generated</span><span>0%</span></div>
+          <div class="tm-bar"><div class="tm-bar-fill r"></div></div>
+        </div>
+        <div class="tm-badge-row">
+          <div class="tm-badge ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Original</div>
+          <div class="tm-badge ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Human-Written</div>
+          <div class="tm-badge ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>No AI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ★ SOCIAL PROOF NUMBERS BAR -->
+<div class="spbar">
+  <div class="spbar-in">
+    <div class="spnum rv"><span class="spnum-val">200K+</span><span class="spnum-label">Students Helped Across All 50 States</span></div>
+    <div class="spnum rv"><span class="spnum-val">98%</span><span class="spnum-label">On-Time Delivery Rate</span></div>
+    <div class="spnum rv"><span class="spnum-val">4.9★</span><span class="spnum-label">Average Rating on Sitejabber & Trustpilot</span></div>
+    <div class="spnum rv"><span class="spnum-val">200+</span><span class="spnum-label">PhD & Master's Verified Experts</span></div>
+  </div>
+</div>
+
+<!-- COMPARE -->
+<section class="cmp" id="cmp-sec">
+  <div class="cmp-in">
+    <div class="stag rv">The Truth About AI</div>
+    <h2 class="rv">Why ChatGPT Is <em>Costing You Grades</em></h2>
+    <p class="cmp-d rv">AI tools seem convenient — until your professor flags your paper.</p>
+    <table class="ct rv"><thead><tr><th>Criteria</th><th class="cs">🏆 Scholar Works</th><th class="ca">🤖 ChatGPT</th></tr></thead><tbody>
+      <tr><td><div class="cn">AI Detection</div><div class="csub">Can professors tell?</div></td><td class="vg swb">✓ 100% human-written</td><td class="vb"><span class="x">✕</span> Fails 83% of detectors</td></tr>
+      <tr><td><div class="cn">Sources</div><div class="csub">Are references real?</div></td><td class="vg swb">✓ Real academic citations</td><td class="vb"><span class="x">✕</span> Hallucinated / fake</td></tr>
+      <tr><td><div class="cn">Instructions</div><div class="csub">Rubric compliance</div></td><td class="vg swb">✓ Tailored to your rubric</td><td class="vb"><span class="x">✕</span> Ignores prompts</td></tr>
+      <tr><td><div class="cn">Quality</div></td><td class="vg swb">✓ Custom original research</td><td class="vb"><span class="x">✕</span> Generic output</td></tr>
+      <tr><td><div class="cn">Privacy</div></td><td class="vg swb">✓ 100% confidential</td><td class="vb"><span class="x">✕</span> Data used for training</td></tr>
+      <tr><td><div class="cn">Revisions</div></td><td class="vg swb">✓ Unlimited targeted edits</td><td class="vb"><span class="x">✕</span> Regenerates randomly</td></tr>
+    </tbody></table>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="wh" id="wh-sec">
+  <div class="stag rv">Why Scholar Works</div>
+  <h2 class="rv">Everything You Need to Succeed</h2>
+  <p class="whd rv">Academic expertise, genuine care, zero AI.</p>
+  <div class="fg2">
+    <div class="fc rv"><div class="fic"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>24/7 Support</h3><p>Round-the-clock availability with fast, helpful responses.</p></div>
+    <div class="fc rv"><div class="fic"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6m3-3h-6"/></svg></div><h3>200+ Ph.D. Experts</h3><p>Ivy League credentials across every discipline.</p></div>
+    <div class="fc rv"><div class="fic"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div><h3>On-Time, Every Time</h3><p>98% on-time delivery rate. Your deadline is sacred.</p></div>
+    <div class="fc rv"><div class="fic"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Total Confidentiality</h3><p>We never share your data, identity, or order details.</p></div>
+    <div class="fc rv"><div class="fic"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div><h3>Zero AI Involvement</h3><p>Every word is human-written. No shortcuts.</p></div>
+    <div class="fc rv"><div class="fic"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div><h3>Free Revision Rounds</h3><p>Unlimited targeted revisions until you're 100% satisfied.</p></div>
+  </div>
+</section>
+
+<!-- PRICING with CALCULATOR -->
+<section class="pri" id="pri-sec">
+  <div class="pri-in">
+    <div class="stag rv">Transparent Pricing</div>
+    <h2 class="rv">Pricing That Works for Students</h2>
+    <p class="prd rv">Estimate your paper cost instantly. No hidden fees, ever.</p>
+
+    <!-- ★ NEW: PRICE CALCULATOR -->
+    <div class="pcalc rv">
+      <div class="pcalc-row">
+        <div>
+          <div class="pcalc-label">Assignment Type</div>
+          <select class="pcalc-select" id="calcType" onchange="calcPrice()">
+            <option value="5">Essay / Short Paper</option>
+            <option value="8">Research Paper</option>
+            <option value="10">Case Study</option>
+            <option value="12">Lab Report</option>
+            <option value="15">Thesis Chapter</option>
+            <option value="20">Dissertation</option>
+          </select>
+        </div>
+        <div>
+          <div class="pcalc-label">Deadline</div>
+          <select class="pcalc-select" id="calcDeadline" onchange="calcPrice()">
+            <option value="3">3 Hours (+150%)</option>
+            <option value="1.8">12 Hours (+80%)</option>
+            <option value="1.4">24 Hours (+40%)</option>
+            <option value="1">3 Days (Standard)</option>
+            <option value="0.85">7 Days (–15%)</option>
+            <option value="0.75">14+ Days (–25%)</option>
+          </select>
+        </div>
+        <div>
+          <div class="pcalc-label">Academic Level</div>
+          <select class="pcalc-select" id="calcLevel" onchange="calcPrice()">
+            <option value="1">Undergraduate</option>
+            <option value="1.3">Master's</option>
+            <option value="1.6">Ph.D.</option>
+          </select>
+        </div>
+      </div>
+      <div class="pcalc-result">
+        <div>
+          <div class="pcalc-from">Estimated price per page</div>
+          <div class="pcalc-price" id="calcResult">$10.00</div>
+          <div class="pcalc-note">Final price depends on page count & instructions</div>
+        </div>
+        <button class="pcalc-cta" onclick="nav2('home')">Order at This Price →</button>
+      </div>
+    </div>
+
+    <div class="pcs rv">
+      <div class="pc"><h3>Step 1 · Scope</h3><div class="pi"><span class="pl">Essay</span><span class="pa">$5</span></div><div class="pi"><span class="pl">Bachelor Thesis</span><span class="pa">$10</span></div><div class="pi"><span class="pl">Master Thesis</span><span class="pa">$15</span></div><div class="pi"><span class="pl">Academic Paper</span><span class="pa">$20</span></div><div class="pi"><span class="pl">Ph.D. Thesis</span><span class="pa">$30</span></div></div>
+      <div class="pc"><h3>Step 2 · Creativity</h3><div class="pi"><span class="pl">Basic</span><span class="pa">$2</span></div><div class="pi"><span class="pl">Advanced</span><span class="pa">$5</span></div><div class="pi"><span class="pl">Expert</span><span class="pa">$10</span></div><div class="pi"><span class="pl">Master</span><span class="pa">$15</span></div><div class="pi"><span class="pl">Insane</span><span class="pa">$25</span></div></div>
+      <div class="pc"><h3>Always Free Included</h3><div class="pi"><span class="pl">Turnitin Report</span><span class="pa">Free</span></div><div class="pi"><span class="pl">AI Detection Scan</span><span class="pa">Free</span></div><div class="pi"><span class="pl">Title Page & References</span><span class="pa">Free</span></div><div class="pi"><span class="pl">Formatting (APA/MLA)</span><span class="pa">Free</span></div><div class="pi"><span class="pl">Unlimited Revisions</span><span class="pa">Free</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBJECTS MARQUEE -->
+<section class="subj" id="subj-sec">
+  <div class="subj-head"><div class="stag rv">Areas of Expertise</div><h2 class="rv">We Cover Every Subject</h2><p class="subj-d rv">200+ experts across 4,400+ specializations.</p></div>
+  <div class="marquee"><div class="marquee-track"><span class="st2">Psychology</span><span class="st2">Sociology</span><span class="st2">Biology</span><span class="st2">Chemistry</span><span class="st2">Physics</span><span class="st2">Healthcare & Nursing</span><span class="st2">Anthropology</span><span class="st2">History</span><span class="st2">Literature</span><span class="st2">Astronomy</span><span class="st2">Statistics</span><span class="st2">Calculus</span><span class="st2">Finance</span><span class="st2">Medicine</span><span class="st2">Engineering</span><span class="st2">Computer Sciences</span><span class="st2">Law</span><span class="st2">Psychology</span><span class="st2">Sociology</span><span class="st2">Biology</span><span class="st2">Chemistry</span><span class="st2">Physics</span><span class="st2">Healthcare & Nursing</span><span class="st2">Anthropology</span><span class="st2">History</span><span class="st2">Literature</span><span class="st2">Astronomy</span><span class="st2">Statistics</span><span class="st2">Calculus</span><span class="st2">Finance</span><span class="st2">Medicine</span><span class="st2">Engineering</span><span class="st2">Computer Sciences</span><span class="st2">Law</span></div></div>
+  <div class="marquee marquee2"><div class="marquee-track"><span class="st2">Political Science</span><span class="st2">Economics</span><span class="st2">Business & Management</span><span class="st2">Journalism</span><span class="st2">Geography</span><span class="st2">Social Science</span><span class="st2">Education</span><span class="st2">Technology</span><span class="st2">Media Studies</span><span class="st2">Philosophy</span><span class="st2">Archaeology</span><span class="st2">Earth Sciences</span><span class="st2">Public Administration</span><span class="st2">Military Sciences</span><span class="st2">Space Sciences</span><span class="st2">Divinity</span><span class="st2">Political Science</span><span class="st2">Economics</span><span class="st2">Business & Management</span><span class="st2">Journalism</span><span class="st2">Geography</span><span class="st2">Social Science</span><span class="st2">Education</span><span class="st2">Technology</span><span class="st2">Media Studies</span><span class="st2">Philosophy</span><span class="st2">Archaeology</span><span class="st2">Earth Sciences</span><span class="st2">Public Administration</span><span class="st2">Military Sciences</span><span class="st2">Space Sciences</span><span class="st2">Divinity</span></div></div>
+</section>
+
+<!-- NICHE LANDING CARDS -->
+<section class="niches" id="niches-sec">
+  <div class="niches-in">
+    <div class="stag rv">Top Subjects</div>
+    <h2 class="rv">Expert Writers for <em>Your Field</em></h2>
+    <p class="rv niches-desc">Our three most in-demand specializations — each staffed by dedicated experts who know your curriculum inside out.</p>
+    <div class="niches-grid">
+      <div class="niche-card niche-nursing rv">
+        <span class="niche-icon">🩺</span>
+        <div class="niche-title">Nursing & Healthcare</div>
+        <div class="niche-desc">PICOT questions, care plans, evidence-based practice papers, and clinical reflections — written by RNs and DNP holders who've been in your shoes.</div>
+        <div class="niche-stats">
+          <span class="niche-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>42 nursing writers</span>
+          <span class="niche-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>Avg. 4.96 rating</span>
+        </div>
+        <button class="niche-cta" onclick="nav2('home')">Order Nursing Paper →</button>
+      </div>
+      <div class="niche-card niche-business rv">
+        <span class="niche-icon">📊</span>
+        <div class="niche-title">Business & MBA</div>
+        <div class="niche-desc">Case analyses, financial models, marketing plans, and strategy papers. Our MBA writers come from Wharton, Kellogg, and top consulting firms.</div>
+        <div class="niche-stats">
+          <span class="niche-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>38 business writers</span>
+          <span class="niche-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>Avg. 4.93 rating</span>
+        </div>
+        <button class="niche-cta" onclick="nav2('home')">Order Business Paper →</button>
+      </div>
+      <div class="niche-card niche-law rv">
+        <span class="niche-icon">⚖️</span>
+        <div class="niche-title">Law & Criminal Justice</div>
+        <div class="niche-desc">Case briefs, legal memoranda, policy analysis, and Bluebook-formatted research. Written by JD holders and practicing attorneys.</div>
+        <div class="niche-stats">
+          <span class="niche-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>27 law writers</span>
+          <span class="niche-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>Avg. 4.95 rating</span>
+        </div>
+        <button class="niche-cta" onclick="nav2('home')">Order Law Paper →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section class="blog-prev" id="blog-sec">
+  <div class="blog-in">
+    <div class="stag rv">Resources</div>
+    <h2 class="rv">Expert Tips & Guides</h2>
+    <p class="rv blog-desc">Free knowledge from our academic team — stay ahead of your professors.</p>
+    <div class="blog-grid">
+      <div class="blog-card rv">
+        <div class="blog-thumb blog-thumb-1">
+          <span class="blog-thumb-icon">🛡️</span>
+          <span class="blog-thumb-tag">AI Detection</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-title">How to Avoid AI Detection in 2025</div>
+          <div class="blog-excerpt">Professors are using smarter tools than ever. Here's what actually triggers AI detectors — and why human-written papers remain the only safe option.</div>
+          <a href="blog-ai-detection.html" class="blog-link">Read More →</a>
+        </div>
+      </div>
+      <div class="blog-card rv">
+        <div class="blog-thumb blog-thumb-2">
+          <span class="blog-thumb-icon">📝</span>
+          <span class="blog-thumb-tag">Formatting</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-title">APA vs MLA: Which Format Does Your Professor Want?</div>
+          <div class="blog-excerpt">The #1 reason students lose easy points. A quick guide to picking the right citation style and getting the header, spacing, and references correct.</div>
+          <a href="blog-apa-vs-mla.html" class="blog-link">Read More →</a>
+        </div>
+      </div>
+      <div class="blog-card rv">
+        <div class="blog-thumb blog-thumb-3">
+          <span class="blog-thumb-icon">⚠️</span>
+          <span class="blog-thumb-tag">Turnitin</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-title">5 Signs Your Essay Will Fail Turnitin</div>
+          <div class="blog-excerpt">From recycled intro paragraphs to suspicious metadata — learn the red flags Turnitin catches and how to make sure your paper is bulletproof.</div>
+          <a href="blog-turnitin.html" class="blog-link">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRAL BLOCK -->
+<section class="referral">
+  <div class="referral-in rv">
+    <div class="referral-content">
+      <div class="referral-badge">🎁 Referral Program</div>
+      <div class="referral-title">Refer a Friend — Both Get 10% Off</div>
+      <div class="referral-desc">Share your unique link. When your friend places their first order, you both save 10%. No limits on referrals.</div>
+    </div>
+    <button class="referral-cta" onclick="nav2('home')">Get My Referral Link →</button>
+  </div>
+</section>
+
+<!-- PROCESS + METRICS -->
+<section class="proc" id="proc-sec">
+  <div class="proc-in">
+    <div class="stag rv">Simple Process</div>
+    <h2 class="rv">How It Works</h2>
+    <p class="proc-d rv">From first contact to delivery — seamless.</p>
+    <div class="proc-grid">
+      <div class="steps2">
+        <div class="stp rv"><div class="stp-l"><div class="stp-n">01</div><div class="stp-c"></div></div><div class="stp-b"><h4>Submit Request</h4><p>Pick assignment type, deadline, level.</p></div></div>
+        <div class="stp rv"><div class="stp-l"><div class="stp-n">02</div><div class="stp-c"></div></div><div class="stp-b"><h4>Share Rubric</h4><p>Send professor's instructions & materials.</p></div></div>
+        <div class="stp rv"><div class="stp-l"><div class="stp-n">03</div><div class="stp-c"></div></div><div class="stp-b"><h4>Expert Matched</h4><p>Best-fit specialist from 200+ writers.</p></div></div>
+        <div class="stp rv"><div class="stp-l"><div class="stp-n">04</div><div class="stp-c"></div></div><div class="stp-b"><h4>Secure Payment</h4><p>Encrypted through trusted processors.</p></div></div>
+        <div class="stp rv"><div class="stp-l"><div class="stp-n">05</div><div class="stp-c"></div></div><div class="stp-b"><h4>Writing & Review</h4><p>Expert crafts with dual quality check.</p></div></div>
+        <div class="stp rv"><div class="stp-l"><div class="stp-n">06</div><div class="stp-c"></div></div><div class="stp-b"><h4>On-Time Delivery</h4><p>Polished paper + free AI & plagiarism report.</p></div></div>
+      </div>
+      <div class="metrics rv">
+        <div class="metric-card"><div class="mc-ring"><svg viewBox="0 0 80 80"><circle class="ring-bg" cx="40" cy="40" r="34"/><circle class="ring-fg" cx="40" cy="40" r="34" stroke-dasharray="213.6" stroke-dashoffset="4.3" id="ring1"/></svg><div class="ring-val">98%</div></div><div class="mc-lab">On-Time Delivery</div></div>
+        <div class="metric-card"><div class="mc-val">200+</div><div class="mc-lab">Expert Writers</div><div class="mc-bar"><div class="mc-bar-fill" style="width:85%"></div></div></div>
+        <div class="metric-card"><div class="mc-val">1,000+</div><div class="mc-lab">Papers Completed</div><div class="mc-bar"><div class="mc-bar-fill" style="width:72%"></div></div></div>
+        <div class="metric-card"><div class="mc-ring"><svg viewBox="0 0 80 80"><circle class="ring-bg" cx="40" cy="40" r="34"/><circle class="ring-fg" cx="40" cy="40" r="34" stroke-dasharray="213.6" stroke-dashoffset="0" id="ring2"/></svg><div class="ring-val">5+</div></div><div class="mc-lab">Years on Market</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ★ NEW: FAQ ON HOMEPAGE -->
+<section class="faq-home" id="faq-sec">
+  <div class="faq-home-in">
+    <div class="stag rv" style="justify-content:center">Common Questions</div>
+    <h2 class="rv">Everything Students Ask</h2>
+    <p class="faq-home-desc rv">Answers to the questions we get every day.</p>
+    <div class="fqi rv"><div class="fqq" onclick="tgf(this)"><span>Will my paper pass AI detection tools like GPTZero and Turnitin?</span><span class="fqic">+</span></div><div class="fqa"><p>Guaranteed. Every paper is 100% written by a human expert — no AI involvement at any stage. We run all completed papers through GPTZero, Turnitin, and Originality.ai before delivery, and include the reports for free. You'll see the results yourself.</p></div></div>
+    <div class="fqi rv"><div class="fqq" onclick="tgf(this)"><span>How fast can you deliver? I have a deadline tonight.</span><span class="fqic">+</span></div><div class="fqa"><p>We offer turnaround from 3 hours. Our urgent writers specialize in fast, high-quality delivery. Select the 3-hour or 12-hour deadline when placing your order and we'll prioritize immediately. We've helped thousands of students in exactly your situation.</p></div></div>
+    <div class="fqi rv"><div class="fqq" onclick="tgf(this)"><span>Is this service confidential? Will my university find out?</span><span class="fqic">+</span></div><div class="fqa"><p>100% confidential. We use bank-level encryption and never share your personal info, order details, or identity with anyone — not your university, not third parties. Your privacy is non-negotiable.</p></div></div>
+    <div class="fqi rv"><div class="fqq" onclick="tgf(this)"><span>What if I'm not happy with the paper?</span><span class="fqic">+</span></div><div class="fqa"><p>We offer unlimited free revisions. If there's anything you want changed — structure, tone, citations, length — we fix it at no extra cost until you're completely satisfied. No time limits on revisions.</p></div></div>
+    <div class="fqi rv"><div class="fqq" onclick="tgf(this)"><span>Do you cover my subject? I study nursing / law / computer science.</span><span class="fqic">+</span></div><div class="fqa"><p>Yes. We have 200+ writers across 4,400+ specializations. Nursing, Law, CS, Business, Psychology, History, Engineering — all covered. When you submit your order we match you with an expert in your exact field.</p></div></div>
+    <div class="fqi rv"><div class="fqq" onclick="tgf(this)"><span>How does payment work? Is it secure?</span><span class="fqic">+</span></div><div class="fqa"><p>We accept all major credit cards via encrypted, SSL-secured payment processing. Your payment details are never stored. You pay when you're ready to start, and if you need changes after delivery, they're always free.</p></div></div>
+  </div>
+</section>
+
+<!-- PROMO CTA -->
+<section class="pcta"><div class="pcta-in"><div><h2>Get <em>15% Off</em> Your First Order</h2><p>Limited-time. Order now and save.</p></div><div class="pcta-r"><div class="cdb"><div class="cdb-b"><span class="cn2" id="ch">09</span><span class="cl2">Hrs</span></div><div class="cdb-b"><span class="cn2" id="cm">37</span><span class="cl2">Min</span></div><div class="cdb-b"><span class="cn2" id="cc">22</span><span class="cl2">Sec</span></div></div><a href="#" onclick="nav2('home');return false" class="bg">Claim Discount →</a></div></div></section>
+
+</div><!-- /pg-home -->
+
+<!-- ========== ABOUT ========== -->
+<div class="pg" id="pg-about">
+<section class="abh"><div class="abh-in"><div><div class="stag">About Us</div><h1>Professional Academic Assistance by <em>Scholar Works</em></h1><p class="abh-t">We are a team of <strong>200+ credentialed writers and editors</strong> supporting every academic challenge. Our Ivy-League-educated experts deliver real results across <strong>4,400+ specializations</strong> — confidentially, on time, with zero AI.</p></div><div class="abh-f"><div class="fh"><h3>Get Expert Help</h3><p>We'll match you with the right writer.</p></div><div class="fg"><label class="fl">Assignment type</label><select class="fs"><option>Essay</option><option>Research Paper</option><option>Thesis</option><option>Dissertation</option><option>Other</option></select></div><div class="frow"><div class="fg"><label class="fl">Name</label><input type="text" class="fi" placeholder="Your name"></div><div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="Email"></div></div><div class="frow"><div class="fg"><label class="fl">Subject</label><input type="text" class="fi" placeholder="e.g. Biology"></div><div class="fg"><label class="fl">Phone</label><input type="tel" class="fi" placeholder="Phone"></div></div><div class="fg"><label class="fl">Message</label><textarea class="fta" placeholder="Your project..."></textarea></div><button class="fsub">Order Now →</button><div class="fmi"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Confidential</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Secure</span></div></div></div></section>
+<section class="faq-about"><h2 class="rv">Frequently Asked Questions</h2>
+<div class="fqi rv"><div class="fqq" onclick="tgf(this)"><span>How does it work?</span><span class="fqic">+</span></div><div class="fqa"><p>Submit your request, share details and rubric, we match you with the best expert. You pay securely, the writer crafts your paper, and we deliver before your deadline with unlimited revisions.</p></div></div>
+<div class="fqi rv"><div class="fqq" onclick="tgf(this)"><span>Can you really boost my grades?</span><span class="fqic">+</span></div><div class="fqa"><p>Absolutely. Our Ph.D. and Master's writers understand what professors expect. Many returning clients report significant grade improvements.</p></div></div>
+<div class="fqi rv"><div class="fqq" onclick="tgf(this)"><span>I need my paper tonight — can you help?</span><span class="fqic">+</span></div><div class="fqa"><p>Yes! We offer urgent turnaround from 3 hours. Our rush writers excel under pressure. Select urgent deadline and we prioritize immediately.</p></div></div>
+<div class="fqi rv"><div class="fqq" onclick="tgf(this)"><span>Will my information be safe?</span><span class="fqic">+</span></div><div class="fqa"><p>100%. Bank-level encryption. We never share personal info, assignment details, or order history. No exceptions.</p></div></div>
+<div class="fqi rv"><div class="fqq" onclick="tgf(this)"><span>What if I'm not satisfied?</span><span class="fqic">+</span></div><div class="fqa"><p>Unlimited free revisions. We keep working on your paper until you're completely happy with the result.</p></div></div>
+<div class="fqi rv"><div class="fqq" onclick="tgf(this)"><span>Will my paper pass AI detection?</span><span class="fqic">+</span></div><div class="fqa"><p>Guaranteed. 100% human-written — passes Turnitin, GPTZero, Originality.ai, and every other detector. Free report included.</p></div></div>
+</section>
+</div>
+
+<!-- ========== CONTACT ========== -->
+<div class="pg" id="pg-contact">
+<section class="cth"><div class="cth-in"><div><div class="stag">Contact Us</div><h1>Ready to Get Your <em>A+</em>?</h1><p class="cth-t">Need expert support? Place your order and get assistance from real professionals. Urgent deadline or long-term project — we're here.</p><p style="color:rgba(255,255,255,.8);font-weight:600;margin-bottom:20px;font-size:14px">Submit your request now.</p><div class="cms"><div class="cm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><div><h4>Chat</h4><p>Live 24/7</p></div></div><div class="cm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg><div><h4>Email</h4><p>support@scholarworks.us</p></div></div><div class="cm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><div><h4>Phone</h4><p>+1 281-661-0084</p></div></div></div></div><div class="cfc"><div class="fh"><h3>Place Your Order</h3><p>Response within 30 minutes.</p></div><div class="fg"><label class="fl">Assignment type</label><select class="fs"><option>Essay</option><option>Research Paper</option><option>Thesis</option><option>Dissertation</option><option>Other</option></select></div><div class="frow"><div class="fg"><label class="fl">Name</label><input type="text" class="fi" placeholder="Your name *"></div><div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="Email *"></div></div><div class="frow"><div class="fg"><label class="fl">Subject</label><input type="text" class="fi" placeholder="e.g. Biology"></div><div class="fg"><label class="fl">Phone</label><input type="tel" class="fi" placeholder="Phone *"></div></div><div class="fg"><label class="fl">Message</label><textarea class="fta" placeholder="Topic, page count, instructions..."></textarea></div><button class="fsub">Order Now →</button><div class="fmi"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Confidential</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Secure</span></div></div></div></section>
+<section class="map-section">
+  <div class="map-section-in">
+    <div>
+      <div class="stag rv">Nationwide</div>
+      <h2 class="rv">Serving All 50 States</h2>
+      <p class="map-d rv">From Ivy League to state universities — Scholar Works delivers expert assistance to students in every corner of the US.</p>
+      <div class="map-s rv">
+        <div class="ms"><div class="v">50</div><div class="l">States</div></div>
+        <div class="ms"><div class="v">200K+</div><div class="l">Students</div></div>
+        <div class="ms"><div class="v">4,400+</div><div class="l">Specializations</div></div>
+        <div class="ms"><div class="v">24/7</div><div class="l">Support</div></div>
+      </div>
+    </div>
+    <div class="rv" style="position:relative">
+      <div class="map-tooltip" id="mapTooltip"></div>
+      <svg viewBox="0 0 959 593" preserveAspectRatio="xMidYMid meet" id="usMapSvg" class="us-map-svg">
+<g class="us-map-states">
+
+<path class="al" id="AL" d="m 643,467.4 .4,-7.3 -.9,-1.2 -1.7,-.7 -2.5,-2.8 .5,-2.9 48.8,-5.1 -.7,-2.2 -1.5,-1.5 -.5,-1.4 .6,-6.3 -2.4,-5.7 .5,-2.6 .3,-3.7 2.2,-3.8 -.2,-1.1 -1.7,-1 v -3.2 l -1.8,-1.9 -2.9,-6.1 -12.9,-45.8 -45.7,4 1.3,2 -1.3,67 4.4,33.2 .9,-.5 1.3,.1 .6,.4 .8,-.1 2,-3.8 v -2.3 l 1.1,-1.1 1.4,.5 3.4,6.4 v .9 l -3.3,2.2 3.5,-.4 4.9,-1.6 z">
+<title>Alabama</title></path>
+
+<!-- The scale of Alaska is 42% that of the contiguous United States, so its area is reduced to about 17.6%. The Islands of Four Mountains, Andreanof Islands, Rat Islands and Near Islands are not shown. -->
+<path class="ak" id="AK" d="m 15.8,572 h 2.4 l .7,.7 -1,1.2 -1.9,.2 -2.5,1.3 -3.7,-.1 2.2,-.9 .3,-1.1 2.5,-.3 z m 8.3,-1.7 1.3,.5 h .9 l .5,1.2 .3,-.6 .9,.2 1.1,1.5 0,.5 -4.2,1.9 -2.4,-.1 -1,-.5 -1.1,.7 -2,0 -1.1,-1.4 4.7,-.5 z m 5.4,-.1 1,.1 .7,.7 v 1 l -1.3,.1 -.9,-1.1 z m 2.5,.3 1.3,-.1 -.1,1 -1.1,.6 z m .3,2.2 3.4,-.1 .2,1.1 -1.3,.1 -.3,-.5 -.8,.6 -.4,-.6 -.9,-.2 z m 166.3,7.6 2.1,.1 -1,1.9 -1.1,-.1 -.4,-.8 .5,-1.3 m -1.1,-2.9 .6,-1.3 -.2,-2.3 2.4,-.5 4.5,4.4 1.3,3.4 1.9,1.6 .3,5.1 -1.4,0 -1.3,-2.3 -3.1,-2.4 h -.6 l 1.1,2.8 1.7,.2 .2,2.1 -.9,.1 -4.1,-4.4 -.1,-.9 1.9,-1 0,-1 -.5,-.8 -1.6,-.6 -1.7,-1.3 1.4,.1 .5,-.4 -.6,-.9 -.6,.5 z m -3.6,-9.1 1.3,.1 2.4,2.5 -.2,.8 -.8,-.1 -.1,1.8 .5,.5 0,1.5 -.8,.3 -.4,1.2 -.8,-.4 -.4,-2.2 1.1,-1.4 -2.1,-2.2 .1,-1.2 z m 1.5,-1.5 1.9,.2 2.5,.1 3.4,3.2 -.2,.5 -1.1,.6 -1.1,-.2 -.1,-.7 -1.2,-1.6 -.3,.7 1,1.3 -.2,1.2 -.8,-.1 -1.3,.2 -.1,-1.7 -2.6,-2.8 z m -12.7,-8.9 .9,-.4 h 1.6 l .7,-.5 4.1,2.2 .1,1.5 -.5,.5 h -.8 l -1.4,-.7 1.1,1.3 1.8,0 .5,2 -.9,0 -2.2,-1.5 -1.1,-.2 .6,1.3 .1,.9 .8,-.6 1.7,1.2 1.3,-.1 -.2,.8 1.9,4.3 0,3.4 .4,2.1 -.8,.3 -1.2,-2 -.5,-1.5 -1.6,-1.6 -.2,-2.7 -.6,-1.7 h -.7 l .3,1.1 0,.5 -1.4,1 .1,-3.3 -1.6,-1.6 -1.3,-2.3 -1.2,-1.2 z m 7.2,-2.3 1.1,1.8 2.4,-.1 1,2.1 -.6,.6 2,3.2 v 1.3 l -1.2,.8 v .7 l -2,1.9 -.5,-1.4 -.1,-1.3 .6,-.7 v -1.1 l -1.5,-1.9 -.5,-3.7 -.9,-1.5 z m -56.7,-18.3 -4,4.1 v 1.6 l 2.1,-.8 .8,-1.9 2.2,-2.4 z m -31.6,16.6 0,.6 1.8,1.2 .2,-1.4 .6,.9 3.5,.1 .7,-.6 .2,-1.8 -.5,-.7 -1.4,0 0,-.8 .4,-.6 v -.4 l -1.5,-.3 -3.3,3.6 z m -8.1,6.2 1.5,5.8 h 2.1 l 2.4,-2.5 .3,1.2 6.3,-4 .7,-1 -1,-1.1 v -.7 l .5,-1.3 -.9,-.1 -2,1 0,-1.2 -2.7,-.6 -2.4,.3 -.2,3.4 -.8,-2 -1.5,-.1 -1,.6 z m -2.2,8.2 .1,-.7 2.1,-1.3 .6,.3 1.3,.2 1.3,1.2 -2.2,-.2 -.4,-.6 -1,.6 z m -5.2,3.3 -1.1,.8 1.5,1.4 .8,-.7 -.1,-1.3 z m -6.3,-7.9 1.4,.1 .4,.6 -1.8,.1 z m -13.9,11.9 v .5 l .7,.1 -.1,-.6 z m -.4,-3.2 -1,1 v .5 l .7,1.1 1,-1 -.7,-.1 z m -2,-.8 -.3,1 -1.3,.1 -.4,.2 0,1.3 -.5,.9 .6,0 .7,-.9 .8,-.1 .9,-1 .2,-1.3 z m -4.4,-2 -.2,1.8 1.4,.8 1.2,-.6 0,-1 1.7,-.3 -.1,-.6 -.9,-.2 -.7,.6 -.9,-.5 z m -4.9,-.1 1,.7 -.3,1.2 -1.4,-1.1 z m -4.2,1.3 1.4,.1 -.7,.8 z m -3.5,3 1.8,1.1 -1.7,.1 z m -25.4,-31.2 1.2,.6 -.8,.6 z m -.7,-6.3 .4,1.2 .8,-1.2 z m 24.3,-19.3 1.5,-.1 .9,.4 1.1,-.5 1.3,-.1 1.6,.8 .8,1.9 -.1,.9 -1.2,2 -2.4,-.2 -2.1,-1.8 -1,-.4 -1.1,-2 z m -21.1,-14.4 .1,1.9 2,2 v .5 l -.8,-.2 -1.7,-.8 -.3,-1.1 -.3,-1.6 z m 18.3,-23.3 v 1.2 l 1.9,1.8 h 2.3 l .6,1.1 v 1.6 l 2.1,1.9 1.8,1.2 -.1,.7 -.7,1.1 -1.4,-1.2 -2.1,.1 -.8,-.8 -.9,-2.1 -1.5,-2.2 -2.6,-.1 -1,-.7 1,-2.1 z m 16.8,-4.5 1,0 .1,1.1 h -1 z m 16.2,19.7 .9,.1 0,1.2 -1.7,-.5 z m 127.8,77.7 -1.2,.4 -.1,1.1 h 1.2 z m -157.6,-4.5 -1.3,-.4 -4.1,.6 -2.8,1.4 -.1,1.9 1.9,.7 1.5,-.9 1.7,-.1 4.7,1.4 .1,-1.3 -1.6,-1.1 z m 2.1,2.3 -.4,-1.4 1.2,.2 .1,1.4 1.8,0 .4,-2.5 .3,2.4 2.5,-.1 3.2,-3.3 .8,.1 -.7,1.3 1.4,.9 4.2,-.2 2.6,-1.2 1.4,-.1 .3,1.5 .6,-.5 .4,-1.4 5.9,.2 1.9,-1.6 -1.3,-1.1 .6,-1.2 2.6,.2 -.2,-1.2 2.5,.2 .7,-1.1 1.1,.2 4.6,-1.9 .2,-1.7 5.6,-2.4 2,-1.9 1.2,-.6 1.3,.8 2.3,-.9 1.1,-1.9 .5,-1.3 1.7,-.9 1.5,-.7 .4,-1.4 -1.1,-1.7 -2.2,-.2 -.2,-1.3 .8,-1.6 1.4,-.2 1.3,-1.5 1.9,-.1 3.4,-3.2 .4,-1.4 1.5,-2.3 3.8,-4.1 2.5,-.9 1.9,-.9 2.1,.8 1.4,2.6 -1.5,0 -1.4,-1.5 -3,2 -1.7,.1 -.2,3.1 -3.1,4.9 .6,2 2.3,0 -.6,1 -1.4,.1 -2.4,1.8 0,.9 1.9,1 3.4,-.6 1.4,-1.7 1.4,.1 3,-1.7 .5,-2.3 1.6,-.1 6.3,.8 1,-1.1 1,-4.5 -1.6,1.1 .6,-2.2 -1.6,-1.4 .8,-1.5 .1,1.5 3.4,0 .7,-1 1.6,-.1 -.3,1.7 1.9,.1 -1.9,1.3 4.1,1.1 -3.5,.4 -1.3,1.2 .9,1.4 4.6,-1.7 2.3,1.7 .7,-.9 .6,1.4 4,2.3 h 2.9 l 3.9,-.5 4.3,1.1 2,1.9 4.5,.4 1.8,-1.5 .8,2.4 -1.8,.7 1.2,1.2 7.4,3.8 1.4,2.5 5.4,4.1 3.3,-2 -.6,-2.2 -3.5,-2 3.1,1.2 .5,-.7 .9,1.3 0,2.7 2.1,-.6 2.1,1.8 -2.5,-9.8 1.2,1.3 1.4,6 2.2,2.5 2.4,-.4 1.8,3.5 h .9 l .6,5.6 3.4,.5 1.6,2.2 1.8,1.1 .4,2.8 -1.8,2.6 2.9,1.6 1.2,-2.4 -.2,3.1 -.8,.9 1.4,1.7 .7,-2.4 -.2,-1.2 .8,.2 .6,2.3 -1,1.4 .6,2.6 .5,.4 .3,-1.6 .7,.6 -.3,2 1.2,.2 -.4,.9 1.7,-.1 0,-1 h -1 l .1,-1.7 -.8,-.6 1.7,-.3 .5,-.8 0,-1.6 .5,1.3 -.6,1.8 1.2,3.9 1.8,.1 2.2,-4.2 .1,-1.9 -1.3,-4 -.1,-1.2 .5,-1.2 -.7,-.7 -1.7,.1 -2.5,-2 -1.7,0 -2,-1.4 -1.5,0 -.5,-1.6 -1.4,-.3 -.2,-1.5 -1,-.5 .1,-1.7 -5.1,-7.4 -1.8,-1.5 v -1.2 l -4.3,-3.5 -.7,-1.1 -1.6,-2 -1.9,-.6 0,-2.2 -1.2,-1.3 -1.7,-.7 -2.1,1.3 -1.6,2.1 -.4,2.4 -1.5,.1 -2.5,2.7 -.8,-.3 v -2.5 l -2.4,-2.2 -2.3,-2 -.5,-2 -2.5,-1.3 .2,-2.2 -2.8,-.1 -.7,1.1 -1.2,0 -.7,-.7 -1.2,.8 -1.8,-1.2 0,-85.8 -6.9,-4.1 -1.8,-.5 -2.2,1.1 -2.2,.1 -2.3,-1.6 -4.3,-.6 -5.8,-3.6 -5.7,-.4 -2,.5 -.2,-1.8 -1.8,-.7 1.1,-1 -.2,-.9 -3.2,-1.1 h -2.4 l -.4,.4 -.9,-.6 .1,-2.6 -.8,-.9 -2.5,2.9 -.8,-.1 v -.8 l 1.7,-.8 v -.8 l -1.9,-2.4 -1.1,-.1 -4.5,3.1 h -3.9 l .4,-.9 -1.8,-.1 -5.2,3.4 -1.8,0 -.6,-.8 -2.7,1.5 -3.6,3.7 -2.8,2.7 -1.5,1.2  -2.6,.1 -2.2,-.4 -2.3,-1.3 v 0 l -2.8,3.9 -.1,2.4 2.6,2.4 2.1,4.5 .2,5.3 2.9,2 3.4,.4 .7,.8 -1.5,2.3 .7,2.7 -1.7,-2.6 v -2.4 l -1.5,-.3 .1,1.2 .7,2.1 2.9,3.7 h -1.4 l -2.2,1.1 -6.2,-2.5 -.1,-2 1.4,-1.3 0,-1.4 -2.1,-.5 -2.3,.2 -4.8,.2 1.5,2.3 -1.9,-1.8 -8.4,1.2 -.8,1.5 4.9,4.7 -.8,1.4 -.3,2 -.7,.8 -.1,1.9 4.4,3.6 4.1,.2 4.6,1.9 h 2 l .8,-.6 3.8,.1 .1,-.8 1.2,1.1 .1,2 -2.5,-.1 .1,3.3 .5,3.2 -2.9,2.7 -1.9,-.1 -2,-.8 -1,.1 -3.1,2.1 -1.7,.2 -1.4,-2.8 -3.1,0 -2.2,2 -.5,1.8 -3.3,1.8 -5.3,4.3 -.3,3.1 .7,2.2 1,1.2 1,-.4 .9,1 -.8,.6 -1.5,.9 1.1,1.5 -2.6,1.1 .8,2.2 1.7,2.3 .8,4.1 4,1.5 2.6,-.8 1.7,-1.1 .5,2.1 .3,4.4 -1.9,1.4 0,4.4 -.6,.9 h -1.7 l 1.7,1.2 2.1,-.1 .4,-1 4.6,-.6 2,2.6 1.3,-.7 1.3,5.1 1,.5 1,-.7 .1,-2.4 .9,-1 .7,1.1 .2,1.6 1.6,.4 4.7,-1.2 .2,1.2 -2,1.1 -1.6,1.7 -2.8,7 -4.3,2 -1.4,1.5 -.3,1.4 -1,-.6 -9.3,3.3 -1.8,4.1 -1.3,-.4 .5,-1.1 -1.5,-1.4 -3.5,-.2 -5.3,3.2 -2.2,1.3 -2.3,0 -.5,2.4 z">
+<title>Alaska</title></path>
+
+<path class="az" id="AZ" d="m 139.6,387.6 3,-2.2 .8,-2.4 -1,-1.6 -1.8,-.2 -1.1,-1.6 1.1,-6.9 1.6,-.3 2.4,-3.2 1.6,-7 2.4,-3.6 4.8,-1.7 1.3,-1.3 -.4,-1.9 -2.3,-2.5 -1.2,-5.8 -1.4,-1.8 -1.3,-3.4 .9,-2.1 1.4,-3 .5,-2.9 -.5,-4.9 1,-13.6 3.5,-.6 3.7,1.4 1.2,2.7 h 2 l 2.4,-2.9 3.4,-17.5 46.2,8.2 40,6 -17.4,124.1 -37.3,-5.4 -64.2,-37.5 .5,-2.9 2,-1.8 z">
+<title>Arizona</title></path>
+
+<path class="ar" id="AR" d="m 584.2,367 .9,-2.2 1.2,.5 .7,-1 -.8,-.7 .3,-1.5 -1.1,-.9 .6,-1 -.1,-1.5 -1.1,-.1 .8,-.8 1.3,.8 .3,-1.4 -.4,-1.1 .1,-.7 2,.6 -.4,-1.5 1.6,-1.3 -.5,-.9 -1.1,.1 -.6,-.9 .9,-.9 1.6,-.2 .5,-.8 1.4,-.2 -.1,-.8 -.9,-.9 v -.5 h 1.5 l .4,-.7 -1.4,-1 -.1,-.6 -11.2,.8 2.8,-5.1 1.7,-1.5 v -2.2 l -1.6,-2.5 -39.8,2 -39.1,.7 4.1,24.4 -.7,39 2.6,2.3 2.8,-1.3 3.2,.8 .2,11.9 52.3,-1.3 1.2,-1.5 .5,-3 -1.5,-2.3 -.5,-2.2 .9,-.7 v -.8 l -1.7,-1.1 -.1,-.7 1.6,-.9 -1.2,-1.1 1.7,-7.1 3.4,-1.6 v -.8 l -1.1,-1.4 2.9,-5.4 h 1.9 l 1.5,-1.2 -.3,-5.2 3.1,-4.5 1.8,-.6 -.5,-3.1 z">
+<title>Arkansas</title></path>
+
+<path class="ca" id="CA" d="m 69.4,365.6 3.4,5.2 -1.4,.1 -1.8,-1.9 z m 1.9,-9.8 1.8,4.1 2.6,1 .7,-.6 -1.3,-2.5 -2.6,-2.4 z m -19.9,-19 v 2.4 l 2,1.2 4.4,-.2 1,-1 -3.1,-.2 z m -5.9,.1 3.3,.5 1.4,2.2 h -3.8 z m 47.9,45.5 -1,-3 .2,-3 -.4,-7.9 -1.8,-4.8 -1.2,-1.4 -.6,-1.5 -7,-8.6 -3.6,.1 -2,-1.9 1.1,-1.8 -.7,-3.7 -2.2,-1.2 -3.9,-.6 -2.8,-1.3 -1.5,-1.9 -4.5,-6.6 -2.7,-2.2 -3.7,-.5 -3.1,-2.3 -4.7,-1.5 -2.8,-.3 -2.5,-2.5 .2,-2.8 .8,-4.8 1.8,-5.1 -1.4,-1.6 -4,-9.4 -2.7,-3.7 -.4,-3 -1.6,-2.3 .2,-2.5 -2,-5 -2.9,-2.7 .6,-7.1 2.4,-.8 1.8,-3.1 -.4,-3.2 -1,-.9 h -2.5 l -2.5,-3.3 -1.5,-3.5 v -7.5 l 1.2,-4.2 .2,-2.1 2.5,.2 -.1,1.6 -.8,.7 v 2.5 l 3.7,3.2 v -4.7 l -1.4,-3.4 .5,-1.1 -1,-1.7 2.8,-1.5 -1.9,-3 -1.4,.5 -1.5,3.8 .5,1.3 -.8,1 -.9,-.1 -5.4,-6.1 .7,-5.6 -1.1,-3.9 -6.5,-12.8 .8,-10.7 2.3,-3.6 .2,-6.4 -5.5,-11.1 .3,-5.2 6.9,-7.5 1.7,-2.4 -.1,-1.4 4,-9.2 .1,-8.4 .9,-2.5 66.1,18.6 -16.4,63.1 1.1,3.5 70.4,105 -.9,2.1 1.3,3.4 1.4,1.8 1.2,5.8 2.3,2.5 .4,1.9 -1.3,1.3 -4.8,1.7 -2.4,3.6 -1.6,7 -2.4,3.2 -1.6,.3 -1.1,6.9 1.1,1.6 1.8,.2 1,1.6 -.8,2.4 -3,2.2 -2.2,-.1 z">
+<title>California</title></path>
+
+<path class="co" id="CO" d="m 374.6,323.3 -16.5,-1 -51.7,-4.8 -52.6,-6.5 11.5,-88.3 44.9,5.7 37.5,3.4 33.1,2.4 -1.4,22.1 z">
+<title>Colorado</title></path>
+
+<path class="ct" id="CT" d="m 873.5,178.9 .4,-1.1 -3.2,-12.3 -.1,-.3 -14.9,3.4 v .7 l -.9,.3 -.5,-.7 -10.5,2.4 2.8,16.3 1.8,1.5 -3.5,3.4 1.7,2.2 5.4,-4.5 1.7,-1.3 h .8 l 2.4,-3.1 1.4,.1 2.9,-1.1 h 2.1 l 5.3,-2.7 2.8,-.9 1,-1 1.5,.5 z">
+<title>Connecticut</title></path>
+
+<path class="de" id="DE" d="m 822.2,226.6 -1.6,.3 -1.5,1.1 -1.2,2.1 7.6,27.1 10.9,-2.3 -2.2,-7.6 -1.1,.5 -3.3,-2.6 -.5,-1.7 -1.8,-1 -.2,-3.7 -2.1,-2.2 -1.1,-.8 -1.2,-1.1 -.4,-3.2 .3,-2.1 1,-2.2 z">
+<title>Delaware</title></path>
+
+<path class="fl" id="FL" d="m 751.7,445.1 -4,-.7 -1.7,-.9 -2.2,1.4 v 2.5 l 1.4,2.1 -.5,4.3 -2.1,.6 -1,-1.1 -.6,-3.2 -50.1,3.3 -3.3,-6 -48.8,5.1 -.5,2.9 2.5,2.8 1.7,.7 .9,1.2 -.4,7.3 -1.1,.6 .5,.4 1,-.3 .7,-.8 10.5,-2.7 9.2,-.5 8.1,1.9 8.5,5 2.4,.8 2.2,2 -.1,2.7 h 2.4 l 1.9,-1 2.5,.1 2,-.8 2.9,-2 3.1,-2.9 1.1,-.4 .6,.5 h 1.4 l .5,-.8 -.5,-1.2 -.6,-.6 .2,-.8 2,-1.1 5,-.4 .8,1 1,.1 2.3,1 3,1.8 1.2,1.7 1.1,1.2 2.8,1.4 v 2.4 l 2.8,1.9 1,.1 1.6,1.4 .7,1.6 1,.2 .8,2.1 .7,.6 1,-1.1 2.9,.1 .5,1.4 1.1,.9 v 1.3 l 2.9,2.2 .2,9.6 -1.8,5.8 1,1.2 -.2,3.4 -.8,1.4 .7,1.2 2.3,2.3 .3,1.5 .8,1 -.4,-1.9 1.3,-.6 .8,-3.6 -3,-1.2 .1,-.6 2.6,-.4 .9,2.6 1.1,.6 .1,-2 1.1,.3 .6,.8 -.1,.7 -2.9,4.2 -.2,1.1 -1.7,1.9 v 1.1 l 3.7,3.8 5.3,7.9 1.8,2.1 v 1.8 l 2.8,4.6 2.3,.6 .7,-1.2 -2.1,.3 -3,-4.5 .2,-1.4 1.5,-.8 v -1.5 l -.6,-1.3 .9,-.9 .4,.9 .7,.5 v 4 l -1.2,-.6 -.8,.9 1.4,1.6 1,2.6 1.2,-.6 2.3,1.2 2.1,2.2 1.6,5.1 3.1,4.8 .8,-1.3 2.8,-.5 3.2,1.3 .3,1.7 3.3,3.8 .1,1.1 2.2,2.7 -.7,.5 v 2.7 l 2.7,1.4 h 1.5 l 2.7,-1.8 1.5,.3 1.1,.4 2.3,-1.7 .2,-.7 1.2,.3 2.4,-1.7 1.3,-2.3 -.7,-3.2 -.2,-1.3 1.1,-4 .6,-.2 .6,1.6 .8,-1.8 -.8,-7.2 -.4,-10.5 -1,-6.8 -.7,-1.7 -6.6,-11.1 -5.2,-9.1 -2.2,-3.3 -1.3,-3.6 -.2,-3.4 .9,-.3 v -.9 l -1.1,-2.2 -4,-4 -7.6,-9.7 -5.7,-10.4 -4.3,-10.7 -.6,-3.7 -1.2,-1 -.5,-3.8 z m 9.2,134.5 1.7,-.1 -.7,-1 z m 7.3,-1.1 v -.7 l 1.6,-.2 3.7,-3.3 1.5,-.6 2.4,-.9 .3,1.3 1.7,.8 -2.6,1.2 h -2.4 l -3.9,2.5 z m 17.2,-7.6 -3,1.4 -1,1.3 1.1,.1 z m 3.8,-2.9 -1.1,.3 -1.4,2 1.1,-.2 1.5,-1.6 z m 8.3,-15.7 -1.7,5.6 -.8,1 -1,2.6 -1.2,1.6 -.7,1.7 -1.9,2.2 v .9 l 2.7,-2.8 2.4,-3.5 .6,-2 2.1,-4.9 z">
+<title>Florida</title></path>
+
+<path class="ga" id="GA" d="m 761.8,414.1 v 1.4 l -4.2,6.2 -1.2,.2 1.5,.5 v 2 l -.9,1.1 -.6,6 -2.3,6.2 .5,2 .7,5.1 -3.6,.3 -4,-.7 -1.7,-.9 -2.2,1.4 v 2.5 l 1.4,2.1 -.5,4.3 -2.1,.6 -1,-1.1 -.6,-3.2 -50.1,3.3 -3.3,-6 -.7,-2.2 -1.5,-1.5 -.5,-1.4 .6,-6.3 -2.4,-5.7 .5,-2.6 .3,-3.7 2.2,-3.8 -.2,-1.1 -1.7,-1 v -3.2 l -1.8,-1.9 -2.9,-6.1 -12.9,-45.8 22.9,-2.9 21.4,-3 -.1,1.9 -1.9,1 -1.4,3.2 .2,1.3 6.1,3.8 2.6,-.3 3.1,4 .4,1.7 4.2,5.1 2.6,1.7 1.4,.2 2.2,1.6 1.1,2.2 2,1.6 1.8,.5 2.7,2.7 .1,1.4 2.6,2.8 5,2.3 3.6,6.7 .3,2.7 3.9,2.1 2.5,4.8 .8,3.1 4.2,.4 z">
+<title>Georgia</title></path>
+
+<!-- Hawaii is shown in the same scale as the contiguous United States. The Northwestern Hawaiian Islands are not shown. -->
+<path class="hi" id="HI" d="m 317,553.7 -.2,3.2 1.7,1.9 .1,1.2 -4.8,4.5 -.1,1.2 1.9,3.2 1.7,4.2 v 2.6 l -.5,1.2 .1,3.4 4.1,2.1 1.1,1.1 1.2,-1.1 2.1,-3.6 4.5,-2.9 3.3,-.5 2.5,-1 1.7,-1.2 3.2,-3.5 -2.8,-1.1 -1.4,-1.4 .1,-1.7 -.5,-.6 h -2 l .2,-2.5 -.7,-1.2 -2.6,-2.3 -4.5,-1.9 -2.8,-.2 -3.3,-2.7 -1.2,-.6 z m -15.3,-17 -1.1,1.5 -.1,1.7 2.7,2.4 1.9,.5 .6,1 .4,3 3.6,.2 5.3,-2.6 -.1,-2.5 -1.4,-.5 -3.5,-2.6 -1.8,-.3 -2.9,1.3 -1.5,-2.7 z m -1.5,11.5 .9,-1.4 2.5,-.3 .6,1.8 z m -7,-8.7 1.7,4 3.1,-.6 .3,-2 -1.4,-1.5 z m -4.1,-6.7 -1.1,2.4 h 5 l 4.8,1.6 2.5,-1.6 .2,-1.5 -4.8,.2 z m -16,-10.6 -1.9,2.1 -2.9,.6 .8,2.2 2.2,2.8 .1,1 2.1,-.3 2.3,.1 1.7,1.2 3.5,-.8 v -.7 l -1,-.8 -.5,-2.1 -.8,-.3 -.5,1 -1.2,-1.3 .2,-1.4 -1.8,-3.3 -1.1,-.7 z m -31.8,-12.4 -4.2,2.9 .2,2.3 2.4,1.2 1.9,1.3 2.7,.4 2.6,-2.2 -.2,-1.9 .8,-1.7 v -1.4 l -1,-.9 z m -10.8,4.8 -.3,1.2 -1.9,.9 -.6,1.8 1,.8 1.1,-1.5 1.9,-.6 .4,-2.6 z">
+<title>Hawaii</title></path>
+
+<path class="id" id="ID" d="m 165.3,183.1 -24.4,-5.4 8.5,-37.3 2.9,-5.8 .4,-2.1 .8,-.9 -.9,-2 -2.9,-1.2 .2,-4.2 4,-5.8 2.5,-.8 1.6,-2.3 -.1,-1.6 1.8,-1.6 3.2,-5.5 4.2,-4.8 -.5,-3.2 -3.5,-3.1 -1.6,-3.6 1.1,-4.3 -.7,-4 12.7,-56.1 14.2,3 -4.8,22 3.7,7.4 -1.6,4.8 3.6,4.8 1.9,.7 3.9,8.3 v 2.1 l 2.3,3 h .9 l 1.4,2.1 h 3.2 v 1.6 l -7.1,17 -.5,4.1 1.4,.5 1.6,2.6 2.8,-1.4 3.6,-2.4 1.9,1.9 .5,2.5 -.5,3.2 2.5,9.7 2.6,3.5 2.3,1.4 .4,3 v 4.1 l 2.3,2.3 1.6,-2.3 6.9,1.6 2.1,-1.2 9,1.7 2.8,-3.3 1.8,-.6 1.2,1.8 1.6,4.1 .9,.1 -8.5,54.8 -47.9,-8.2 z">
+<title>Idaho</title></path>
+
+<path class="il" id="IL" d="m 623.5,265.9 -1,5.2 v 2 l 2.4,3.5 v .7 l -.3,.9 .9,1.9 -.3,2.4 -1.6,1.8 -1.3,4.2 -3.8,5.3 -.1,7 h -1 l .9,1.9 v .9 l -2.2,2.7 .1,1.1 1.5,2.2 -.1,.9 -3.7,.6 -.6,1.2 -1.2,-.6 -1,.5 -.4,3.3 1.7,1.8 -.4,2.4 -1.5,.3 -6.9,-3 -4,3.7 .3,1.8 h -2.8 l -1.4,-1.5 -1.8,-3.8 v -1.9 l .8,-.6 .1,-1.3 -1.7,-1.9 -.9,-2.5 -2.7,-4.1 -4.8,-1.3 -7.4,-7.1 -.4,-2.4 2.8,-7.6 -.4,-1.9 1.2,-1.1 v -1.3 l -2.8,-1.5 -3,-.7 -3.4,1.2 -1.3,-2.3 .6,-1.9 -.7,-2.4 -8.6,-8.4 -2.2,-1.5 -2.5,-5.9 -1.2,-5.4 1.4,-3.7 .7,-.7 .1,-2.3 -.7,-.9 1,-1.5 1.8,-.6 .9,-.3 1,-1.2 v -2.4 l 1.7,-2.4 .5,-.5 .1,-3.5 -.9,-1.4 -1,-.3 -1.1,-1.6 1,-4 3,-.8 h 2.4 l 4.2,-1.8 1.7,-2.2 .1,-2.4 1.1,-1.3 1.3,-3.2 -.1,-2.6 -2.8,-3.5 h -1.2 l -.9,-1.1 .2,-1.6 -1.7,-1.7 -2.5,-1.3 .5,-.6 45.9,-2.8 .1,4.6 3.4,4.6 1.2,4.1 1.6,3.2 z">
+<title>Illinois</title></path>
+
+<path class="in" id="IN" d="m 629.2,214.8 -5.1,2.3 -4.7,-1.4 4.1,50.2 -1,5.2 v 2 l 2.4,3.5 v .7 l -.3,.9 .9,1.9 -.3,2.4 -1.6,1.8 -1.3,4.2 -3.8,5.3 -.1,7 h -1 l .9,1.9 1.1,.8 .6,-1 -.7,-1.7 4.6,-.5 .2,1.2 1.1,.2 .4,-.9 -.6,-1.3 .3,-.8 1.3,.8 1.7,-.4 1.7,.6 3.4,2.1 1.8,-2.8 3.5,-2.2 3,3.3 1.6,-2.1 .3,-2.7 3.8,-2.3 .2,1.3 1.9,1.2 3,-.2 1.2,-.7 .1,-3.4 2.5,-3.7 4.6,-4.4 -.1,-1.7 1.2,-3.8 2.2,1 6.7,-4.5 -.4,-1.7 -1.5,-2.1 1,-1.9 -6.6,-57.2 -.1,-1.4 -32.4,3.4 z">
+<title>Indiana</title></path>
+
+<path class="ia" id="IA" d="m 556.9,183 2.1,1.6 .6,1.1 -1.6,3.3 -.1,2.5 2,5.5 2.7,1.5 3.3,.7 1.3,2.8 -.5,.6 2.5,1.3 1.7,1.7 -.2,1.6 .9,1.1 h 1.2 l 2.8,3.5 .1,2.6 -1.3,3.2 -1.1,1.3 -.1,2.4 -1.7,2.2 -4.2,1.8 h -2.4 l -3,.8 -1,4 1.1,1.6 1,.3 .9,1.4 -.1,3.5 -.5,.5 -1.7,2.4 v 2.4 l -1,1.2 -.9,.3 -1.8,.6 -1,1.5 .7,.9 -.1,2.3 -.7,.7 -1.5,-.8 -1.1,-1.1 -.6,-1.6 -1.7,-1.3 -14.3,.8 -27.2,1.2 -25.9,-.1 -1.8,-4.4 .7,-2.2 -.8,-3.3 .2,-2.9 -1.3,-.7 -.4,-6.1 -2.8,-5 -.2,-3.7 -2.2,-4.3 -1.3,-3.7 v -1.4 l -.6,-1.7 v -2.3 l -.5,-.9 -.7,-1.7 -.3,-1.3 -1.3,-1.2 1,-4.3 1.7,-5.1 -.7,-2 -1.3,-.4 -.4,-1.6 1,-.5 .1,-1.1 -1.3,-1.5 .1,-1.6 2.2,.1 h 28.2 l 36.3,-.9 18.6,-.7 z">
+<title>Iowa</title></path>
+
+<path class="ks" id="KS" d="m 459.1,259.5 -43.7,-1.2 -36,-2 -4.8,67 67.7,2.9 62,.1 -.5,-48.1 -3.2,-.7 -2.6,-4.7 -2.5,-2.5 .5,-2.3 2.7,-2.6 .1,-1.2 -1.5,-2.1 -.9,1 -2,-.6 -2.9,-3 z">
+<title>Kansas</title></path>
+
+<path class="ky" id="KY" d="m 692.1,322.5 -20.5,1.4 -5.2,.8 -17.4,1 -2.6,.8 -22.6,2 -.7,-.6 h -3.7 l 1.2,3.2 -.6,.9 -23.3,1.5 1,-2.7 1.4,.9 .7,-.4 1.2,-4.1 -1,-1 1,-2 .2,-.9 -1.3,-.8 -.3,-1.8 4,-3.7 6.9,3 1.5,-.3 .4,-2.4 -1.7,-1.8 .4,-3.3 1,-.5 1.2,.6 .6,-1.2 3.7,-.6 .1,-.9 -1.5,-2.2 -.1,-1.1 2.2,-2.7 0,-.9 1.1,.8 .6,-1 -.7,-1.7 4.6,-.5 .2,1.2 1.1,.2 .4,-.9 -.6,-1.3 .3,-.8 1.3,.8 1.7,-.4 1.7,.6 3.4,2.1 1.8,-2.8 3.5,-2.2 3,3.3 1.6,-2.1 .3,-2.7 3.8,-2.3 .2,1.3 1.9,1.2 3,-.2 1.2,-.7 .1,-3.4 2.5,-3.7 4.6,-4.4 -.1,-1.7 1.2,-3.8 2.2,1 6.7,-4.5 -.4,-1.7 -1.5,-2.1 1,-1.9 1.3,.5 2.2,.1 1.9,-.8 2.9,1.2 2.2,3.4 v 1 l 4.1,.7 2.3,-.2 1.9,2.1 2.2,.2 v -1 l 1.9,-.8 3,.8 1.2,.8 1.3,-.7 h .9 l .6,-1.7 3.4,-1.8 .5,.8 .8,2.9 3.5,1.4 1.2,2.1 -.1,1.1 .6,1 -.6,3.6 1.9,1.6 .8,1.1 1,.6 -.1,.9 4.4,5.6 h 1.4 l 1.5,1.8 1.2,.3 1.4,-.1 -4.9,6.6 -2.9,1 -3,3 -.4,2.2 -2.1,1.3 -.1,1.7 -1.4,1.4 -1.8,.5 -.5,1.9 -1,.4 -6.9,4.2 z m -98,11.3 -.7,-.7 .2,-1 h 1.1 l .7,.7 -.3,1 z">
+<title>Kentucky</title></path>
+
+<path class="la" id="LA" d="m 602.5,472.8 -1.2,-1.8 .3,-1.3 -4.8,-6.8 .9,-4.6 1,-1.4 .1,-1.4 -36,2 1.7,-11.9 2.4,-4.8 6,-8.4 -1.8,-2.5 h 2 v -3.3 l -2.4,-2.5 .5,-1.7 -1.2,-1 -1.6,-7.1 .6,-1.4 -52.3,1.3 .5,19.9 .7,3.4 2.6,2.8 .7,5.4 3.8,4.6 .8,4.3 h 1 l -.1,7.3 -3.3,6.4 1.3,2.3 -1.3,1.5 .7,3 -.1,4.3 -2.2,3.5 -.1,.8 -1.7,1.2 1,1.8 1.2,1.1 1.6,-1.3 5.3,-.9 6.1,-.1 9.6,3.8 8,1 1.5,-1.4 1.8,-.2 4.8,2.2 1.6,-.4 1.1,-1.5 -4.2,-1.8 -2.2,1 -1.1,-.2 -1.4,-2 3.3,-2.2 1.6,-.1 v 1.7 l 1.5,-.1 3.4,-.3 .4,2.3 1.1,.4 .6,1.9 4.8,1 1.7,1.6 v .7 h -1.2 l -1.5,1.7 1.7,1.2 5.4,1 2.7,2.8 4.4,-1 -3.7,.2 -.1,-.6 2.8,-.7 .2,-1.8 1.2,-.3 v -1.4 l 1.1,.1 v 1.6 l 2.5,.1 .8,-1.9 .9,.3 .2,2.5 1.2,.2 -1.8,2 2.6,-.9 2,-1.1 2.9,-3.3 h -.7 l -1.3,1.2 -.4,-.1 -.5,-.8 .9,-1.2 v -2.3 l 1.1,-.8 .7,.7 1,-.8 1,-.1 .6,1.3 -.6,1.9 h 2.4 l 5.1,1.7 .5,1.3 1.6,1.4 2.8,.1 1.3,.7 1.8,-1 .9,-1.7 v -1.7 h -1.4 l -1.2,-1.4 -1.1,-1.1 -3.2,-.9 -2.6,.2 -4.2,-2.4 v -2.3 l 1.3,-1 2.4,.6 -3.1,-1.6 .2,-.8 h 3.6 l 2.6,-3.5 -2.6,-1.8 .8,-1.5 -1.2,-.8 h -.8 l -2,2.1 v 2.1 l -.6,.7 -1.1,-.1 -1.6,-1.4 h -1.3 v -1.5 l .6,-.7 .8,.7 1.7,-1.6 .7,-1.6 .8,-.3 z m -10.3,-2.7 1.9,1 .8,1.1 2.5,.1 1.5,.8 .2,1.4 -.4,.6 -.9,-1.5 -1.4,1.2 -.9,1.4 -2.8,.8 -1.6,.1 -3.7,-1 .1,-1.7 2,-2 1.1,-2.4 z m -4.7,1.2 v 1.1 l -1.8,2 h -1.2 v -2.2 l 1.6,-1.5 z">
+<title>Louisiana</title></path>
+
+<path class="me" id="ME" d="m 875,128.7 .6,4 3.2,2 .8,2.2 2.3,1.4 1.4,-.3 1,-3 -.8,-2.9 1.6,-.9 .5,-2.8 -.6,-1.3 3.3,-1.9 -2.2,-2.3 .9,-2.4 1.4,-2.2 .5,3.2 1.6,-2 1.3,.9 1.2,-.8 v -1.7 l 3.2,-1.3 .3,-2.9 2.5,-.2 2.7,-3.7 v -.7 l -.9,-.5 -.1,-3.3 .6,-1.1 .2,1.6 1,-.5 -.2,-3.2 -.9,.3 -.1,1.2 -1.2,-1.4 .9,-1.4 .6,.1 1.1,-.4 .5,2.8 2,-.3 2.9,.7 v -1 l -1.1,-1.2 1.3,.1 .1,-2.3 .6,.8 .3,1.9 2.1,1.5 .2,-1 .9,-.2 -.3,-.8 .8,-.6 -.1,-1.6 -1.6,-.2 -2,.7 1.4,-1.6 .7,-.8 1.3,-.2 .4,1.3 1.7,1.6 .4,-2.1 2.3,-1.2 -.9,-1.3 .1,-1.7 1.1,.5 h .7 l 1.7,-1.4 .4,-2.3 2.2,.3 .1,-.7 .2,-1.6 .5,1.4 1.5,-1 2.3,-4.1 -.1,-2.2 -1.4,-2 -3,-3.2 h -1.9 l -.8,2.2 -2.9,-3 .3,-.8 v -1.5 l -1.6,-4.5 -.8,-.2 -.7,.4 h -4.8 l -.3,-3.6 -8.1,-26 -7.3,-3.7 -2.9,-.1 -6.7,6.6 -2.7,-1 -1,-3.9 h -2.7 l -6.9,19.5 .7,6.2 -1.7,2.4 -.4,4.6 1.3,3.7 .8,.2 v 1.6 l -1.6,4.5 -1.5,1.4 -1.3,2.2 -.4,7.8 -2.4,-1 -1.5,.4 z m 34.6,-24.7 -1,.8 v 1.3 l .7,-.8 .9,.8 .4,-.5 1.1,.2 -1,-.8 .4,-.8 z m -1.7,2.6 -1,1.1 .5,.4 -.1,1 h 1.1 v -1.8 z m -3,-1.6 .9,1.3 1,.5 .3,-1 v -1.8 l -1.3,-.7 -.4,1.2 z m -1,5 -1.7,-1.7 1.6,-2.4 .8,.3 .2,1.1 1,.8 v 1.1 l -1,1 z">
+<title>Maine</title></path>
+
+<path class="md" id="MD" d="m 822.9,269.3 0,-1.7 h -.8 l 0,1.8 z m 11.8,-3.9 1.2,-2.2 .1,-2.5 -.6,-.6 -.7,.9 -.2,2.1 -.8,1.4 -.3,1.1 -4.6,1.6 -.7,.8 -1.3,.2 -.4,.9 -1.3,.6 -.3,-2.5 .4,-.7 -.8,-.5 .2,-1.5 -1.6,1 v -2 l 1.2,-.3 -1.9,-.4 -.7,-.8 .4,-1.3 -.8,-.6 -.7,1.6 .5,.8 -.7,.6 -1.1,.5 -2,-1 -.2,-1.2 -1,-1.1 -1.4,-1.7 1.5,-.8 -1,-.6 v -.9 l .6,-1 1.7,-.3 -1.4,-.6 -.1,-.7 -1.3,-.1 -.4,1.1 -.6,.3 .1,-3.4 1,-1 .8,.7 .1,-1.6 -1,-.9 -.9,1.1 -1,1.4 -.6,-1 .2,-2.4 .9,-1 .9,.9 1.2,-.7 -.4,-1.7 -1,1 -.9,-2.1 -.2,-1.7 1.1,-2.4 1.1,-1.4 1.4,-.2 -.5,-.8 .5,-.6 -.3,-.7 .2,-2.1 -1.5,.4 -.8,1.1 1,1.3 -2.6,3.6 -.9,-.4 -.7,.9 -.6,2.2 -1.8,.5 1.3,.6 1.3,1.3 -.2,.7 .9,1.2 -1.1,1 .5,.3 -.5,1.3 v 2.1 l -.5,1.3 .9,1.1 .7,3.4 1.3,1.4 1.6,1.4 .4,2.8 1.6,2 .4,1.4 v 1 h -.7 l -1.5,-1.2 -.4,.2 -1.2,-.2 -1.7,-1.4 -1.4,-.3 -1,.5 -1.2,-.3 -.4,.2 -1.7,-.8 -1,-1 -1,-1.3 -.6,-.2 -.8,.7 -1.6,1.3 -1.1,-.8 -.4,-2.3 .8,-2.1 -.3,-.5 .3,-.4 -.7,-1 1,-.1 1,-.9 .4,-1.8 1.7,-2.6 -2.6,-1.8 -1,1.7 -.6,-.6 h -1 l -.6,-.1 -.4,-.4 .1,-.5 -1.7,-.6 -.8,.3 -1.2,-.1 -.7,-.7 -.5,-.2 -.2,-.7 .6,-.8 v -.9 l -1.2,-.2 -1,-.9 -.9,.1 -1.6,-.3 -.9,-.4 .2,-1.6 -1,-.5 -.2,-.7 h -.7 l -.8,-1.2 .2,-1 -2.6,.4 -2.2,-1.6 -1.4,.3 -.9,1.4 h -1.3 l -1.7,2.9 -3.3,.4 -1.9,-1 -2.6,3.8 -2.2,-.3 -3.1,3.9 -.9,1.6 -1.8,1.6 -1.7,-11.4 60.5,-11.8 7.6,27.1 10.9,-2.3 0,5.3 -.1,3.1 -1,1.8 z m -13.4,-1.8 -1.3,.9 .8,1.8 1.7,.8 -.4,-1.6 z">
+<title>Maryland</title></path>
+
+<path class="ma" id="MA" d="m 899.9,174.2 h 3.4 l .9,-.6 .1,-1.3 -1.9,-1.8 .4,1 -1.5,1.5 h -2.3 l .1,.8 z m -9,1.8 -1.2,-.6 1,-.8 .6,-2.1 1.2,-1 .8,-.2 .6,.9 1.1,.2 .6,-.6 .5,1.9 -1.3,.3 -2.8,.7 z m -34.9,-23.4 18.4,-3.8 1,-1.5 .3,-1.7 1.9,-.6 .5,-1.1 1.7,-1.1 1.3,.3 1.7,3.3 1,.4 1.1,-1.3 .8,1.3 v 1.1 l -3,2.4 .2,.8 -.9,1 .4,.8 -1.3,.3 .9,1.2 -.8,.7 .6,1 .9,-.2 .3,-.8 1.1,.6 h 1.8 l 2.5,2.6 .2,2.6 1.8,.1 .8,1.1 .6,2 1,.7 h 1.9 l 1.9,-.1 .8,-.9 1.6,-1.2 1.1,-.3 -1.2,-2.1 -.3,.9 -1.5,-3.6 h -.8 l -.4,.9 -1.2,-1 1.3,-1.1 1.8,.4 2.3,2.1 1.3,2.7 1.2,3.3 -1,2.8 v -1.8 l -.7,-1 -3.5,2.3 -.9,-.3 -1.6,1 -.1,1.2 -2.2,1.2 -2,2.1 -2,1.9 h -1.2 l 3.3,-3.3 .5,-1.9 -.5,-.6 -.3,-1.3 -.9,-.1 -.1,1.3 -1,1.2 h -1.2 l -.3,1.1 .4,1.2 -1.2,1.1 -1.1,-.2 -.4,1 -1.4,-3 -1.3,-1.1 -2.6,-1.3 -.6,-2.2 h -.8 l -.7,-2.6 -6.5,2 -.1,-.3 -14.9,3.4 v .7 l -.9,.3 -.5,-.7 -10.5,2.4 -.7,-1 .5,-15 z">
+<title>Massachusetts</title></path>
+
+<path class="mi" id="MI" d="m 663.3,209.8 .1,1.4 21.4,-3.5 .5,-1.2 3.9,-5.9 v -4.3 l .8,-2.1 2.2,-.8 2,-7.8 1,-.5 1,.6 -.2,.6 -1.1,.8 .3,.9 .8,.4 1.9,-1.4 .4,-9.8 -1.6,-2.3 -1.2,-3.7 v -2.5 l -2.3,-4.4 v -1.8 l -1.2,-3.3 -2.3,-3 -2.9,-1 -4.8,3 -2.5,4.6 -.2,.9 -3,3.5 -1.5,-.2 -2.9,-2.8 -.1,-3.4 1.5,-1.9 2,-.2 1.2,-1.7 .2,-4 .8,-.8 1.1,-.1 .9,-1.7 -.2,-9.6 -.3,-1.3 -1.2,-1.2 -1.7,-1 -.1,-1.8 .7,-.6 1.8,.8 -.3,-1.7 -1.9,-2.7 -.7,-1.6 -1.1,-1.1 h -2.2 l -8.1,-2.9 -1.4,-1.7 -3.1,-.3 -1.2,.3 -4.4,-2.3 h -1.4 l .5,1 -2.7,-.1 .1,.6 .6,.6 -2.5,2.1 .1,1.8 1.5,2.3 1.5,.2 v .6 l -1.5,.5 -2.1,-.1 -2.8,2.5 .1,2.5 .4,5.8 -2.2,3.4 .8,-4.5 -.8,-.6 -.9,5.3 -1,-2.3 .5,-2.3 -.5,-1 .6,-1.3 -.6,-1.1 1,-1 v -1.2 l -1.3,.6 -1.3,3.1 -.7,.7 -1.3,2.4 -1.7,-.2 -.1,1.2 h -1.6 l .2,1.5 .2,2 -3,1.2 .1,1.3 1,1.7 -.1,5.2 -1.3,4.4 -1.7,2.5 1.2,1.4 .8,3.5 -1,2.5 -.2,2.1 1.7,3.4 2.5,4.9 1.2,1.9 1.6,6.9 -.1,8.8 -.9,3.9 -2,3.2 -.9,3.7 -2,3 -1.2,1 z m -95.8,-96.8 3,3.8 17,3.8 1.4,1 4,.8 .7,.5 2.8,-.2 4.9,.8 1.4,1.5 -1,1 .8,.8 3.8,.7 1.2,1.2 .1,4.4 -1.3,2.8 2,.1 1,-.8 .9,.8 -1.1,3.1 1,1.6 1.2,.3 .8,-1.8 2.9,-4.6 1.6,-6 2.3,-2 -.5,-1.6 .5,-.9 1,1.6 -.3,2.2 2.9,-2.2 .2,-2.3 2.1,.6 .8,-1.6 .7,.6 -.7,1.5 -1,.5 -1,2 1.4,1.8 1.1,-.5 -.5,-.7 1,-1.5 1.9,-1.7 h .8 l .2,-2.6 2,-1.8 7.9,-.5 1.9,-3.1 3.8,-.3 3.8,1.2 4.2,2.7 .7,-.2 -.2,-3.5 .7,-.2 4.5,1.1 1.5,-.2 2.9,-.7 1.7,.4 1.8,.1 v -1.1 l -.7,-.9 -1.5,-.2 -1.1,-.8 .5,-1.4 -.8,-.3 -2.6,.1 -.1,-1 1.1,-.8 .6,.8 .5,-1.8 -.7,-.7 .7,-.2 -1.4,-1.3 .3,-1.3 .1,-1.9 h -1.3 l -1.5,1 -1.9,.1 -.5,1.8 -1.9,.2 -.3,-1.2 -2.2,.1 -1,1.2 -.7,-.1 -.2,-.8 -2.6,.4 -.1,-4.8 1,-2 -.7,-.1 -1.8,1.1 h -2.2 l -3.8,2.7 -6.2,.3 -4.1,.8 -1.9,1.5 -1.4,1.3 -2.5,1.7 -.3,.8 -.6,-1.7 -1.3,-.6 v .6 l .7,.7 v 1.3 l -1.5,-.6 h -.6 l -.3,1.2 -2,-1.9 -1.3,-.2 -1.3,1.5 -3.2,-.1 -.5,-1.4 -2,-1.9 -1.3,-1.6 v -.7 l -1.1,-1.4 -2.6,-1.2 -3.3,-.1 -1.1,-.9 h -1.4 l -.7,.4 -2.2,2.2 -.7,1.1 -1,-.7 .2,-1 .8,-2.1 3.2,-5 .8,-.2 1.7,-1.9 .7,-1.6 3,-.6 .8,-.6 -.1,-1 -.5,-.5 -4.5,.2 -2,.5 -2.6,1.2 -1.2,1.2 -1.7,2.2 -1.8,1 -3.3,3.4 -.4,1.6 -7.4,4.6 -4,.5 -1.8,.4 -2.3,3 -1.8,.7 -4.4,2.3 z m 100.7,3.8 3.8,.1 .6,-.5 -.2,-2 -1.7,-1.8 -1.9,.1 -.1,.5 1.1,.4 -1.6,.8 -.3,1 -.6,-.6 -.4,.8 z m -75.1,-41.9 -2.3,.2 -2.7,1.9 -7.1,5.3 .8,1 1.8,.3 2.8,-2 -1.1,-.5 2.3,-1.6 h 1 l 3,-1.9 -.1,-.9 z m 41.1,62.8 v 1 l 2.1,1.6 -.2,-2.4 z m -.7,2.8 1.1,.1 v .9 h -1 z m 21.4,-21.3 v .9 l .8,-.2 v -.5 z m 4.7,3.1 -.1,-1.1 -1.6,-.2 -.6,-.4 h -.9 l -.4,.3 .9,.4 1.1,1.1 z m -18,1.2 -.1,1.1 -.3,.7 .2,2.2 .4,.3 .7,.1 .5,-.9 .1,-1.6 -.3,-.6 -.1,-1.1 z">
+<title>Michigan</title></path>
+
+<path class="mn" id="MN" d="m 464.7,68.6 -1.1,2.8 .8,1.4 -.3,5.1 -.5,1.1 2.7,9.1 1.3,2.5 .7,14 1,2.7 -.4,5.8 2.9,7.4 .3,5.8 -.1,2.1 -.1,2.2 -.9,2 -3.1,1.9 -.3,1.2 1.7,2.5 .4,1.8 2.6,.6 1.5,1.9 -.2,39.5 h 28.2 l 36.3,-.9 18.6,-.7 -1.1,-4.5 -.2,-3 -2.2,-3 -2.8,-.7 -5.2,-3.6 -.6,-3.3 -6.3,-3.1 -.2,-1.3 h -3.3 l -2.2,-2.6 -2,-1.3 .7,-5.1 -.9,-1.6 .5,-5.4 1,-1.8 -.3,-2.7 -1.2,-1.3 -1.8,-.3 v -1.7 l 2.8,-5.8 5.9,-3.9 -.4,-13 .9,.4 .6,-.5 .1,-1.1 .9,-.6 1.4,1.2 .7,-.1 v 0 l -1.2,-2.2 4.3,-3.1 3.1,-3.7 1.6,-.8 4.7,-5.9 6.3,-5.8 3.9,-2.1 6.3,-2.7 7.6,-4.5 -.6,-.4 -3.7,.7 -2.8,.1 -1,-1.6 -1.4,-.9 -9.8,1.2 -1,-2.8 -1.6,-.1 -1.7,.8 -3.7,3.1 h -4.1 l -2.1,-1 -.3,-1.7 -3.9,-.8 -.6,-1.6 -.7,-1.3 -1,.9 -2.6,.1 -9.9,-5.5 h -2.9 l -.8,-.7 -3.1,1.3 -.8,1.3 -3.3,.8 -1.3,-.2 v -1.7 l -.7,-.9 h -5.9 l -.4,-1.4 h -2.6 l -1.1,.4 -2.4,-1.7 .3,-1.4 -.6,-2.4 -.7,-1.1 -.2,-3 -1,-3.1 -2.1,-1.6 h -2.9 l .1,8 -30.9,-.4 z">
+<title>Minnesota</title></path>
+
+<path class="ms" id="MS" d="m 623.8,468.6 -5,.1 -2.4,-1.5 -7.9,2.5 -.9,-.7 -.5,.2 -.1,1.6 -.6,.1 -2.6,2.7 -.7,-.1 -.6,-.7 -1.2,-1.8 .3,-1.3 -4.8,-6.8 .9,-4.6 1,-1.4 .1,-1.4 -36,2 1.7,-11.9 2.4,-4.8 6,-8.4 -1.8,-2.5 h 2 v -3.3 l -2.4,-2.5 .5,-1.7 -1.2,-1 -1.6,-7.1 .6,-1.4 1.2,-1.5 .5,-3 -1.5,-2.3 -.5,-2.2 .9,-.7 v -.8 l -1.7,-1.1 -.1,-.7 1.6,-.9 -1.2,-1.1 1.7,-7.1 3.4,-1.6 v -.8 l -1.1,-1.4 2.9,-5.4 h 1.9 l 1.5,-1.2 -.3,-5.2 3.1,-4.5 1.8,-.6 -.5,-3.1 38.3,-2.6 1.3,2 -1.3,67 4.4,33.2 z">
+<title>Mississippi</title></path>
+
+<path class="mo" id="MO" d="m 555.3,248.9 -1.1,-1.1 -.6,-1.6 -1.7,-1.3 -14.3,.8 -27.2,1.2 -25.9,-.1 1.3,1.3 -.3,1.4 2.1,3.7 3.9,6.3 2.9,3 2,.6 .9,-1 1.5,2.1 -.1,1.2 -2.7,2.6 -.5,2.3 2.5,2.5 2.6,4.7 3.2,.7 .5,48.1 .2,10.8 39.1,-.7 39.8,-2 1.6,2.5 v 2.2 l -1.7,1.5 -2.8,5.1 11.2,-.8 1,-2 1.2,-.5 v -.7 l -1.2,-1.1 -.6,-1 1.7,.2 .8,-.7 -1.4,-1.5 1.4,-.5 .1,-1 -.6,-1 v -1.3 l -.7,-.7 .2,-1 h 1.1 l .7,.7 -.3,1 .8,.7 .8,-1 1,-2.7 1.4,.9 .7,-.4 1.2,-4.1 -1,-1 1,-2 .2,-.9 -1.3,-.8 h -2.8 l -1.4,-1.5 -1.8,-3.8 v -1.9 l .8,-.6 .1,-1.3 -1.7,-1.9 -.9,-2.5 -2.7,-4.1 -4.8,-1.3 -7.4,-7.1 -.4,-2.4 2.8,-7.6 -.4,-1.9 1.2,-1.1 v -1.3 l -2.8,-1.5 -3,-.7 -3.4,1.2 -1.3,-2.3 .6,-1.9 -.7,-2.4 -8.6,-8.4 -2.2,-1.5 -2.5,-5.9 -1.2,-5.4 1.4,-3.7 z">
+<title>Missouri</title></path>
+
+<path class="mt" id="MT" d="m 247,130.5 57.3,7.9 51,5.3 2,-20.7 5.2,-66.7 -53.5,-5.6 -54.3,-7.7 -65.9,-12.5 -4.8,22 3.7,7.4 -1.6,4.8 3.6,4.8 1.9,.7 3.9,8.3 v 2.1 l 2.3,3 h .9 l 1.4,2.1 h 3.2 v 1.6 l -7.1,17 -.5,4.1 1.4,.5 1.6,2.6 2.8,-1.4 3.6,-2.4 1.9,1.9 .5,2.5 -.5,3.2 2.5,9.7 2.6,3.5 2.3,1.4 .4,3 v 4.1 l 2.3,2.3 1.6,-2.3 6.9,1.6 2.1,-1.2 9,1.7 2.8,-3.3 1.8,-.6 1.2,1.8 1.6,4.1 .9,.1 z">
+<title>Montana</title></path>
+
+<path class="ne" id="NE" d="m 402.5,191.1 38,1.6 3.4,3.2 1.7,.2 2.1,2 1.8,-.1 1.8,-2 1.5,.6 1,-.7 .7,.5 .9,-.4 .7,.4 .9,-.4 1,.5 1.4,-.6 2,.6 .6,1.1 6.1,2.2 1.2,1.3 .9,2.6 1.8,.7 1.5,-.2 .5,.9 v 2.3 l .6,1.7 v 1.4 l 1.3,3.7 2.2,4.3 .2,3.7 2.8,5 .4,6.1 1.3,.7 -.2,2.9 .8,3.3 -.7,2.2 1.8,4.4 1.3,1.3 -.3,1.4 2.1,3.7 3.9,6.3 h -32.4 l -43.7,-1.2 -36,-2 1.4,-22.1 -33.1,-2.4 3.7,-44.2 z">
+<title>Nebraska</title></path>
+
+<path class="nv" id="NV" d="m 167.6,296.8 -3.4,17.5 -2.4,2.9 h -2 l -1.2,-2.7 -3.7,-1.4 -3.5,.6 -1,13.6 .5,4.9 -.5,2.9 -1.4,3 -70.4,-105 -1.1,-3.5 16.4,-63.1 47,11.2 24.4,5.4 23.3,4.7 z">
+<title>Nevada</title></path>
+
+<path class="nh" id="NH" d="m 862.6,93.6 -1.3,.1 -1,-1.1 -1.9,1.4 -.5,6.1 1.2,2.3 -1.1,3.5 2.1,2.8 -.4,1.7 .1,1.3 -1.1,2.1 -1.4,.4 -.6,1.3 -2.1,1 -.7,1.5 1.4,3.4 -.5,2.5 .5,1.5 -1,1.9 .4,1.9 -1.3,1.9 .2,2.2 -.7,1.1 .7,4.5 .7,1.5 -.5,2.6 .9,1.8 -.2,2.5 -.5,1.3 -.1,1.4 2.1,2.6 18.4,-3.8 1,-1.5 .3,-1.7 1.9,-.6 .5,-1.1 1.7,-1.1 1.3,.3 .8,-4.8 -2.3,-1.4 -.8,-2.2 -3.2,-2 -.6,-4 -11.9,-36.8 z">
+<title>New Hampshire</title></path>
+
+<path class="nj" id="NJ" d="m 842.5,195.4 -14.6,-4.9 -1.8,2.5 .1,2.2 -3,5.4 1.5,1.8 -.7,2 -1,1 .5,3.6 2.7,.9 1,2.8 2.1,1.1 4.2,3.2 -3.3,2.6 -1.6,2.3 -1.8,3 -1.6,.6 -1.4,1.7 -1,2.2 -.3,2.1 .8,.9 .4,2.3 1.2,.6 2.4,1.5 1.8,.8 1.6,.8 .1,1.1 .8,.1 1.1,-1.2 .8,.4 2.1,.2 -.2,2.9 .2,2.5 1.8,-.7 1.5,-3.9 1.6,-4.8 2.9,-2.8 .6,-3.5 -.6,-1.2 1.7,-2.9 v -1.2 l -.7,-1.1 1.2,-2.7 -.3,-3.6 -.6,-8.2 -1.2,-1.4 v 1.4 l .5,.6 h -1.1 l -.6,-.4 -1.3,-.2 -.9,.6 -1.2,-1.6 .7,-1.7 v -1 l 1.7,-.7 .8,-2.1 z">
+<title>New Jersey</title></path>
+
+<path class="nm" id="NM" d="m 357.5,332.9 h -.8 l -7.9,99.3 -31.8,-2.6 -34.4,-3.6 -.3,3 2,2.2 -30.8,-4.1 -1.4,10.2 -15.7,-2.2 17.4,-124.1 52.6,6.5 51.7,4.8 z">
+<title>New Mexico</title></path>
+
+<path class="ny" id="NY" d="m 872.9,181.6 -1.3,.1 -.5,1 z m -30.6,22.7 .7,.6 1.3,-.3 1.1,.3 .9,-1.3 h 1.9 l 2.4,-.9 5.1,-2.1 -.5,-.5 -1.9,.8 -2,.9 .2,-.8 2.6,-1.1 .8,-1 1.2,.1 4.1,-2.3 v .7 l -4.2,3 4.5,-2.8 1.7,-2.2 1.5,-.1 4.5,-3.1 3.2,-3.1 3,-2.3 1,-1.2 -1.7,-.1 -1,1.2 -.2,.7 -.9,.7 -.8,-1.1 -1.7,1 -.1,.9 -.9,-.2 .5,-.9 -1.2,-.7 -.6,.9 .9,.3 .2,.5 -.3,.5 -1.4,2.6 h -1.9 l .9,-1.8 .9,-.6 .3,-1.7 1.4,-1.6 .9,-.8 1.5,-.7 -1.2,-.2 -.7,.9 h -.7 l -1.1,.8 -.2,1 -2.2,2.1 -.4,.9 -1.4,.9 -7.7,1.9 .2,.9 -.9,.7 -2,.3 -1,-.6 -.2,1.1 -1.1,-.4 .1,1 -1.2,-.1 -1.2,.5 -.2,1.1 h -1 l .2,1 h -.7 l .2,1 -1.8,.4 -1.5,2.3 z m -.8,-.4 -1.6,.4 v 1 l -.7,1.6 .6,.7 2.4,-2.3 -.1,-.9 z m -10.1,-95.2 -.6,1.9 1.4,.9 -.4,1.5 .5,3.2 2.2,2.3 -.4,2.2 .6,2 -.4,1 -.3,3.8 3.1,6.7 -.8,1.8 .9,2.2 .9,-1.6 1.9,1.5 3,14.2 -.5,2 1.1,1 -.5,15 .7,1 2.8,16.3 1.8,1.5 -3.5,3.4 1.7,2.2 -1.3,3.3 -1.5,1.7 -1.5,2.3 -.2,-.7 .4,-5.9 -14.6,-4.9 -1.6,-1.1 -1.9,.3 -3,-2.2 -3,-5.8 h -2 l -.4,-1.5 -1.7,-1.1 -70.5,13.9 -.8,-6 4.3,-3.9 .6,-1.7 3.9,-2.5 .6,-2.4 2.3,-2 .8,-1.1 -1.7,-3.3 -1.7,-.5 -1.8,-3 -.2,-3.2 7.6,-3.9 8.2,-1.6 h 4.4 l 3.2,1.6 .9,-.1 1.8,-1.6 3.4,-.7 h 3 l 2.6,-1.3 2.5,-2.6 2.4,-3.1 1.9,-.4 1.1,-.5 .4,-3.2 -1.4,-2.7 -1.2,-.7 2,-1.3 -.1,-1.8 h -1.5 l -2.3,-1.4 -.1,-3.1 6.2,-6.1 .7,-2.4 3.7,-6.3 5.9,-6.4 2.1,-1.7 2.5,.1 20.6,-5.2 z">
+<title>New York</title></path>
+
+<path class="nc" id="NC" d="m 829,300.1 -29.1,6.1 -39.4,7.3 -29.4,3.5 v 5.2 l -1.5,-.1 -1.4,1.2 -2.4,5.2 -2.6,-1.1 -3.5,2.5 -.7,2.1 -1.5,1.2 -.8,-.8 -.1,-1.5 -.8,-.2 -4,3.3 -.6,3.4 -4.7,2.4 -.5,1.2 -3.2,2.6 -3.6,.5 -4.6,3 -.8,4.1 -1.3,.9 -1.5,-.1 -1.4,1.3 -.1,4.9 21.4,-3 4.4,-1.9 1.3,-.1 7.3,-4.3 23.2,-2.2 .4,.5 -.2,1.4 .7,.3 1.2,-1.5 3.3,3 .1,2.6 19.7,-2.8 24.5,17.1 4,-2.2 3,-.7 h 1.7 l 1.1,1.1 .8,-2 .6,-5 1.7,-3.9 5.4,-6.1 4.1,-3.5 5.4,-2.3 2.5,-.4 1.3,.4 .7,1.1 3.3,-6.6 3.3,-5.3 -.7,-.3 -4.4,6.8 -.5,-.8 2,-2.2 -.4,-1.5 -2,-.5 1,1.3 -1.2,.1 -1.2,-1.8 -1.2,2 -1.6,.2 1,-2.7 .7,-1.7 -.2,-2.9 -2.2,-.1 .9,-.9 1.1,.3 2.7,.1 .8,-.5 h 2.3 l 2,-1.9 .2,-3.2 1.3,-1.4 1.2,-.2 1.3,-1 -.5,-3.7 -2.2,-3.8 -2.7,-.2 -.9,1.6 -.5,-1 -2.7,.2 -1.2,.4 -1.9,1.2 -.3,-.4 h -.9 l -1.8,1.2 -2.6,.5 v -1.3 l .8,-1 1,.7 h 1 l 1.7,-2.1 3.7,-1.7 2,-2.2 h 2.4 l .8,1.3 1.7,.8 -.5,-1.5 -.3,-1.6 -2.8,-3.1 -.3,-1.4 -.4,1 -.9,-1.3 z m 7,31 2.7,-2.5 4.6,-3.3 v -3.7 l -.4,-3.1 -1.7,-4.2 1.5,1.4 1,3.2 .4,7.6 -1.7,.4 -3.1,2.4 -3.2,3.2 z m 1.9,-19.3 -.9,-.2 v 1 l 2.5,2.2 -.2,-1.4 z m 2.9,2.1 -1.4,-2.8 -2.2,-3.4 -2.4,-3 -2.2,-4.3 -.8,-.7 2.2,4.3 .3,1.3 3.4,5.5 1.8,2.1 z">
+<title>North Carolina</title></path>
+
+<path class="nd" id="ND" d="m 464.7,68.6 -1.1,2.8 .8,1.4 -.3,5.1 -.5,1.1 2.7,9.1 1.3,2.5 .7,14 1,2.7 -.4,5.8 2.9,7.4 .3,5.8 -.1,2.1 -29.5,-.4 -46,-2.1 -39.2,-2.9 5.2,-66.7 44.5,3.4 55.3,1.6 z">
+<title>North Dakota</title></path>
+
+<path class="oh" id="OH" d="m 685.7,208.8 1.9,-.4 3,1.3 2.1,.6 .7,.9 h 1 l 1,-1.5 1.3,.8 h 1.5 l -.1,1 -3.1,.5 -2,1.1 1.9,.8 1.6,-1.5 2.4,-.4 2.2,1.5 1.5,-.1 2.5,-1.7 3.6,-2.1 5.2,-.3 4.9,-5.9 3.8,-3.1 9.3,-5.1 4.9,29.9 -2.2,1.2 1.4,2.1 -.1,2.2 .6,2 -1.1,3.4 -.1,5.4 -1,3.6 .5,1.1 -.4,2.2 -1.1,.5 -2,3.3 -1.8,2 h -.6 l -1.8,1.7 -1.3,-1.2 -1.5,1.8 -.3,1.2 h -1.3 l -1.3,2.2 .1,2.1 -1,.5 1.4,1.1 v 1.9 l -1,.2 -.7,.8 -1,.5 -.6,-2.1 -1.6,-.5 -1,2.3 -.3,2.2 -1.1,1.3 1.3,3.6 -1.5,.8 -.4,3.5 h -1.5 l -3.2,1.4 -1.2,-2.1 -3.5,-1.4 -.8,-2.9 -.5,-.8 -3.4,1.8 -.6,1.7 h -.9 l -1.3,.7 -1.2,-.8 -3,-.8 -1.9,.8 v 1 l -2.2,-.2 -1.9,-2.1 -2.3,.2 -4.1,-.7 v -1 l -2.2,-3.4 -2.9,-1.2 -1.9,.8 -2.2,-.1 -1.3,-.5 -6.6,-57.2 21.4,-3.5 z">
+<title>Ohio</title></path>
+
+<path class="ok" id="OK" d="m 501.5,398.6 -4.6,-3.8 -2.2,-.9 -.5,1.6 -5.1,.3 -.6,-1.5 -5,2.5 -1.6,-.7 -3.7,.3 -.6,1.7 -3.6,.9 -1.3,-1.2 -1.2,.1 -2,-1.8 -2.1,.7 -2,-.5 -1.8,-2 -2.5,4.2 -1.2,.8 -1,-1.8 .3,-2 -1.2,-.7 -2.3,2.5 -1.7,-1.2 -.1,-1.5 -1.3,.5 -2.6,-1.7 -3,2.6 -2.3,-1.1 .7,-2.1 -2.3,.1 -1.9,-3 -3.5,-1.1 -2,2.3 -2.3,-2.2 -1.4,.4 -2,.1 -3.5,-1.9 -2.3,.1 -1.2,-.7 -.5,-2.9 -2.3,-1.7 -1.1,1.5 -1.4,-1 -1.2,-.4 -1.1,1 -1.5,-.3 -2.5,-3 -2.7,-1.3 1.4,-42.7 -52.6,-3.2 .6,-10.6 16.5,1 67.7,2.9 62,.1 .2,10.8 4.1,24.4 -.7,39 z">
+<title>Oklahoma</title></path>
+
+<path class="or" id="OR" d="m 93.9,166.5 47,11.2 8.5,-37.3 2.9,-5.8 .4,-2.1 .8,-.9 -.9,-2 -2.9,-1.2 .2,-4.2 4,-5.8 2.5,-.8 1.6,-2.3 -.1,-1.6 1.8,-1.6 3.2,-5.5 4.2,-4.8 -.5,-3.2 -3.5,-3.1 -1.6,-3.6 -30.3,-7.3 -2.8,1 -5.4,-.9 -1.8,-.9 -1.5,1.2 -3.3,-.4 -4.5,.5 -.9,.7 -4.2,-.4 -.8,-1.6 -1.2,-.2 -4.4,1.3 -1.6,-1.1 -2.2,.8 -.2,-1.8 -2.3,-1.2 -1.5,-.2 -1,-1.1 -3,.3 -1.2,-.8 h -1.2 l -1.2,.9 -5.5,.7 -6.6,-4.2 1.1,-5.6 -.4,-4.1 -3.2,-3.7 -3.7,.1 -.4,-1.1 .4,-1.2 -.7,-.8 -1,.1 -1.1,1.3 -1.5,-.2 -.5,-1.1 -1,-.1 -.7,.6 -2,-1.9 v 4.3 l -1.3,1.3 -1.1,3.5 -.1,2.3 -4.5,12.3 -13.2,31.3 -3.2,4.6 -1.6,-.1 .1,2.1 -5.2,7.1 -.3,3.3 1,1.3 .1,2.4 -1.2,1.1 -1.2,3 .1,5.7 1.2,2.9 z">
+<title>Oregon</title></path>
+
+<path class="pa" id="PA" d="m 826.3,189.4 -1.9,.3 -3,-2.2 -3,-5.8 h -2 l -.4,-1.5 -1.7,-1.1 -70.5,13.9 -.8,-6 -4.2,3.4 -.9,.1 -2.7,3 -3.3,1.7 4.9,29.9 3.2,19.7 17.4,-2.9 60.5,-11.8 1.2,-2.1 1.5,-1.1 1.6,-.3 1.6,.6 1.4,-1.7 1.6,-.6 1.8,-3 1.6,-2.3 3.3,-2.6 -4.2,-3.2 -2.1,-1.1 -1,-2.8 -2.7,-.9 -.5,-3.6 1,-1 .7,-2 -1.5,-1.8 3,-5.4 -.1,-2.2 1.8,-2.5 z">
+<title>Pennsylvania</title></path>
+
+<path class="ri" id="RI" d="m 883.2,170.7 -1.3,-1.1 -2.6,-1.3 -.6,-2.2 h -.8 l -.7,-2.6 -6.5,2 3.2,12.3 -.4,1.1 .4,1.8 5.6,-3.6 .1,-3 -.8,-.8 .4,-.6 -.1,-1.3 -.9,-.7 1.2,-.4 -.9,-1.6 1.8,.7 .3,1.4 .7,1.2 -1.4,-.8 1.1,1.7 -.3,1.2 -.6,-1.1 v 2.5 l .6,-.9 .4,.9 1.3,-1.5 -.2,-2.5 1.4,3.1 1,-.9 z m -4.7,12.2 h .9 l .5,-.6 -.8,-1.3 -.7,.7 z">
+<title>Rhode Island</title></path>
+
+<path class="sc" id="SC" d="m 772.3,350.2 -19.7,2.8 -.1,-2.6 -3.3,-3 -1.2,1.5 -.7,-.3 .2,-1.4 -.4,-.5 -23.2,2.2 -7.3,4.3 -1.3,.1 -4.4,1.9 -.1,1.9 -1.9,1 -1.4,3.2 .2,1.3 6.1,3.8 2.6,-.3 3.1,4 .4,1.7 4.2,5.1 2.6,1.7 1.4,.2 2.2,1.6 1.1,2.2 2,1.6 1.8,.5 2.7,2.7 .1,1.4 2.6,2.8 5,2.3 3.6,6.7 .3,2.7 3.9,2.1 2.5,4.8 .8,3.1 4.2,.4 .8,-1.5 h .6 l 1.8,-1.5 .5,-2 3.2,-2.1 .3,-2.4 -1.2,-.9 .8,-.7 .8,.4 1.3,-.4 1.8,-2.1 3.8,-1.8 1.6,-2.4 .1,-.7 4.8,-4.4 -.1,-.5 -.9,-.8 1.1,-1.5 h .8 l .4,.5 .7,-.8 h 1.3 l .6,-1.5 2.3,-2.1 -.3,-5.4 .8,-2.3 3.6,-6.2 2.4,-2.2 2.2,-1.1 z">
+<title>South Carolina</title></path>
+
+<path class="sd" id="SD" d="m 396.5,125.9 46,2.1 29.5,.4 -.1,2.2 -.9,2 -3.1,1.9 -.3,1.2 1.7,2.5 .4,1.8 2.6,.6 1.5,1.9 -.2,39.5 -2.2,-.1 -.1,1.6 1.3,1.5 -.1,1.1 -1,.5 .4,1.6 1.3,.4 .7,2 -1.7,5.1 -1,4.3 1.3,1.2 .3,1.3 .7,1.7 -1.5,.2 -1.8,-.7 -.9,-2.6 -1.2,-1.3 -6.1,-2.2 -.6,-1.1 -2,-.6 -1.4,.6 -1,-.5 -.9,.4 -.7,-.4 -.9,.4 -.7,-.5 -1,.7 -1.5,-.6 -1.8,2 -1.8,.1 -2.1,-2 -1.7,-.2 -3.4,-3.2 -38,-1.6 -51.1,-3.5 3.9,-43.9 2,-20.7 z">
+<title>South Dakota</title></path>
+
+<path class="tn" id="TN" d="m 620.9,365.1 45.7,-4 22.9,-2.9 .1,-4.9 1.4,-1.3 1.5,.1 1.3,-.9 .8,-4.1 4.6,-3 3.6,-.5 3.2,-2.6 .5,-1.2 4.7,-2.4 .6,-3.4 4,-3.3 .8,.2 .1,1.5 .8,.8 1.5,-1.2 .7,-2.1 3.5,-2.5 2.6,1.1 2.4,-5.2 1.4,-1.2 1.5,.1 0,-5.2 .3,-.7 -4.6,.5 -.2,1 -28.9,3.3 -5.6,1.4 -20.5,1.4 -5.2,.8 -17.4,1 -2.6,.8 -22.6,2 -.7,-.6 h -3.7 l 1.2,3.2 -.6,.9 -23.3,1.5 -.8,1 -.8,-.7 h -1 v 1.3 l .6,1 -.1,1 -1.4,.5 1.4,1.5 -.8,.7 -1.7,-.2 .6,1 1.2,1.1 v .7 l -1.2,.5 -1,2 .1,.6 1.4,1 -.4,.7 h -1.5 v .5 l .9,.9 .1,.8 -1.4,.2 -.5,.8 -1.6,.2 -.9,.9 .6,.9 1.1,-.1 .5,.9 -1.6,1.3 .4,1.5 -2,-.6 -.1,.7 .4,1.1 -.3,1.4 -1.3,-.8 -.8,.8 1.1,.1 .1,1.5 -.6,1 1.1,.9 -.3,1.5 .8,.7 -.7,1 -1.2,-.5 -.9,2.2 -1.6,.7 z">
+<title>Tennessee</title></path>
+
+<path class="tx" id="TX" d="m 282.3,429 .3,-3 34.4,3.6 31.8,2.6 7.9,-99.3 .8,0 52.6,3.2 -1.4,42.7 2.7,1.3 2.5,3 1.5,.3 1.1,-1 1.2,.4 1.4,1 1.1,-1.5 2.3,1.7 .5,2.9 1.2,.7 2.3,-.1 3.5,1.9 2,-.1 1.4,-.4 2.3,2.2 2,-2.3 3.5,1.1 1.9,3 2.3,-.1 -.7,2.1 2.3,1.1 3,-2.6 2.6,1.7 1.3,-.5 .1,1.5 1.7,1.2 2.3,-2.5 1.2,.7 -.3,2 1,1.8 1.2,-.8 2.5,-4.2 1.8,2 2,.5 2.1,-.7 2,1.8 1.2,-.1 1.3,1.2 3.6,-.9 .6,-1.7 3.7,-.3 1.6,.7 5,-2.5 .6,1.5 5.1,-.3 .5,-1.6 2.2,.9 4.6,3.8 6.4,1.9 2.6,2.3 2.8,-1.3 3.2,.8 .2,11.9 .5,19.9 .7,3.4 2.6,2.8 .7,5.4 3.8,4.6 .8,4.3 h 1 l -.1,7.3 -3.3,6.4 1.3,2.3 -1.3,1.5 .7,3 -.1,4.3 -2.2,3.5 -.1,.8 -1.7,1.2 1,1.8 1.2,1.1 -3.5,.3 -8.4,3.9 -3.5,1.4 -1.8,1.8 -.7,-.5 2.1,-2.3 1.8,-.7 .5,-.9 -2.9,-.1 -.7,-.8 .8,-2 -.9,-1.8 h -.6 l -2.4,1.3 -1.9,2.6 .3,1.7 3.3,3.4 1.3,.3 v .8 l -2.3,1.6 -4.9,4 -4,3.9 -3.2,1.4 -5,3 -3.7,2 -4.5,1.9 -4.1,2.5 3.2,-3 v -1.1 l .6,-.8 -.2,-1.8 -1.5,-.1 -1.1,1.5 -2.6,1.3 -1.8,-1.2 -.3,-1.7 h -1.5 l .8,2.2 1.4,.7 1.2,.9 1.8,1.6 -.7,.8 -3.9,1.7 -1.7,.1 -1.2,-1.2 -.5,2.1 .5,1.1 -2.7,2 -1.5,.2 -.8,.7 -.4,1.7 -1.8,3.3 -1.6,.7 -1.6,-.6 -1.8,1.1 .3,1.4 1.3,.8 1,.8 -1.8,3.5 -.3,2.8 -1,1.7 -1.4,1 -2.9,.4 1.8,.6 1.9,-.6 -.4,3.2 -1.1,-.1 .2,1.2 .3,1.4 -1.3,.9 v 3.1 l 1.6,1.4 .6,3.1 -.4,2.2 -1,.4 .4,1.5 1.1,.4 .8,1.7 v 2.6 l 1.1,2.1 2.2,2.6 -.1,.7 -2.2,-.2 -1.6,1.4 .2,1.4 -.9,-.3 -1.4,-.2 -3.4,-3.7 -2.3,-.6 h -7.1 l -2.8,-.8 -3.6,-3 -1.7,-1 -2.1,.1 -3.2,-2.6 -5.4,-1.6 v -1.3 l -1.4,-1.8 -.9,-4.7 -1.1,-1.7 -1.7,-1.4 v -1.6 l -1.4,-.6 .6,-2.6 -.3,-2.2 -1.3,-1.4 .7,-3 -.8,-3.2 -1.7,-1.4 h -1.1 l -4,-3.5 .1,-1.9 -.8,-1.7 -.8,-.2 -.9,-2.4 -2,-1.6 -2.9,-2.5 -.2,-2.1 -1,-.7 .2,-1.6 .5,-.7 -1.4,-1.5 .1,-.7 -2,-2.2 .1,-2.1 -2.7,-4.9 -.1,-1.7 -1.8,-3.1 -5.1,-4.8 v -1.1 l -3.3,-1.7 -.1,-1.8 -1.2,-.4 v -.7 l -.8,-.2 -2.1,-2.8 h -.8 l -.7,-.6 -1.3,1.1 h -2.2 l -2.6,-1.1 h -4.6 l -4.2,-2.1 -1.3,1.9 -2.2,-.6 -3.3,1.2 -1.7,2.8 -2,3.2 -1.1,4.4 -1.4,1.2 -1.1,.1 -.9,1.6 -1.3,.6 -.1,1.8 -2.9,.1 -1.8,-1.5 h -1 l -2,-2.9 -3.6,-.5 -1.7,-2.3 -1.3,-.2 -2.1,-.8 -3.4,-3.4 .2,-.8 -1.6,-1.2 -1,-.1 -3.4,-3.1 -.1,-2 -2.3,-4 .2,-1.6 -.7,-1.3 .8,-1.5 -.1,-2.4 -2.6,-4.1 -.6,-4.2 -1.6,-1.6 v -1 l -1.2,-.2 -.7,-1.1 -2.4,-1.7 -.9,-.1 -1.9,-1.6 v -1.1 l -2.9,-1.8 -.6,-2.1 -2.6,-2.3 -3.2,-4.4 -3,-1.3 -2.1,-1.8 .2,-1.2 -1.3,-1.4 -1.7,-3.7 -2.4,-1 z m 174.9,138.3 .8,.1 -.6,-4.8 -3.5,-12.3 -.2,-8.1 4.9,-10.5 6.1,-8.2 7.2,-5.1 v -.7 h -.8 l -2.6,1 -3.6,2.3 -.7,1.5 -8.2,11.6 -2.8,7.9 v 8.8 l 3.6,12 z">
+<title>Texas</title></path>
+
+<path class="ut" id="UT" d="m 233.2,217.9 3.3,-21.9 -47.9,-8.2 -21,109 46.2,8.2 40,6 11.5,-88.3 z">
+<title>Utah</title></path>
+
+<path class="vt" id="VT" d="m 859.1,102.4 -1.1,3.5 2.1,2.8 -.4,1.7 .1,1.3 -1.1,2.1 -1.4,.4 -.6,1.3 -2.1,1 -.7,1.5 1.4,3.4 -.5,2.5 .5,1.5 -1,1.9 .4,1.9 -1.3,1.9 .2,2.2 -.7,1.1 .7,4.5 .7,1.5 -.5,2.6 .9,1.8 -.2,2.5 -.5,1.3 -.1,1.4 2.1,2.6 -12.4,2.7 -1.1,-1 .5,-2 -3,-14.2 -1.9,-1.5 -.9,1.6 -.9,-2.2 .8,-1.8 -3.1,-6.7 .3,-3.8 .4,-1 -.6,-2 .4,-2.2 -2.2,-2.3 -.5,-3.2 .4,-1.5 -1.4,-.9 .6,-1.9 -.8,-1.7 27.3,-6.9 z">
+<title>Vermont</title></path>
+
+<path class="va" id="VA" d="m 834.7,265.4 -1.1,2.8 .5,1.1 .4,-1.1 .8,-3.1 z m -34.6,-7 -.7,-1 1,-.1 1,-.9 .4,-1.8 -.2,-.5 .1,-.5 -.3,-.7 -.6,-.5 -.4,-.1 -.5,-.4 -.6,-.6 h -1 l -.6,-.1 -.4,-.4 .1,-.5 -1.7,-.6 -.8,.3 -1.2,-.1 -.7,-.7 -.5,-.2 -.2,-.7 .6,-.8 v -.9 l -1.2,-.2 -1,-.9 -.9,.1 -1.6,-.3 -.4,.7 -.4,1.6 -.5,2.3 -10,-5.2 -.2,.9 .9,1.6 -.8,2.3 .1,2.9 -1.2,.8 -.5,2.1 -.9,.8 -1.4,1.8 -.9,.8 -1,2.5 -2.4,-1.1 -2.3,8.5 -1.3,1.6 -2.8,-.5 -1.3,-1.9 -2.3,-.7 -.1,4.7 -1.4,1.7 .4,1.5 -2.1,2.2 .4,1.9 -3.7,6.3 -1,3.3 1.5,1.2 -1.5,1.9 .1,1.4 -2.3,2 -.7,-1.1 -4.3,3.1 -1.5,-1 -.6,1.4 .8,.5 -.5,.9 -5.5,2.4 -3,-1.8 -.8,1.7 -1.9,1.8 -2.3,.1 -4.4,-2.3 -.1,-1.5 -1.5,-.7 .8,-1.2 -.7,-.6 -4.9,6.6 -2.9,1 -3,3 -.4,2.2 -2.1,1.3 -.1,1.7 -1.4,1.4 -1.8,.5 -.5,1.9 -1,.4 -6.9,4.2 28.9,-3.3 .2,-1 4.6,-.5 -.3,.7 29.4,-3.5 39.4,-7.3 29.1,-6.1 -.6,-1.2 .4,-.1 .9,.9 -.1,-1.4 -.3,-1.9 1.6,1.2 .9,2.1 v -1.3 l -3.4,-5.5 v -1.2 l -.7,-.8 -1.3,.7 .5,1.4 h -.8 l -.4,-1 -.6,.9 -.9,-1.1 -2.1,-.1 -.2,.7 1.5,2.1 -1.4,-.7 -.5,-1 -.4,.8 -.8,.1 -1.5,1.7 .3,-1.6 v -1.4 l -1.5,-.7 -1.8,-.5 -.2,-1.7 -.6,-1.3 -.6,1.1 -1.7,-1 -2,.3 .2,-.9 1.5,-.2 .9,.5 1.7,-.8 .9,.4 .5,1 v .7 l 1.9,.4 .3,.9 .9,.4 .9,1.2 1.4,-1.6 h .6 l -.1,-2.1 -1.3,1 -.6,-.9 1.5,-.2 -1.2,-.9 -1.2,.6 -.1,-1.7 -1.7,.2 -2.2,-1.1 -1.8,-2.2 3.6,2.2 .9,.3 1.7,-.8 -1.7,-.9 .6,-.6 -1,-.5 .8,-.2 -.3,-.9 1.1,.9 .4,-.8 .4,1.3 1.2,.8 .6,-.5 -.5,-.6 -.1,-2.5 -1.1,-.1 -1.6,-.8 .9,-1.1 -2,-.1 -.4,-.5 -1.4,.6 -1.4,-.8 -.5,-1.2 -2.1,-1.2 -2.1,-1.8 -2.2,-1.9 3,1.3 .9,1.2 2.1,.7 2.3,2.5 .2,-1.7 .6,1.3 2.3,.5 v -4 l -.8,-1.1 1.1,.4 .1,-1.6 -3.1,-1.4 -1.6,-.2 -1.3,-.2 .3,-1.2 -1.5,-.3 -.1,-.6 h -1.8 l -.2,.8 -.7,-1 h -2.7 l -1,-.4 -.2,-1 -1.2,-.6 -.4,-1.5 -.6,-.4 -.7,1.1 -.9,.2 -.9,.7 h -1.5 l -.9,-1.3 .4,-3.1 .5,-2.4 .6,.5 z m 21.9,11.6 .9,-.1 0,-.6 -.8,.1 z m 7.5,14.2 -1,2.7 1.2,-1.3 z m -1.8,-15.3 .7,.3 -.2,1.9 -.5,-.5 -1.3,1 1,.4 -1.8,4.4 .1,8.1 1.9,3.1 .5,-1.5 .4,-2.7 -.3,-2.3 .7,-.9 -.2,-1.4 1.2,-.6 -.6,-.5 .5,-.7 .8,1.1 -.2,1.1 -.4,3.9 1.1,-2.2 .4,-3.1 .1,-3 -.3,-2 .6,-2.3 1.1,-1.8 .1,-2.2 .3,-.9 -4.6,1.6 -.7,.8 z">
+<title>Virginia</title></path>
+
+<path class="wa" id="WA" d="m 161.9,83.6 .7,4 -1.1,4.3 -30.3,-7.3 -2.8,1 -5.4,-.9 -1.8,-.9 -1.5,1.2 -3.3,-.4 -4.5,.5 -.9,.7 -4.2,-.4 -.8,-1.6 -1.2,-.2 -4.4,1.3 -1.6,-1.1 -2.2,.8 -.2,-1.8 -2.3,-1.2 -1.5,-.2 -1,-1.1 -3,.3 -1.2,-.8 h -1.2 l -1.2,.9 -5.5,.7 -6.6,-4.2 1.1,-5.6 -.4,-4.1 -3.2,-3.7 -3.7,.1 -.4,-1.1 .4,-1.2 -.7,-.8 -1,.1 -2.1,-1.5 -1.2,.4 -2,-.1 -.7,-1.5 -1.6,-.3 2.5,-7.5 -.7,6 .5,.5 v -2 l .8,-.2 1.1,2.3 -.5,-2.2 1.2,-4.2 1.8,.4 -1.1,-2 -1,.3 -1.5,-.4 .2,-4.2 .2,1.5 .9,.5 .6,-1.6 h 3.2 l -2.2,-1.2 -1.7,-1.9 -1.4,1.6 1.2,-3.1 -.3,-4.6 -.2,-3.6 .9,-6.1 -.5,-2 -1.4,-2.1 .1,-4 .4,-2.7 2,-2.3 -.7,-1.4 .2,-.6 .9,.1 7.8,7.6 4.7,1.9 5.1,2.5 3.2,-.1 .2,3 1,-1.6 h .7 l .6,2.7 .5,-2.6 1.4,-.2 .5,.7 -1.1,.6 .1,1.6 .7,-1.5 h 1.1 l -.4,2.6 -1.1,-.8 .4,1.4 -.1,1.5 -.8,.7 -2.5,2.9 1.2,-3.4 -1.6,.4 -.4,2.1 -3.8,2.8 -.4,1 -2.1,2.2 -.1,1 h 2.2 l 2.4,-.2 .5,-.9 -3.9,.5 v -.6 l 2.6,-2.8 1.8,-.8 1.9,-.2 1,-1.6 3,-2.3 v -1.4 h 1.1 l .1,4 h -1.5 l -.6,.8 -1.1,-.9 .3,1.1 v 1.7 l -.7,.7 -.3,-1.6 -.8,.8 .7,.6 -.9,1.1 h 1.3 l .7,-.5 .1,2 -1,1.9 -.9,1 -.1,1.8 -1,-.2 -.2,-1.4 .9,-1.1 -.8,-.5 -.8,.7 -.7,2.2 -.8,.9 -.1,-2 .8,-1.1 -.2,-1.1 -1.2,1.2 .1,2.2 -.6,.4 -2.1,-.4 -1.3,1.2 2.2,-.6 -.2,2.2 1,-1.8 .4,1.4 .5,-1 .7,1.8 h .7 l .7,-.8 .6,-.1 2,-1.9 .2,-1.2 .8,.6 .3,.9 .7,-.3 .1,-1.2 h 1.3 l .2,-2.9 -.1,-2.7 .9,.3 -.7,-2.1 1.4,-.8 .2,-2.4 2.3,-2.2 1,.1 .3,-1.4 -1.2,-1.4 -.1,-3.5 -.8,.9 .7,2.9 -.6,.1 -.6,-1.9 -.6,-.5 .3,-2.3 1.8,-.1 .3,.7 .3,-1.6 -1.6,-1.7 -.6,-1.6 -.2,2 .9,1.1 -.7,.4 -1,-.8 -1.8,1.3 1.5,.5 .2,2.4 -.3,1.8 .9,-1.3 1.4,2.3 -.4,1.9 h -1.5 v -1.2 l -1.5,-1.2 .5,-3 -1.9,-2.6 2.7,-3 .6,-4.1 h .9 l 1.4,3.2 v -2.6 l 1.2,.3 v -3.3 l -.9,-.8 -1.2,2.5 -1,-3 1.3,-.1 -1.5,-4.9 1.9,-.6 25.4,7.5 31.7,8 23.6,5.5 z m -78.7,-39.4 h .5 l .1,.8 -.5,.3 .1,.6 -.7,.4 -.2,-.9 .5,-.4 z m 5,-4.3 -1.2,1.9 -.1,.8 .4,.2 .5,-.6 1.1,.1 z m -.4,-21.6 .5,.6 1.3,-.3 .2,-1 1.2,-1.8 -1,-.4 -.7,1.6 -.1,-1.6 -1.1,.2 -.7,1.4 z m 3.2,-5.5 .7,1.5 -.9,.2 -.8,.4 -.2,-2.4 z m -2.7,-1.6 -1.1,-.2 .5,1.4 z m -1,2.5 .8,.4 -.4,1.1 1.7,-.5 -.2,-2.2 -.9,-.2 z m -2.7,-.4 .3,2.7 1.6,1.3 .6,-1.9 -1.1,-2.2 z m 1.9,-1.1 -1.1,-1 -.9,.1 1.8,1.5 z m 3.2,-7 h -1.2 v .8 l 1.2,.6 z m -.9,32.5 .4,-2.7 h -1.1 l -.2,1.9 z">
+<title>Washington</title></path>
+
+<path class="wv" id="WV" d="m 723.4,297.5 -.8,1.2 1.5,.7 .1,1.5 4.4,2.3 2.3,-.1 1.9,-1.8 .8,-1.7 3,1.8 5.5,-2.4 .5,-.9 -.8,-.5 .6,-1.4 1.5,1 4.3,-3.1 .7,1.1 2.3,-2 -.1,-1.4 1.5,-1.9 -1.5,-1.2 1,-3.3 3.7,-6.3 -.4,-1.9 2.1,-2.2 -.4,-1.5 1.4,-1.7 .1,-4.7 2.3,.7 1.3,1.9 2.8,.5 1.3,-1.6 2.3,-8.5 2.4,1.1 1,-2.5 .9,-.8 1.4,-1.8 .9,-.8 .5,-2.1 1.2,-.8 -.1,-2.9 .8,-2.3 -.9,-1.6 .2,-.9 10,5.2 .5,-2.3 .4,-1.6 .4,-.7 -.9,-.4 .2,-1.6 -1,-.5 -.2,-.7 h -.7 l -.8,-1.2 .2,-1 -2.6,.4 -2.2,-1.6 -1.4,.3 -.9,1.4 h -1.3 l -1.7,2.9 -3.3,.4 -1.9,-1 -2.6,3.8 -2.2,-.3 -3.1,3.9 -.9,1.6 -1.8,1.6 -1.7,-11.4 -17.4,2.9 -3.2,-19.7 -2.2,1.2 1.4,2.1 -.1,2.2 .6,2 -1.1,3.4 -.1,5.4 -1,3.6 .5,1.1 -.4,2.2 -1.1,.5 -2,3.3 -1.8,2 h -.6 l -1.8,1.7 -1.3,-1.2 -1.5,1.8 -.3,1.2 h -1.3 l -1.3,2.2 .1,2.1 -1,.5 1.4,1.1 v 1.9 l -1,.2 -.7,.8 -1,.5 -.6,-2.1 -1.6,-.5 -1,2.3 -.3,2.2 -1.1,1.3 1.3,3.6 -1.5,.8 -.4,3.5 h -1.5 l -3.2,1.4 -.1,1.1 .6,1 -.6,3.6 1.9,1.6 .8,1.1 1,.6 -.1,.9 4.4,5.6 h 1.4 l 1.5,1.8 1.2,.3 1.4,-.1 z">
+<title>West Virginia</title></path>
+
+<path class="wi" id="WI" d="m 611,144 -2.9,.8 .2,2.3 -2.4,3.4 -.2,3.1 .6,.7 .8,-.7 .5,-1.6 2,-1.1 1.6,-4.2 3.5,-1.1 .8,-3.3 .7,-.9 .4,-2.1 1.8,-1.1 v -1.5 l 1,-.9 1.4,.1 v 2 l -1,.1 .5,1.2 -.7,2.2 -.6,.1 -1.2,4.5 -.7,.5 -2.8,7.2 -.3,4.2 .6,2 .1,1.3 -2.4,1.9 .3,1.9 -.9,3.1 .3,1.6 .4,3.7 -1.1,4.1 -1.5,5 1,1.5 -.3,.3 .8,1.7 -.5,1.1 1.1,.9 v 2.7 l 1.3,1.5 -.4,3 .3,4 -45.9,2.8 -1.3,-2.8 -3.3,-.7 -2.7,-1.5 -2,-5.5 .1,-2.5 1.6,-3.3 -.6,-1.1 -2.1,-1.6 -.2,-2.6 -1.1,-4.5 -.2,-3 -2.2,-3 -2.8,-.7 -5.2,-3.6 -.6,-3.3 -6.3,-3.1 -.2,-1.3 h -3.3 l -2.2,-2.6 -2,-1.3 .7,-5.1 -.9,-1.6 .5,-5.4 1,-1.8 -.3,-2.7 -1.2,-1.3 -1.8,-.3 v -1.7 l 2.8,-5.8 5.9,-3.9 -.4,-13 .9,.4 .6,-.5 .1,-1.1 .9,-.6 1.4,1.2 .7,-.1 h 2.6 l 6.8,-2.6 .3,-1 h 1.2 l .7,-1.2 .4,.8 1.8,-.9 1.8,-1.7 .3,.5 1,-1 2.2,1.6 -.8,1.6 -1.2,1.4 .5,1.5 -1.4,1.6 .4,.9 2.3,-1.1 v -1.4 l 3.3,1.9 1.9,.7 1.9,.7 3,3.8 17,3.8 1.4,1 4,.8 .7,.5 2.8,-.2 4.9,.8 1.4,1.5 -1,1 .8,.8 3.8,.7 1.2,1.2 .1,4.4 -1.3,2.8 2,.1 1,-.8 .9,.8 -1.1,3.1 1,1.6 1.2,.3 z m -49.5,-37.3 -.5,.1 -1.5,1.6 .2,.5 1.5,-.6 v -.6 l .9,-.3 z m 1.6,-1.1 -1,.3 -.2,.7 .9,-.1 z m -1.3,-1.6 -.2,.9 h 1.7 l .6,-.4 .1,-1 z m 2.8,-3 -.3,1.9 1.2,-.5 .1,-1.4 z m 58.3,31.9 -2,.3 -.4,1.3 1.3,1.7 z">
+<title>Wisconsin</title></path>
+
+<path class="wy" id="WY" d="m 355.3,143.7 -51,-5.3 -57.3,-7.9 -2,10.7 -8.5,54.8 -3.3,21.9 32.1,4.8 44.9,5.7 37.5,3.4 3.7,-44.2 z">
+<title>Wyoming</title></path>
+
+<path class="dc" id="DC" d="m 803.5,252 -2.6,-1.8 -1,1.7 .5,.4 .4,.1 .6,.5 .3,.7 -.1,.5 .2,.5 z">
+<title>District of Columbia</title></path>
+
+</g>
+
+<g class="map-borders" pointer-events="none" fill="none">
+<path class="al-fl" d="m 687.6,447.4 -48.8,5.1 -.5,2.9 2.5,2.8 1.7,.7 .9,1.2 -.4,7.3 -1.1,.6"/>
+<path class="al-ga" d="m 666.6,361.1 12.9,45.8 2.9,6.1 1.8,1.9 v 3.2 l 1.7,1 .2,1.1 -2.2,3.8 -.3,3.7 -.5,2.6 2.4,5.7 -.6,6.3 .5,1.4 1.5,1.5 .7,2.2"/>
+<path class="al-ms" d="m 620.9,365.1 1.3,2 -1.3,67 4.4,33.2"/>
+<path class="al-tn" d="m 620.9,365.1 45.7,-4"/>
+<path class="ar-la" d="m 516.7,414.2 52.3,-1.3"/>
+<path class="ar-mo" d="m 591.7,344.9 -11.2,.8 2.8,-5.1 1.7,-1.5 v -2.2 l -1.6,-2.5 -39.8,2 -39.1,.7"/>
+<path class="ar-ms" d="m 569,412.9 1.2,-1.5 .5,-3 -1.5,-2.3 -.5,-2.2 .9,-.7 v -.8 l -1.7,-1.1 -.1,-.7 1.6,-.9 -1.2,-1.1 1.7,-7.1 3.4,-1.6 0,-.8 -1.1,-1.4 2.9,-5.4 h 1.9 l 1.5,-1.2 -.3,-5.2 3.1,-4.5 1.8,-.6 -.5,-3.1"/>
+<path class="ar-ok" d="m 507.9,400.5 .7,-39 -4.1,-24.4"/>
+<path class="ar-tn" d="m 582.6,367.7 1.6,-.7 .9,-2.2 1.2,.5 .7,-1 -.8,-.7 .3,-1.5 -1.1,-.9 .6,-1 -.1,-1.5 -1.1,-.1 .8,-.8 1.3,.8 .3,-1.4 -.4,-1.1 .1,-.7 2,.6 -.4,-1.5 1.6,-1.3 -.5,-.9 -1.1,.1 -.6,-.9 .9,-.9 1.6,-.2 .5,-.8 1.4,-.2 -.1,-.8 -.9,-.9 0,-.5 h 1.5 l .4,-.7 -1.4,-1 -.1,-.6"/>
+<path class="ar-tx" d="m 507.9,400.5 2.6,2.3 2.8,-1.3 3.2,.8 .2,11.9"/>
+<path class="az-ca" d="m 149,338.1 -.9,2.1 1.3,3.4 1.4,1.8 1.2,5.8 2.3,2.5 .4,1.9 -1.3,1.3 -4.8,1.7 -2.4,3.6 -1.6,7 -2.4,3.2 -1.6,.3 -1.1,6.9 1.1,1.6 1.8,.2 1,1.6 -.8,2.4 -3,2.2 -2.2,-.1"/>
+<path class="az-nm" d="m 253.8,311 -17.4,124.1"/>
+<path class="az-nv" d="m 167.6,296.8 -3.4,17.5 -2.4,2.9 h -2 l -1.2,-2.7 -3.7,-1.4 -3.5,.6 -1,13.6 .5,4.9 -.5,2.9 -1.4,3"/>
+<path class="az-ut" d="m 167.6,296.8 46.2,8.2 40,6"/>
+<path class="ca-nv" d="m 93.9,166.5 -16.4,63.1 1.1,3.5 70.4,105"/>
+<path class="ca-or" d="m 27.8,147.9 66.1,18.6"/>
+<path class="co-ks" d="m 379.4,256.3 -4.8,67"/>
+<path class="co-ne" d="m 347.7,231.8 33.1,2.4 -1.4,22.1"/>
+<path class="co-nm" d="m 253.8,311 52.6,6.5 51.7,4.8"/>
+<path class="co-ok" d="m 358.1,322.3 16.5,1"/>
+<path class="co-ut" d="m 265.3,222.7 -11.5,88.3"/>
+<path class="co-wy" d="m 265.3,222.7 44.9,5.7 37.5,3.4"/>
+<path class="ct-ma" d="m 843.8,171.3 10.5,-2.4 .5,.7 .9,-.3 0,-.7 14.9,-3.4 .1,.3"/>
+<path class="ct-ny" d="m 846.6,194.7 -1.7,-2.2 3.5,-3.4 -1.8,-1.5 -2.8,-16.3"/>
+<path class="ct-ri" d="m 870.7,165.5 3.2,12.3 -.4,1.1 .4,1.8"/>
+<path class="dc-md" d="m 801.8,254.6 1.7,-2.6 -2.6,-1.8 -1,1.7"/>
+<path class="dc-va" d="m 799.9,251.9 .5,.4 .4,.1 .6,.5 .3,.7 -.1,.5 .2,.5"/>
+<path class="de-md" d="m 817.9,230.1 7.6,27.1 10.9,-2.3"/>
+<path class="de-nj" d="m 823.8,227.2 -1,2.2 -.3,2.1"/>
+<path class="de-pa" d="m 817.9,230.1 1.2,-2.1 1.5,-1.1 1.6,-.3 1.6,.6"/>
+<path class="fl-ga" d="m 687.6,447.4 3.3,6 50.1,-3.3 .6,3.2 1,1.1 2.1,-.6 .5,-4.3 -1.4,-2.1 v -2.5 l 2.2,-1.4 1.7,.9 4,.7 3.6,-.3"/>
+<path class="ga-nc" d="m 689.5,358.2 21.4,-3"/>
+<path class="ga-sc" d="m 710.9,355.2 -.1,1.9 -1.9,1 -1.4,3.2 .2,1.3 6.1,3.8 2.6,-.3 3.1,4 .4,1.7 4.2,5.1 2.6,1.7 1.4,.2 2.2,1.6 1.1,2.2 2,1.6 1.8,.5 2.7,2.7 .1,1.4 2.6,2.8 5,2.3 3.6,6.7 .3,2.7 3.9,2.1 2.5,4.8 .8,3.1 4.2,.4"/>
+<path class="ga-tn" d="m 666.6,361.1 22.9,-2.9"/>
+<path class="ia-il" d="m 556.8,249.7 .7,-.7 .1,-2.3 -.7,-.9 1,-1.5 1.8,-.6 .9,-.3 1,-1.2 0,-2.4 1.7,-2.4 .5,-.5 .1,-3.5 -.9,-1.4 -1,-.3 -1.1,-1.6 1,-4 3,-.8 h 2.4 l 4.2,-1.8 1.7,-2.2 .1,-2.4 1.1,-1.3 1.3,-3.2 -.1,-2.6 -2.8,-3.5 -1.2,0 -.9,-1.1 .2,-1.6 -1.7,-1.7 -2.5,-1.3 .5,-.6"/>
+<path class="ia-mn" d="m 473.6,182 28.2,0 36.3,-.9 18.6,-.7"/>
+<path class="ia-mo" d="m 484.5,246.8 25.9,.1 27.2,-1.2 14.3,-.8 1.7,1.3 .6,1.6 1.1,1.1 1.5,.8"/>
+<path class="ia-ne" d="m 484.5,246.8 -1.8,-4.4 .7,-2.2 -.8,-3.3 .2,-2.9 -1.3,-.7 -.4,-6.1 -2.8,-5 -.2,-3.7 -2.2,-4.3 -1.3,-3.7 v -1.4 l -.6,-1.7 v -2.3 l -.5,-.9"/>
+<path class="ia-sd" d="m 473.5,204.2 -.7,-1.7 -.3,-1.3 -1.3,-1.2 1,-4.3 1.7,-5.1 -.7,-2 -1.3,-.4 -.4,-1.6 1,-.5 .1,-1.1 -1.3,-1.5 .1,-1.6 2.2,.1"/>
+<path class="ia-wi" d="m 567.2,202 -1.3,-2.8 -3.3,-.7 -2.7,-1.5 -2,-5.5 .1,-2.5 1.6,-3.3 -.6,-1.1 -2.1,-1.6 -.2,-2.6"/>
+<path class="id-mt" d="m 188.8,30.5 -4.8,22 3.7,7.4 -1.6,4.8 3.6,4.8 1.9,.7 3.9,8.3 v 2.1 l 2.3,3 h .9 l 1.4,2.1 h 3.2 v 1.6 l -7.1,17 -.5,4.1 1.4,.5 1.6,2.6 2.8,-1.4 3.6,-2.4 1.9,1.9 .5,2.5 -.5,3.2 2.5,9.7 2.6,3.5 2.3,1.4 .4,3 v 4.1 l 2.3,2.3 1.6,-2.3 6.9,1.6 2.1,-1.2 9,1.7 2.8,-3.3 1.8,-.6 1.2,1.8 1.6,4.1 .9,.1"/>
+<path class="id-nv" d="m 140.9,177.7 24.4,5.4 23.3,4.7"/>
+<path class="id-or" d="m 140.9,177.7 8.5,-37.3 2.9,-5.8 .4,-2.1 .8,-.9 -.9,-2 -2.9,-1.2 .2,-4.2 4,-5.8 2.5,-.8 1.6,-2.3 -.1,-1.6 1.8,-1.6 3.2,-5.5 4.2,-4.8 -.5,-3.2 -3.5,-3.1 -1.6,-3.6"/>
+<path class="id-ut" d="m 236.5,196 -47.9,-8.2"/>
+<path class="id-wa" d="m 174.6,27.5 -12.7,56.1 .7,4 -1.1,4.3"/>
+<path class="id-wy" d="m 245,141.2 -8.5,54.8"/>
+<path class="il-in" d="m 619.4,215.7 4.1,50.2 -1,5.2 v 2 l 2.4,3.5 v .7 l -.3,.9 .9,1.9 -.3,2.4 -1.6,1.8 -1.3,4.2 -3.8,5.3 -.1,7 h -1 l .9,1.9"/>
+<path class="il-ky" d="m 599.9,322.5 -.3,-1.8 4,-3.7 6.9,3 1.5,-.3 .4,-2.4 -1.7,-1.8 .4,-3.3 1,-.5 1.2,.6 .6,-1.2 3.7,-.6 .1,-.9 -1.5,-2.2 -.1,-1.1 2.2,-2.7 v -.9"/>
+<path class="il-mo" d="m 599.9,322.5 -2.8,0 -1.4,-1.5 -1.8,-3.8 v -1.9 l .8,-.6 .1,-1.3 -1.7,-1.9 -.9,-2.5 -2.7,-4.1 -4.8,-1.3 -7.4,-7.1 -.4,-2.4 2.8,-7.6 -.4,-1.9 1.2,-1.1 v -1.3 l -2.8,-1.5 -3,-.7 -3.4,1.2 -1.3,-2.3 .6,-1.9 -.7,-2.4 -8.6,-8.4 -2.2,-1.5 -2.5,-5.9 -1.2,-5.4 1.4,-3.7"/>
+<path class="il-wi" d="m 567.2,202 45.9,-2.8"/>
+<path class="in-ky" d="m 618.3,302.7 1.1,.8 .6,-1 -.7,-1.7 4.6,-.5 .2,1.2 1.1,.2 .4,-.9 -.6,-1.3 .3,-.8 1.3,.8 1.7,-.4 1.7,.6 3.4,2.1 1.8,-2.8 3.5,-2.2 3,3.3 1.6,-2.1 .3,-2.7 3.8,-2.3 .2,1.3 1.9,1.2 3,-.2 1.2,-.7 .1,-3.4 2.5,-3.7 4.6,-4.4 -.1,-1.7 1.2,-3.8 2.2,1 6.7,-4.5 -.4,-1.7 -1.5,-2.1 1,-1.9"/>
+<path class="in-mi" d="m 630.9,213.2 32.4,-3.4 .1,1.4"/>
+<path class="in-oh" d="m 670,268.4 -6.6,-57.2"/>
+<path class="ks-mo" d="m 504.3,326.3 -.5,-48.1 -3.2,-.7 -2.6,-4.7 -2.5,-2.5 .5,-2.3 2.7,-2.6 .1,-1.2 -1.5,-2.1 -.9,1 -2,-.6 -2.9,-3"/>
+<path class="ks-ne" d="m 379.4,256.3 36,2 43.7,1.2 h 32.4"/>
+<path class="ks-ok" d="m 374.6,323.3 67.7,2.9 62,.1"/>
+<path class="ky-mo" d="m 596.7,333.5 1,-2.7 1.4,.9 .7,-.4 1.2,-4.1 -1,-1 1,-2 .2,-.9 -1.3,-.8 m -5.8,11.3 -.7,-.7 .2,-1 h 1.1 l .7,.7 -.3,1"/>
+<path class="ky-oh" d="m 670,268.4 1.3,.5 2.2,.1 1.9,-.8 2.9,1.2 2.2,3.4 v 1 l 4.1,.7 2.3,-.2 1.9,2.1 2.2,.2 v -1 l 1.9,-.8 3,.8 1.2,.8 1.3,-.7 h .9 l .6,-1.7 3.4,-1.8 .5,.8 .8,2.9 3.5,1.4 1.2,2.1"/>
+<path class="ky-tn" d="m 596.7,333.5 23.3,-1.5 .6,-.9 -1.2,-3.2 h 3.7 l .7,.6 22.6,-2 2.6,-.8 17.4,-1 5.2,-.8 20.5,-1.4 5.6,-1.4 m -103.6,12.7 h 1"/>
+<path class="ky-va" d="m 697.7,321.1 6.9,-4.2 1,-.4 .5,-1.9 1.8,-.5 1.4,-1.4 .1,-1.7 2.1,-1.3 .4,-2.2 3,-3 2.9,-1 4.9,-6.6"/>
+<path class="ky-wv" d="m 709.3,279.4 -.1,1.1 .6,1 -.6,3.6 1.9,1.6 .8,1.1 1,.6 -.1,.9 4.4,5.6 h 1.4 l 1.5,1.8 1.2,.3 1.4,-.1"/>
+<path class="la-ms" d="m 569,412.9 -.6,1.4 1.6,7.1 1.2,1 -.5,1.7 2.4,2.5 v 3.3 l -2,0 1.8,2.5 -6,8.4 -2.4,4.8 -1.7,11.9 36,-2 -.1,1.4 -1,1.4 -.9,4.6 4.8,6.8 -.3,1.3 1.2,1.8 .6,.7"/>
+<path class="la-tx" d="m 516.7,414.2 .5,19.9 .7,3.4 2.6,2.8 .7,5.4 3.8,4.6 .8,4.3 h 1 l -.1,7.3 -3.3,6.4 1.3,2.3 -1.3,1.5 .7,3 -.1,4.3 -2.2,3.5 -.1,.8 -1.7,1.2 1,1.8 1.2,1.1"/>
+<path class="ma-nh" d="m 856,152.6 18.4,-3.8 1,-1.5 .3,-1.7 1.9,-.6 .5,-1.1 1.7,-1.1 1.3,.3"/>
+<path class="ma-ny" d="m 843.8,171.3 -.7,-1 .5,-15"/>
+<path class="ma-ri" d="m 870.7,165.5 6.5,-2 .7,2.6 h .8 l .6,2.2 2.6,1.3 1.3,1.1 1.4,3"/>
+<path class="ma-vt" d="m 843.6,155.3 12.4,-2.7"/>
+<path class="md-pa" d="m 757.4,241.9 60.5,-11.8"/>
+<path class="md-va" d="m 822.9,269.3 -.8,.1 m 13.2,-4.3 -.6,.3 m -1.3,.2 -4.6,1.6 -.7,.8 m -28.2,-16.1 -.6,-.6 h -1 l -.6,-.1 -.4,-.4 .1,-.5 -1.7,-.6 -.8,.3 -1.2,-.1 -.7,-.7 -.5,-.2 -.2,-.7 .6,-.8 v -.9 l -1.2,-.2 -1,-.9 -.9,.1 -1.6,-.3 m 11.6,13.5 .3,-.4 -.7,-1 1,-.1 1,-.9 .4,-1.8"/>
+<path class="md-wv" d="m 757.4,241.9 1.7,11.4 1.8,-1.6 .9,-1.6 3.1,-3.9 2.2,.3 2.6,-3.8 1.9,1 3.3,-.4 1.7,-2.9 h 1.3 l .9,-1.4 1.4,-.3 2.2,1.6 2.6,-.4 -.2,1 .8,1.2 h .7 l .2,.7 1,.5 -.2,1.6 .9,.4"/>
+<path class="me-nh" d="m 881.9,138.3 -2.3,-1.4 -.8,-2.2 -3.2,-2 -.6,-4 -11.9,-36.8"/>
+<path class="mi-oh" d="m 663.4,211.2 21.4,-3.5"/>
+<path class="mi-wi" d="m 565.6,112.3 1.9,.7 3,3.8 17,3.8 1.4,1 4,.8 .7,.5 2.8,-.2 4.9,.8 1.4,1.5 -1,1 .8,.8 3.8,.7 1.2,1.2 .1,4.4 -1.3,2.8 2,.1 1,-.8 .9,.8 -1.1,3.1 1,1.6 1.2,.3"/>
+<path class="mn-nd" d="m 462.3,61.3 2.4,7.3 -1.1,2.8 .8,1.4 -.3,5.1 -.5,1.1 2.7,9.1 1.3,2.5 .7,14 1,2.7 -.4,5.8 2.9,7.4 .3,5.8 -.1,2.1"/>
+<path class="mn-sd" d="m 473.6,182 .2,-39.5 -1.5,-1.9 -2.6,-.6 -.4,-1.8 -1.7,-2.5 .3,-1.2 3.1,-1.9 .9,-2 .1,-2.2"/>
+<path class="mn-wi" d="m 556.7,180.4 -1.1,-4.5 -.2,-3 -2.2,-3 -2.8,-.7 -5.2,-3.6 -.6,-3.3 -6.3,-3.1 -.2,-1.3 -3.3,0 -2.2,-2.6 -2,-1.3 .7,-5.1 -.9,-1.6 .5,-5.4 1,-1.8 -.3,-2.7 -1.2,-1.3 -1.8,-.3 v -1.7 l 2.8,-5.8 5.9,-3.9 -.4,-13 .9,.4 .6,-.5 .1,-1.1 .9,-.6 1.4,1.2 .7,-.1"/>
+<path class="mo-ne" d="m 491.5,259.5 -3.9,-6.3 -2.1,-3.7 .3,-1.4 -1.3,-1.3"/>
+<path class="mo-ok" d="m 504.3,326.3 .2,10.8"/>
+<path class="mo-tn" d="m 591.7,344.9 1,-2 1.2,-.5 v -.7 l -1.2,-1.1 -.6,-1 1.7,.2 .8,-.7 -1.4,-1.5 1.4,-.5 .1,-1 -.6,-1 0,-1.3 m 1,0 .8,.7 .8,-1"/>
+<path class="ms-tn" d="m 582.6,367.7 38.3,-2.6"/>
+<path class="mt-nd" d="m 362.5,56.3 -5.2,66.7"/>
+<path class="mt-sd" d="m 357.3,123 -2,20.7"/>
+<path class="mt-wy" d="m 355.3,143.7 -51,-5.3 -57.3,-7.9 -2,10.7"/>
+<path class="nc-sc" d="m 710.9,355.2 4.4,-1.9 1.3,-.1 7.3,-4.3 23.2,-2.2 .4,.5 -.2,1.4 .7,.3 1.2,-1.5 3.3,3 .1,2.6 19.7,-2.8 24.5,17.1"/>
+<path class="nc-tn" d="m 731.1,317 0,5.2 -1.5,-.1 -1.4,1.2 -2.4,5.2 -2.6,-1.1 -3.5,2.5 -.7,2.1 -1.5,1.2 -.8,-.8 -.1,-1.5 -.8,-.2 -4,3.3 -.6,3.4 -4.7,2.4 -.5,1.2 -3.2,2.6 -3.6,.5 -4.6,3 -.8,4.1 -1.3,.9 -1.5,-.1 -1.4,1.3 -.1,4.9"/>
+<path class="nc-va" d="m 731.1,317 29.4,-3.5 39.4,-7.3 29.1,-6.1"/>
+<path class="nd-sd" d="m 357.3,123 39.2,2.9 46,2.1 29.5,.4"/>
+<path class="ne-sd" d="m 351.4,187.6 51.1,3.5 38,1.6 3.4,3.2 1.7,.2 2.1,2 1.8,-.1 1.8,-2 1.5,.6 1,-.7 .7,.5 .9,-.4 .7,.4 .9,-.4 1,.5 1.4,-.6 2,.6 .6,1.1 6.1,2.2 1.2,1.3 .9,2.6 1.8,.7 1.5,-.2"/>
+<path class="ne-wy" d="m 347.7,231.8 3.7,-44.2"/>
+<path class="nh-vt" d="m 857.9,100.1 1.2,2.3 -1.1,3.5 2.1,2.8 -.4,1.7 .1,1.3 -1.1,2.1 -1.4,.4 -.6,1.3 -2.1,1 -.7,1.5 1.4,3.4 -.5,2.5 .5,1.5 -1,1.9 .4,1.9 -1.3,1.9 .2,2.2 -.7,1.1 .7,4.5 .7,1.5 -.5,2.6 .9,1.8 -.2,2.5 -.5,1.3 -.1,1.4 2.1,2.6"/>
+<path class="nj-ny" d="m 827.9,190.5 14.6,4.9 -.4,5.9"/>
+<path class="nj-pa" d="m 823.8,227.2 1.4,-1.7 1.6,-.6 1.8,-3 1.6,-2.3 3.3,-2.6 -4.2,-3.2 -2.1,-1.1 -1,-2.8 -2.7,-.9 -.5,-3.6 1,-1 .7,-2 -1.5,-1.8 3,-5.4 -.1,-2.2 1.8,-2.5"/>
+<path class="nm-ok" d="m 358.1,322.3 -.6,10.6"/>
+<path class="nm-tx" d="m 284.3,431.2 -2,-2.2 .3,-3 34.4,3.6 31.8,2.6 7.9,-99.3 .8,0"/>
+<path class="nv-or" d="m 93.9,166.5 47,11.2"/>
+<path class="nv-ut" d="m 188.6,187.8 -21,109"/>
+<path class="ny-pa" d="m 827.9,190.5 -1.6,-1.1 -1.9,.3 -3,-2.2 -3,-5.8 h -2 l -.4,-1.5 -1.7,-1.1 -70.5,13.9 -.8,-6"/>
+<path class="ny-vt" d="m 843.6,155.3 -1.1,-1 .5,-2 -3,-14.2 -1.9,-1.5 -.9,1.6 -.9,-2.2 .8,-1.8 -3.1,-6.7 .3,-3.8 .4,-1 -.6,-2 .4,-2.2 -2.2,-2.3 -.5,-3.2 .4,-1.5 -1.4,-.9 .6,-1.9 -.8,-1.7"/>
+<path class="oh-pa" d="m 736.8,225.1 -4.9,-29.9"/>
+<path class="oh-wv" d="m 709.3,279.4 3.2,-1.4 h 1.5 l .4,-3.5 1.5,-.8 -1.3,-3.6 1.1,-1.3 .3,-2.2 1,-2.3 1.6,.5 .6,2.1 1,-.5 .7,-.8 1,-.2 v -1.9 l -1.4,-1.1 1,-.5 -.1,-2.1 1.3,-2.2 h 1.3 l .3,-1.2 1.5,-1.8 1.3,1.2 1.8,-1.7 h .6 l 1.8,-2 2,-3.3 1.1,-.5 .4,-2.2 -.5,-1.1 1,-3.6 .1,-5.4 1.1,-3.4 -.6,-2 .1,-2.2 -1.4,-2.1 2.2,-1.2"/>
+<path class="ok-tx" d="m 357.5,332.9 52.6,3.2 -1.4,42.7 2.7,1.3 2.5,3 1.5,.3 1.1,-1 1.2,.4 1.4,1 1.1,-1.5 2.3,1.7 .5,2.9 1.2,.7 2.3,-.1 3.5,1.9 2,-.1 1.4,-.4 2.3,2.2 2,-2.3 3.5,1.1 1.9,3 2.3,-.1 -.7,2.1 2.3,1.1 3,-2.6 2.6,1.7 1.3,-.5 .1,1.5 1.7,1.2 2.3,-2.5 1.2,.7 -.3,2 1,1.8 1.2,-.8 2.5,-4.2 1.8,2 2,.5 2.1,-.7 2,1.8 1.2,-.1 1.3,1.2 3.6,-.9 .6,-1.7 3.7,-.3 1.6,.7 5,-2.5 .6,1.5 5.1,-.3 .5,-1.6 2.2,.9 4.6,3.8 6.4,1.9"/>
+<path class="or-wa" d="m 161.5,91.9 -30.3,-7.3 -2.8,1 -5.4,-.9 -1.8,-.9 -1.5,1.2 -3.3,-.4 -4.5,.5 -.9,.7 -4.2,-.4 -.8,-1.6 -1.2,-.2 -4.4,1.3 -1.6,-1.1 -2.2,.8 -.2,-1.8 -2.3,-1.2 -1.5,-.2 -1,-1.1 -3,.3 -1.2,-.8 h -1.2 l -1.2,.9 -5.5,.7 -6.6,-4.2 1.1,-5.6 -.4,-4.1 -3.2,-3.7 -3.7,.1 -.4,-1.1 .4,-1.2 -.7,-.8 -1,.1"/>
+<path class="pa-wv" d="m 736.8,225.1 3.2,19.7 17.4,-2.9"/>
+<path class="sd-wy" d="m 351.4,187.6 3.9,-43.9"/>
+<path class="tn-va" d="m 697.7,321.1 28.9,-3.3 .2,-1 4.6,-.5 -.3,.7"/>
+<path class="ut-wy" d="m 236.5,196 -3.3,21.9 32.1,4.8"/>
+<path class="va-wv" d="m 722.7,296.9 .7,.6 -.8,1.2 1.5,.7 .1,1.5 4.4,2.3 2.3,-.1 1.9,-1.8 .8,-1.7 3,1.8 5.5,-2.4 .5,-.9 -.8,-.5 .6,-1.4 1.5,1 4.3,-3.1 .7,1.1 2.3,-2 -.1,-1.4 1.5,-1.9 -1.5,-1.2 1,-3.3 3.7,-6.3 -.4,-1.9 2.1,-2.2 -.4,-1.5 1.4,-1.7 .1,-4.7 2.3,.7 1.3,1.9 2.8,.5 1.3,-1.6 2.3,-8.5 2.4,1.1 1,-2.5 .9,-.8 1.4,-1.8 .9,-.8 .5,-2.1 1.2,-.8 -.1,-2.9 .8,-2.3 -.9,-1.6 .2,-.9 10,5.2 .5,-2.3 .4,-1.6 .4,-.7"/>
+</g>
+
+<circle class="state borders dccircle dc" cx="801.6" cy="252.1" r="5">
+<title>District of Columbia</title></circle>
+
+<path class="map-sep" pointer-events="none" fill="none" d="m 215,493 v 55 l 36,45 m -251,-168 h 147 l 68,68 h 85 l 54,54 v 46"/>
+      </svg>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- FOOTER -->
+<footer><div class="fi2"><div class="ft"><div class="fb2"><div class="logo" onclick="nav2('home')"><div class="logo-i">S</div><div class="logo-t"><span>Scholar</span> Works</div></div><p class="ftg">Professional academic writing by real experts. Trusted by 200,000+ students.</p></div><div class="flg"><div class="fcl"><h4>Services</h4><a href="#">Essays</a><a href="#">Thesis</a><a href="#">Research</a><a href="#">Dissertations</a><a href="#">Editing</a></div><div class="fcl"><h4>Company</h4><a onclick="nav2('home')">Home</a><a onclick="nav2('about')">About Us</a><a onclick="nav2('contact')">Contact</a></div><div class="fcl"><h4>Support</h4><a href="#">FAQ</a><a href="#">Privacy</a><a href="#">Terms</a></div></div></div><div class="fbot"><span>© 2025 Scholar Works</span><span>support@scholarworks.us</span></div></div></footer>
+
+<!-- LIVE ORDER FEED -->
+<div class="live-feed" id="liveFeed">
+  <div class="live-toast" id="liveToast">
+    <div class="live-toast-dot"></div>
+    <div class="live-toast-text" id="liveToastText"></div>
+  </div>
+</div>
+
+
+<script>
+// Routing
+function nav2(p){document.querySelectorAll('.pg').forEach(x=>x.classList.remove('on'));document.getElementById('pg-'+p).classList.add('on');document.querySelectorAll('.nl a[data-p]').forEach(a=>a.classList.toggle('act',a.dataset.p===p));window.scrollTo({top:0,behavior:'smooth'});document.getElementById('nls').classList.remove('mo');setTimeout(initRv,100)}
+function goSec(id){nav2('home');setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})},150);document.getElementById('nls').classList.remove('mo')}
+
+// Countdown (shared)
+let t=9*3600+37*60+22;
+setInterval(()=>{if(t<=0)return;t--;const h=String(Math.floor(t/3600)).padStart(2,'0'),m=String(Math.floor((t%3600)/60)).padStart(2,'0'),s=String(t%60).padStart(2,'0');
+[['ph','pm','ps'],['ch','cm','cc']].forEach(([a,b,c])=>{const e=document.getElementById(a);if(e){e.textContent=h;document.getElementById(b).textContent=m;document.getElementById(c).textContent=s}});
+},1000);
+
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('nb').classList.toggle('sc',window.scrollY>40);
+});
+
+// Reveals
+function initRv(){const o=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vi'),i*40);o.unobserve(e.target)}})},{threshold:.08});document.querySelectorAll('.rv:not(.vi)').forEach(el=>o.observe(el))}
+initRv();
+
+// FAQ
+function tgf(el){el.parentElement.classList.toggle('op')}
+
+// Duplicate review track for infinite scroll
+const rt=document.getElementById('revTrack');
+if(rt)rt.innerHTML+=rt.innerHTML;
+
+// Price Calculator
+function calcPrice(){
+  const type=parseFloat(document.getElementById('calcType').value)||5;
+  const deadline=parseFloat(document.getElementById('calcDeadline').value)||1;
+  const level=parseFloat(document.getElementById('calcLevel').value)||1;
+  const price=(type*deadline*level).toFixed(2);
+  document.getElementById('calcResult').textContent='$'+price;
+}
+calcPrice();
+
+// Exit Intent Popup
+let exitShown=false;
+document.addEventListener('mouseleave',(e)=>{
+  if(e.clientY<=0&&!exitShown){
+    exitShown=true;
+    document.getElementById('exitPopup').classList.add('show');
+  }
+});
+function closeExit(){document.getElementById('exitPopup').classList.remove('show')}
+
+// === LIVE ORDER FEED ===
+const liveOrders=[
+  {name:'Marcus',school:'UCLA',type:'Research Paper',min:2},
+  {name:'Jessica',school:'NYU',type:'Nursing Essay',min:4},
+  {name:'David',school:'UT Austin',type:'Case Study',min:7},
+  {name:'Aisha',school:'Columbia',type:'Literature Review',min:3},
+  {name:'Ryan',school:'Penn State',type:'Lab Report',min:5},
+  {name:'Sophia',school:'Duke',type:'Thesis Chapter',min:1},
+  {name:'Brandon',school:'Michigan',type:'Business Paper',min:6},
+  {name:'Emily',school:'Stanford',type:'APA Essay',min:8},
+  {name:'Carlos',school:'FIU',type:'Discussion Post',min:2},
+  {name:'Hannah',school:'Ohio State',type:'Capstone Project',min:4},
+  {name:'Tyler',school:'Berkeley',type:'MLA Essay',min:3},
+  {name:'Priya',school:'Georgia Tech',type:'Statistics Report',min:5},
+];
+let feedIdx=0;
+function showLiveToast(){
+  const order=liveOrders[feedIdx%liveOrders.length];
+  const toast=document.getElementById('liveToast');
+  const text=document.getElementById('liveToastText');
+  text.innerHTML='<strong>'+order.name+' from '+order.school+'</strong> just ordered a '+order.type+'<span class="lt-time">'+order.min+' min ago</span>';
+  toast.classList.add('show');
+  setTimeout(()=>{toast.classList.remove('show');feedIdx++},4500);
+}
+setTimeout(()=>{showLiveToast();setInterval(showLiveToast,17000)},5000);
+
+// === INTERACTIVE US MAP ===
+document.querySelectorAll('#usMapSvg path').forEach(function(path){
+  var titleEl = path.querySelector('title');
+  if(!titleEl) return;
+  var name = titleEl.textContent;
+  path.addEventListener('mouseenter',function(e){
+    var tip = document.getElementById('mapTooltip');
+    if(tip){tip.textContent=name;tip.classList.add('show')}
+  });
+  path.addEventListener('mouseleave',function(){
+    var tip = document.getElementById('mapTooltip');
+    if(tip){tip.classList.remove('show')}
+  });
+  path.addEventListener('click',function(){
+    nav2('home');
+  });
+});
+</script>
+</body>
+</html>

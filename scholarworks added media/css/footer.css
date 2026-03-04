@@ -1,0 +1,39 @@
+/* =============================================
+   FOOTER — Site Footer
+   ============================================= */
+
+footer { background: var(--ch); padding: 48px 32px 24px }
+.fi2 { max-width: 1280px; margin: 0 auto }
+
+.ft {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+  gap: 24px;
+}
+.fb2 .logo-t { color: var(--wh) }
+.fb2 .logo-t span { color: var(--em-l) }
+.ftg { font-size: 12px; color: rgba(255, 255, 255, .3); margin-top: 8px; max-width: 240px; line-height: 1.5 }
+
+.flg { display: flex; gap: 44px }
+.fcl h4 { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255, 255, 255, .35); margin-bottom: 10px }
+.fcl a {
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, .45);
+  text-decoration: none;
+  padding: 2px 0;
+  transition: color .3s;
+  cursor: pointer;
+}
+.fcl a:hover { color: var(--wh) }
+
+.fbot {
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: rgba(255, 255, 255, .2);
+}

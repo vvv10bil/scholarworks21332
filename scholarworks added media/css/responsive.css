@@ -144,7 +144,8 @@
   .pcalc { padding: 16px; margin-bottom: 16px; border-radius: 12px }
   .pcalc-row { grid-template-columns: 1fr; gap: 10px; margin-bottom: 14px }
   .pcalc-label { font-size: 10px; margin-bottom: 4px }
-  .pcalc-select { padding: 9px 12px; font-size: 12px; border-radius: 8px }
+  .pcalc-select { padding: 9px 12px; font-size: 12px; border-radius: 8px; max-width: 100%; width: 100%; box-sizing: border-box }
+  .pcalc-row > div { min-width: 0; overflow: hidden }
   .pcalc-result { flex-direction: column; gap: 10px; text-align: center; padding: 12px 14px; border-radius: 8px }
   .pcalc-price { font-size: 28px }
   .pcalc-from { font-size: 12px }
@@ -330,7 +331,8 @@
   .hmf .frow { grid-template-columns: 1fr 1fr }
   .hmf .fg { margin-bottom: 10px; min-width: 0 }
   .hmf .fl { font-size: 11px; margin-bottom: 4px }
-  .hmf .fs, .hmf .fi { font-size: 14px; min-height: 44px; max-width: 100%; overflow: hidden; text-overflow: ellipsis }
+  .hmf .fs, .hmf .fi { font-size: 14px; min-height: 44px; max-width: 100%; width: 100%; overflow: hidden; text-overflow: ellipsis; box-sizing: border-box }
+  .hmf .fg { overflow: hidden }
   .hmf .fta { font-size: 14px; height: 56px }
   .hmf .fsub { font-size: 14px; min-height: 50px; margin-top: 2px }
   .hmf .fmi { margin-top: 10px }

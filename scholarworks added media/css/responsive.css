@@ -289,7 +289,7 @@
   .av { width: 28px; height: 28px; margin-left: -7px; font-size: 12px; border-width: 2px }
   .pt2 { font-size: 13px; line-height: 1.4 }
   .pt2 .st { font-size: 11px }
-  .tr { display: none }
+  .tr { display: none !important; margin: 0; padding: 0; height: 0; overflow: hidden }
   .hms {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -328,9 +328,9 @@
     font-weight: 400;
   }
   .hmf .frow { grid-template-columns: 1fr 1fr }
-  .hmf .fg { margin-bottom: 10px }
+  .hmf .fg { margin-bottom: 10px; min-width: 0 }
   .hmf .fl { font-size: 11px; margin-bottom: 4px }
-  .hmf .fs, .hmf .fi { font-size: 14px; min-height: 44px }
+  .hmf .fs, .hmf .fi { font-size: 14px; min-height: 44px; max-width: 100%; overflow: hidden; text-overflow: ellipsis }
   .hmf .fta { font-size: 14px; height: 56px }
   .hmf .fsub { font-size: 14px; min-height: 50px; margin-top: 2px }
   .hmf .fmi { margin-top: 10px }
@@ -344,7 +344,7 @@
   .pb { font-size: 10px; gap: 4px; padding: 7px 10px }
   .hm { display: none }
   nav { top: 28px }
-  .nl { top: 72px }
+  .nl { top: 100% }
 }
 
 /* ---- Max 600px ---- */

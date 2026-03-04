@@ -148,6 +148,10 @@
   transition: opacity .3s;
   object-fit: contain;
 }
+.tl-dartmouth {
+  height: 42px;
+  max-width: 130px;
+}
 
 /* === MEDIA MENTIONS BAR === */
 .media-bar { padding: 20px 32px; background: var(--wh); border-bottom: 1px solid rgba(200, 164, 78, .06) }

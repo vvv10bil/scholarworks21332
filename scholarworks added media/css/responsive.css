@@ -58,6 +58,7 @@
   .tlogos { gap: 24px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px }
   .tlogos::-webkit-scrollbar { display: none }
   .tl { height: 22px; flex-shrink: 0 }
+  .tl-dartmouth { height: 30px; max-width: 110px }
 
   /* Forms */
   .frow { grid-template-columns: 1fr }
@@ -379,6 +380,7 @@
   .tbar { padding: 16px 12px; overflow: hidden }
   .tlogos { gap: 20px }
   .tl { height: 18px }
+  .tl-dartmouth { height: 26px; max-width: 100px }
   .writers-arrow { display: none }
   .writers-scroll-container { margin: 0 }
   .writers-track-wrap {

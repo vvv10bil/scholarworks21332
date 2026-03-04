@@ -303,11 +303,41 @@
   .hm-s { text-align: center }
   .hm-s strong { display: block; font-family: var(--fd); font-size: 20px; color: var(--em); line-height: 1.3 }
   .hm-s span { font-size: 10px; color: var(--mu); font-weight: 500 }
-  .hfw { display: block; opacity: 1; animation: none }
-  .hf { padding: 24px 18px; border-radius: 16px }
-  .fh { margin-bottom: 18px }
-  .fh h3 { font-size: 18px }
-  .fh p { font-size: 12px }
+  .hfw { display: none }
+  .hmf {
+    display: block;
+    margin-top: 24px;
+    background: var(--wh);
+    border-radius: 16px;
+    padding: 22px 18px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .06), 0 0 0 1px rgba(200, 164, 78, .08);
+  }
+  .hmf-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--fd);
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: var(--ch);
+  }
+  .hmf-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--em);
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px var(--em-s);
+  }
+  .hmf .frow { grid-template-columns: 1fr 1fr }
+  .hmf .fg { margin-bottom: 10px }
+  .hmf .fl { font-size: 11px; margin-bottom: 4px }
+  .hmf .fs, .hmf .fi { font-size: 14px; min-height: 44px }
+  .hmf .fta { font-size: 14px; height: 56px }
+  .hmf .fsub { font-size: 14px; min-height: 50px; margin-top: 2px }
+  .hmf .fmi { margin-top: 10px }
+  .hmf .fmi span { font-size: 11px }
   .fg { margin-bottom: 10px }
   .fl { font-size: 11px; margin-bottom: 4px }
 }
@@ -392,4 +422,7 @@
   .hm-s strong { font-size: 18px }
   .hm-s span { font-size: 9px }
   .pb { font-size: 9px }
+  .hmf { padding: 18px 14px; margin-top: 20px }
+  .hmf-head { font-size: 15px; margin-bottom: 14px }
+  .hmf .frow { grid-template-columns: 1fr }
 }

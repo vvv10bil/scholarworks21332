@@ -110,6 +110,9 @@
 
 .hms { display: none }
 
+/* Mobile inline form — hidden on desktop */
+.hmf { display: none }
+
 .hfw { animation: fr .8s ease .2s forwards; opacity: 0 }
 .hf {
   background: var(--wh);

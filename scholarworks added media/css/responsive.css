@@ -238,9 +238,13 @@
 
   /* Footer */
   footer { padding: 32px 16px 16px }
-  .ft { flex-direction: column; gap: 20px }
-  .flg { flex-wrap: wrap; gap: 24px }
-  .fbot { flex-direction: column; gap: 3px; align-items: center; text-align: center }
+  .ft { flex-direction: column; gap: 28px; align-items: center; text-align: center }
+  .fb2 { display: flex; flex-direction: column; align-items: center }
+  .fb2 .logo { justify-content: center }
+  .ftg { text-align: center; max-width: 280px }
+  .flg { flex-wrap: wrap; gap: 32px; justify-content: center }
+  .fcl { text-align: center }
+  .fbot { flex-direction: column; gap: 6px; align-items: center; text-align: center }
 
   /* Niches & Blog */
   .niches { padding: 48px 16px }

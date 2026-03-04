@@ -306,3 +306,59 @@ document.querySelectorAll('#usMapSvg path').forEach(function (path) {
     nav2('home');
   });
 });
+
+// ===== FILE ATTACH IN DESCRIPTION =====
+(function() {
+  var MAX_SIZE = 5 * 1024 * 1024; // 5 MB
+
+  document.querySelectorAll('.fta-file-input').forEach(function(input) {
+    var wrap = input.closest('.fta-bottom');
+    var list = wrap.querySelector('.fta-file-list');
+    var stored = [];
+
+    input.addEventListener('change', function() {
+      Array.from(input.files).forEach(function(f) {
+        if (f.size > MAX_SIZE) {
+          showFileError(list, f.name + ' exceeds 5 MB limit');
+          return;
+        }
+        if (stored.some(function(s) { return s.name === f.name && s.size === f.size; })) return;
+        stored.push(f);
+        renderChips(list, stored, input);
+      });
+      input.value = '';
+    });
+  });
+
+  function renderChips(list, stored, input) {
+    list.innerHTML = '';
+    stored.forEach(function(f, i) {
+      var chip = document.createElement('span');
+      chip.className = 'fta-file-chip';
+      chip.innerHTML = f.name + ' <button type="button">&times;</button>';
+      chip.querySelector('button').addEventListener('click', function() {
+        stored.splice(i, 1);
+        renderChips(list, stored, input);
+      });
+      list.appendChild(chip);
+    });
+    syncFiles(stored, input);
+  }
+
+  function syncFiles(stored, input) {
+    var dt = new DataTransfer();
+    stored.forEach(function(f) { dt.items.add(f); });
+    input.files = dt.files;
+  }
+
+  function showFileError(list, msg) {
+    var el = list.parentElement.querySelector('.fta-file-error');
+    if (!el) {
+      el = document.createElement('div');
+      el.className = 'fta-file-error';
+      list.parentElement.appendChild(el);
+    }
+    el.textContent = msg;
+    setTimeout(function() { if (el.parentElement) el.remove(); }, 4000);
+  }
+})();

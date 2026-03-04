@@ -138,6 +138,95 @@ body {
   background: var(--em);
   color: var(--wh);
 }
+/* Integrated file upload inside description */
+.fta-wrap {
+  position: relative;
+  border: 1.5px solid rgba(26, 26, 26, .07);
+  border-radius: 9px;
+  background: var(--ivory);
+  transition: all .3s;
+}
+.fta-wrap:focus-within {
+  border-color: var(--em);
+  background: var(--wh);
+  box-shadow: 0 0 0 3px var(--em-s);
+}
+.fta-wrap .fta {
+  border: none;
+  background: transparent;
+  border-radius: 9px 9px 0 0;
+  height: 60px;
+  margin-bottom: 0;
+}
+.fta-wrap .fta:focus {
+  box-shadow: none;
+  border-color: transparent;
+  background: transparent;
+}
+.fta-bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px 10px 8px;
+  border-top: 1px solid rgba(26, 26, 26, .05);
+}
+.fta-attach-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: 1px solid rgba(26, 26, 26, .1);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: var(--fb);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--mu);
+  cursor: pointer;
+  transition: all .2s;
+}
+.fta-attach-btn:hover {
+  background: var(--em-s);
+  color: var(--em);
+  border-color: rgba(13, 107, 78, .15);
+}
+.fta-file-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.fta-file-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--em-s);
+  color: var(--em);
+  border-radius: 5px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--fb);
+}
+.fta-file-chip button {
+  background: none;
+  border: none;
+  color: var(--em);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0 0 0 2px;
+  opacity: .6;
+}
+.fta-file-chip button:hover {
+  opacity: 1;
+}
+.fta-file-error {
+  color: #d32f2f;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 0;
+}
 .fmi {
   text-align: center;
   margin-top: 10px;

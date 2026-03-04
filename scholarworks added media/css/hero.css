@@ -137,15 +137,16 @@
   color: var(--mu);
   margin-bottom: 14px;
 }
-.tlogos { display: flex; justify-content: center; align-items: center; gap: 32px; flex-wrap: wrap }
+.tlogos { display: flex; justify-content: center; align-items: center; gap: 36px; flex-wrap: wrap }
 .tl {
-  font-family: var(--fd);
-  font-size: 16px;
-  color: rgba(26, 26, 26, .18);
-  white-space: nowrap;
-  transition: color .3s;
+  height: 28px;
+  width: auto;
+  opacity: .18;
+  transition: opacity .3s;
+  filter: grayscale(100%);
+  object-fit: contain;
 }
-.tl:hover { color: rgba(26, 26, 26, .35) }
+.tl:hover { opacity: .4 }
 
 /* === MEDIA MENTIONS BAR === */
 .media-bar { padding: 20px 32px; background: var(--wh); border-bottom: 1px solid rgba(200, 164, 78, .06) }

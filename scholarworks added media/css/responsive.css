@@ -53,6 +53,11 @@
 
 /* ---- Max 768px ---- */
 @media (max-width: 768px) {
+  /* Trust bar */
+  .tbar { padding: 20px 16px }
+  .tlogos { gap: 20px }
+  .tl { height: 20px }
+
   /* Forms */
   .frow { grid-template-columns: 1fr }
   .fs, .fi { font-size: 15px; min-height: 46px }
@@ -337,6 +342,9 @@
 
 /* ---- Max 480px ---- */
 @media (max-width: 480px) {
+  .tbar { padding: 16px 12px }
+  .tlogos { gap: 14px }
+  .tl { height: 16px }
   .writers-arrow { display: none }
   .writers-scroll-container { margin: 0 }
   .writers-track-wrap {

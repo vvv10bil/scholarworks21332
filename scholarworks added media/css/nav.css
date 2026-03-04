@@ -51,14 +51,8 @@ nav.sc { padding: 8px 32px; box-shadow: 0 2px 20px rgba(0, 0, 0, .06) }
 .logo-i {
   width: 34px;
   height: 34px;
-  background: var(--em);
   border-radius: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  font-family: var(--fd);
-  font-size: 18px;
+  object-fit: contain;
 }
 .logo-t { font-family: var(--fd); font-size: 20px; color: var(--ch) }
 .logo-t span { color: var(--em) }

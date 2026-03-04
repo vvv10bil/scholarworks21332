@@ -349,6 +349,7 @@
   .fl { font-size: 11px; margin-bottom: 4px }
 
   /* Custom mobile dropdown for assignment types */
+  .fg:has(.mobile-select-wrap) { overflow: visible !important }
   .mobile-select-wrap { position: relative }
   .mobile-select-wrap .fs { display: none }
   .mobile-select-trigger {

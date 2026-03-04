@@ -394,6 +394,8 @@ document.querySelectorAll('#usMapSvg path').forEach(function (path) {
         wrap.className = 'mobile-select-wrap';
         sel.parentNode.insertBefore(wrap, sel);
         wrap.appendChild(sel);
+        // Ensure parent .fg doesn't clip the dropdown
+        fg.style.overflow = 'visible';
 
         var trigger = document.createElement('div');
         trigger.className = 'mobile-select-trigger';

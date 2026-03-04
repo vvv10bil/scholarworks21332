@@ -55,7 +55,7 @@
 @media (max-width: 768px) {
   /* Trust bar */
   .tbar { padding: 20px 16px; overflow: hidden }
-  .tlogos { gap: 24px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px }
+  .tlogos { gap: 24px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; justify-content: flex-start }
   .tlogos::-webkit-scrollbar { display: none }
   .tl { height: 22px; flex-shrink: 0 }
   .tl-dartmouth { height: 30px; max-width: 110px }

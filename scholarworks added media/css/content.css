@@ -89,6 +89,7 @@
 
 .rev-platforms { display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 32px; flex-wrap: wrap }
 .rev-plat { display: flex; align-items: center; gap: 6px; background: var(--ivory); border: 1px solid rgba(200, 164, 78, .1); padding: 6px 14px; border-radius: 8px }
+.rev-plat-logo { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0 }
 .rev-plat-name { font-size: 12px; font-weight: 700; color: var(--ch) }
 .rev-plat-stars { color: var(--gold); font-size: 12px }
 .rev-plat-score { font-size: 12px; font-weight: 800; color: var(--em) }

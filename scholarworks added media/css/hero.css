@@ -141,14 +141,10 @@
 .tl {
   height: 28px;
   width: auto;
-  opacity: .18;
+  opacity: 1;
   transition: opacity .3s;
-  filter: grayscale(100%);
   object-fit: contain;
 }
-.tl:hover { opacity: .4 }
-.tnames { display: flex; justify-content: center; align-items: center; gap: 36px; flex-wrap: wrap; margin-top: 14px }
-.tnames span { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; opacity: .18; color: var(--ch) }
 
 /* === MEDIA MENTIONS BAR === */
 .media-bar { padding: 20px 32px; background: var(--wh); border-bottom: 1px solid rgba(200, 164, 78, .06) }

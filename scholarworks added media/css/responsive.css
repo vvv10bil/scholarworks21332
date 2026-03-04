@@ -347,8 +347,6 @@
   .tbar { padding: 16px 12px }
   .tlogos { gap: 14px }
   .tl { height: 16px }
-  .tnames { gap: 14px; margin-top: 8px }
-  .tnames span { font-size: 8px; letter-spacing: 1px }
   .writers-arrow { display: none }
   .writers-scroll-container { margin: 0 }
   .writers-track-wrap {

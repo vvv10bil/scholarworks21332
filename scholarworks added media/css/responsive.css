@@ -341,6 +341,67 @@
   .hmf .fl { font-size: 11px; margin-bottom: 4px }
   .hmf .fs, .hmf .fi { font-size: 14px; min-height: 44px; max-width: 100%; width: 100%; overflow: hidden; text-overflow: ellipsis; box-sizing: border-box }
   .hmf .fg { overflow: hidden }
+
+  /* Custom mobile dropdown for assignment types */
+  .hmf .fg:has(.mobile-select-wrap) { overflow: visible }
+  .mobile-select-wrap { position: relative }
+  .mobile-select-wrap .fs { display: none }
+  .mobile-select-trigger {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px;
+    padding-right: 30px;
+    background: var(--ivory);
+    border: 1.5px solid rgba(26, 26, 26, .07);
+    border-radius: 9px;
+    font-family: var(--fb);
+    font-size: 14px;
+    color: var(--ch);
+    min-height: 44px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237A7A7A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all .3s;
+  }
+  .mobile-select-trigger.open {
+    border-color: var(--em);
+    background-color: var(--wh);
+    box-shadow: 0 0 0 3px var(--em-s);
+  }
+  .mobile-select-list {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: var(--ivory);
+    border: 1.5px solid rgba(26, 26, 26, .07);
+    border-radius: 9px;
+    max-height: 220px;
+    overflow-y: auto;
+    z-index: 100;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+    -webkit-overflow-scrolling: touch;
+  }
+  .mobile-select-list.open { display: block }
+  .mobile-select-item {
+    padding: 11px 12px;
+    font-family: var(--fb);
+    font-size: 14px;
+    color: var(--ch);
+    cursor: pointer;
+    border-bottom: 1px solid rgba(26, 26, 26, .05);
+  }
+  .mobile-select-item:last-child { border-bottom: none }
+  .mobile-select-item:active { background: rgba(26, 26, 26, .04) }
+  .mobile-select-item.selected { color: var(--em); font-weight: 600 }
+
   .hmf .fta { font-size: 14px; height: 56px }
   .hmf .fsub { font-size: 14px; min-height: 50px; margin-top: 2px }
   .hmf .fmi { margin-top: 10px }

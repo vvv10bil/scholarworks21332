@@ -1,0 +1,314 @@
+/* =============================================
+   RESPONSIVE — All Mobile Overrides
+   ============================================= */
+
+/* ---- Max 1100px ---- */
+@media (max-width: 1100px) {
+}
+
+/* ---- Max 1024px ---- */
+@media (max-width: 1024px) {
+  .fg2 { grid-template-columns: 1fr 1fr }
+  .proc-grid { grid-template-columns: 1fr }
+  .pcta-in { flex-direction: column; text-align: center }
+  .pcta-r { flex-direction: column }
+}
+
+/* ---- Max 900px ---- */
+@media (max-width: 900px) {
+  /* Nav */
+  .nl {
+    display: none !important;
+    position: fixed;
+    top: 84px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    padding: 16px;
+    gap: 4px;
+    border-bottom: 1px solid rgba(200, 164, 78, .15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .1);
+    z-index: 999;
+  }
+  .nl.mo { display: flex !important }
+  .nl a { padding: 12px 16px; font-size: 15px; width: 100% }
+  .nl .sep { display: none }
+  .nl .cta { text-align: center; margin-top: 4px; border-radius: 10px; padding: 14px !important }
+  .bur { display: flex; align-items: center }
+  nav { padding: 10px 16px }
+  nav.sc { padding: 8px 16px }
+  .logo-i { width: 30px; height: 30px; font-size: 15px }
+  .logo-t { font-size: 17px }
+  .fchat { bottom: 16px; right: 16px; padding: 12px 18px; font-size: 13px }
+
+  /* Sections */
+  .urgency-grid { grid-template-columns: repeat(2, 1fr) }
+  .aidet-grid { grid-template-columns: 1fr 1fr }
+  .turnitin-in { grid-template-columns: 1fr; gap: 32px }
+  .pcalc-row { grid-template-columns: 1fr 1fr }
+  .niches-grid { grid-template-columns: 1fr }
+  .blog-grid { grid-template-columns: 1fr }
+}
+
+/* ---- Max 768px ---- */
+@media (max-width: 768px) {
+  /* Forms */
+  .frow { grid-template-columns: 1fr }
+  .fs, .fi { font-size: 15px; min-height: 46px }
+  .fta { font-size: 15px; height: 60px }
+  .fsub { font-size: 15px; min-height: 52px }
+
+  /* Media bar */
+  .media-bar { padding: 16px }
+  .media-logos { gap: 20px }
+  .media-logo { font-size: 14px }
+  .media-bar-in { gap: 16px; flex-direction: column }
+
+  /* Writers */
+  .writers { padding: 48px 16px }
+  .wcard { width: 220px; padding: 16px; border-radius: 12px }
+  .wavatar { width: 40px; height: 40px; font-size: 18px }
+  .wname { font-size: 13px }
+  .wdeg { font-size: 10px }
+  .wstars { font-size: 11px; margin-bottom: 6px }
+  .wrating { font-size: 11px }
+  .worders { font-size: 10px }
+  .wtag { font-size: 9px; padding: 2px 6px }
+  .whire { padding: 7px; font-size: 11px }
+  .writers-track { animation-duration: 45s }
+
+  /* Reviews */
+  .rev-section { padding: 48px 16px }
+  .rev-card { width: 260px; padding: 18px; min-height: 170px }
+  .rev-text { font-size: 13px }
+
+  /* Turnitin */
+  .turnitin { padding: 48px 16px }
+  .turnitin-seal { display: none }
+  .turnitin-filigree { display: none }
+  .turnitin-trust { gap: 12px; justify-content: center }
+  .tm-score-row { gap: 8px }
+  .tm-stamp { width: 48px; height: 48px }
+
+  /* Compare */
+  .cmp { padding: 48px 16px }
+  .cmp-d { font-size: 13px; margin-bottom: 24px }
+  .ct { border-radius: 10px }
+  .ct thead th { padding: 8px 6px; font-size: 10px; text-align: center }
+  .ct thead th:first-child { text-align: left }
+  .ct tbody td { padding: 9px 6px; font-size: 11px; line-height: 1.35 }
+  .ct .ca, .ct .cs { width: auto; min-width: 0 }
+  .cn { font-size: 12px }
+  .csub { display: none }
+  .vb, .vg { font-size: 10px }
+  .vb .x { font-size: 12px }
+
+  /* Features */
+  .wh { padding: 48px 16px }
+  .whd { font-size: 13px; margin-bottom: 28px }
+  .fg2 { grid-template-columns: 1fr 1fr; gap: 10px }
+  .fc { padding: 14px 12px; border-radius: 10px }
+  .fic { width: 32px; height: 32px; border-radius: 8px; margin-bottom: 8px }
+  .fic svg { width: 16px; height: 16px }
+  .fc h3 { font-size: 14px; margin-bottom: 3px }
+  .fc p { font-size: 11px; line-height: 1.45 }
+
+  /* Social proof */
+  .spbar { padding: 16px 12px }
+  .spbar-in { grid-template-columns: repeat(2, 1fr); gap: 8px }
+  .spnum { padding: 8px 6px; border-right: none; border-bottom: 1px solid rgba(255, 255, 255, .06) }
+  .spnum:nth-child(odd) { border-right: 1px solid rgba(255, 255, 255, .06) }
+  .spnum:nth-last-child(-n+2) { border-bottom: none }
+  .spnum-val { font-size: 24px; margin-bottom: 2px }
+  .spnum-label { font-size: 10px }
+
+  /* Pricing */
+  .pri { padding: 48px 16px }
+  .pcs { grid-template-columns: 1fr; max-width: 100% }
+  .pc { padding: 22px 18px }
+  .pcalc-row { grid-template-columns: 1fr }
+  .pcalc-result { flex-direction: column; gap: 10px; text-align: center }
+  .pcalc-cta { width: 100% }
+
+  /* Subjects */
+  .subj { padding: 40px 0 }
+  .subj-head { padding: 0 16px; margin-bottom: 20px }
+  .st2 { padding: 8px 16px; font-size: 12px }
+
+  /* Process */
+  .proc { padding: 48px 16px }
+  .proc-laurel, .proc-crest { display: none }
+  .steps2 { padding: 20px 16px }
+  .metrics { gap: 10px }
+  .metric-card { padding: 18px }
+  .metric-card .mc-val { font-size: 28px }
+  .mc-ring { width: 64px; height: 64px }
+  .mc-ring svg { width: 64px; height: 64px }
+  .mc-ring .ring-val { font-size: 18px }
+
+  /* FAQ */
+  .faq-home { padding: 48px 16px }
+  .fqq { font-size: 13px; padding: 14px 16px }
+
+  /* CTA */
+  .pcta { padding: 40px 16px }
+
+  /* About */
+  .abh { padding: 100px 16px 40px }
+  .abh-in { grid-template-columns: 1fr; gap: 28px }
+  .abh h1 { font-size: 28px }
+  .abh-f { padding: 22px 16px }
+  .abh-corner { display: none }
+  .abh-badges { gap: 8px }
+  .abh-badge { font-size: 10px; padding: 6px 10px }
+  .ab-stats-in { grid-template-columns: 1fr 1fr }
+  .ab-stat { padding: 20px 14px }
+  .ab-stat-val { font-size: 20px }
+  .ab-mission { padding: 48px 16px }
+  .ab-mission-values { grid-template-columns: 1fr }
+  .faq-about { padding: 48px 16px }
+
+  /* Contact */
+  .cth { padding: 100px 16px 40px }
+  .cth-in { grid-template-columns: 1fr; gap: 28px }
+  .cth h1 { font-size: 28px }
+  .cth-corner { display: none }
+  .cth-promise { padding: 12px 14px }
+  .cms { grid-template-columns: 1fr }
+  .cm { display: flex; align-items: center; gap: 10px; text-align: left; padding: 14px }
+  .cm::before { display: none }
+  .cm svg { margin-bottom: 0 }
+  .cth-trust { gap: 10px }
+  .cfc { padding: 22px 16px }
+  .map-section { padding: 40px 16px }
+  .map-section-in { grid-template-columns: 1fr; gap: 24px }
+
+  /* Footer */
+  footer { padding: 32px 16px 16px }
+  .ft { flex-direction: column; gap: 20px }
+  .flg { flex-wrap: wrap; gap: 24px }
+  .fbot { flex-direction: column; gap: 3px; align-items: center; text-align: center }
+
+  /* Niches & Blog */
+  .niches { padding: 48px 16px }
+  .niche-card { padding: 24px 20px }
+  .blog-prev { padding: 48px 16px }
+  .blog-thumb { height: 120px }
+
+  /* Referral */
+  .referral { padding: 32px 16px }
+  .referral-in { flex-direction: column; text-align: center; padding: 28px 20px }
+  .referral-cta { width: 100% }
+
+  /* Live feed */
+  .live-feed { bottom: 80px; left: 12px; right: 12px; max-width: none }
+  .live-toast { padding: 10px 14px }
+
+  /* Hero */
+  .hero { padding: 100px 20px 40px; min-height: auto; align-items: flex-start }
+  .hero::before { display: none }
+  .hg { grid-template-columns: 1fr; gap: 32px }
+  .up { font-size: 10px; padding: 6px 12px; margin-bottom: 18px }
+  .hero h1 { font-size: 30px; margin-bottom: 16px; line-height: 1.2; opacity: 1; animation: none }
+  .hero h1 br { display: none }
+  .hsub { font-size: 15px; line-height: 1.7; margin-bottom: 22px; opacity: 1; animation: none }
+  .mqc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px;
+    background: var(--em);
+    color: var(--wh);
+    border-radius: 12px;
+    font-family: var(--fb);
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 14px rgba(13, 107, 78, .25);
+  }
+  .sp { flex-direction: row; gap: 10px; margin-bottom: 20px; opacity: 1; animation: none }
+  .av { width: 28px; height: 28px; margin-left: -7px; font-size: 12px; border-width: 2px }
+  .pt2 { font-size: 13px; line-height: 1.4 }
+  .pt2 .st { font-size: 11px }
+  .tr { gap: 14px; margin-bottom: 22px; opacity: 1; animation: none }
+  .tb { font-size: 12px; gap: 5px }
+  .tb svg { width: 14px; height: 14px }
+  .hms {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(200, 164, 78, .08);
+    margin-top: 6px;
+  }
+  .hm-s { text-align: center }
+  .hm-s strong { display: block; font-family: var(--fd); font-size: 20px; color: var(--em); line-height: 1.3 }
+  .hm-s span { font-size: 10px; color: var(--mu); font-weight: 500 }
+  .hfw { opacity: 1; animation: none }
+  .hf { padding: 24px 18px; border-radius: 16px }
+  .fh { margin-bottom: 18px }
+  .fh h3 { font-size: 18px }
+  .fh p { font-size: 12px }
+  .fg { margin-bottom: 10px }
+  .fl { font-size: 11px; margin-bottom: 4px }
+}
+
+/* ---- Max 640px ---- */
+@media (max-width: 640px) {
+  .pb { font-size: 10px; gap: 4px; padding: 7px 10px }
+  .hm { display: none }
+}
+
+/* ---- Max 600px ---- */
+@media (max-width: 600px) {
+  .aidet { padding: 48px 16px }
+  .aidet-head { margin-bottom: 24px }
+  .aidet-head p { font-size: 13px }
+  .aidet-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 20px }
+  .aicard { padding: 16px; border-radius: 12px }
+  .aicard-logo { gap: 8px; margin-bottom: 12px }
+  .aicard-icon { width: 32px; height: 32px; border-radius: 8px; font-size: 14px }
+  .aicard-name { font-size: 13px }
+  .aicard-type { font-size: 10px }
+  .aicard-result { margin-bottom: 10px }
+  .aicard-badge { padding: 4px 9px; font-size: 11px; border-radius: 6px }
+  .aicard-badge svg { width: 12px; height: 12px }
+  .aicard-score { font-size: 26px; margin-bottom: 2px }
+  .aicard-label { font-size: 11px; margin-bottom: 10px }
+  .aicard-bar { height: 6px }
+  .aicard-note { font-size: 10px; margin-top: 8px }
+  .aicard-blog-link { font-size: 10px; padding: 4px 10px; margin-top: 8px }
+  .aidet-bottom { flex-direction: column; text-align: center; padding: 20px 16px }
+  .urgency { padding: 40px 16px }
+  .urgency-grid { grid-template-columns: 1fr 1fr; gap: 10px }
+  .ucard { padding: 18px 14px }
+}
+
+/* ---- Max 480px ---- */
+@media (max-width: 480px) {
+  .wcard { width: 200px }
+  .exit-box { padding: 28px 20px }
+  .exit-box h2 { font-size: 22px }
+  .exit-input-row { flex-direction: column }
+
+  /* Compare table — tight screens */
+  .cmp { padding: 36px 10px }
+  .ct thead th { padding: 7px 4px; font-size: 9px }
+  .ct tbody td { padding: 7px 4px; font-size: 10px }
+  .cn { font-size: 11px }
+  .vb, .vg { font-size: 9px }
+}
+
+/* ---- Max 380px ---- */
+@media (max-width: 380px) {
+  .hero { padding: 94px 16px 32px }
+  .hero h1 { font-size: 26px; line-height: 1.2; margin-bottom: 14px }
+  .hsub { font-size: 14px; line-height: 1.65; margin-bottom: 18px }
+  .mqc { font-size: 14px; padding: 14px }
+  .hm-s strong { font-size: 18px }
+  .hm-s span { font-size: 9px }
+  .pb { font-size: 9px }
+}
